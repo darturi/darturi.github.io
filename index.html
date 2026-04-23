@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Aarao Reis Arturi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #13131a;
+            --bg-card-hover: #1a1a24;
+            --text: #e8e8ed;
+            --text-muted: #8888a0;
+            --accent-1: #6c5ce7;
+            --accent-2: #00cec9;
+            --accent-3: #fd79a8;
+            --accent-4: #fdcb6e;
+            --gradient-1: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --gradient-2: linear-gradient(135deg, #00cec9, #55efc4);
+            --gradient-3: linear-gradient(135deg, #fd79a8, #fab1a0);
+            --gradient-4: linear-gradient(135deg, #fdcb6e, #f8a5c2);
+            --border: #2a2a3a;
+            --panel-bg: #16161f;
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-social {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-social a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-social a:hover {
+            border-color: var(--accent-1);
+            color: var(--accent-1);
+        }
+
+        /* ── HAMBURGER ── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 200;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.15), transparent 70%);
+            top: 10%;
+            left: 10%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 206, 201, 0.1), transparent 70%);
+            bottom: 10%;
+            right: 10%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .hero-meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-tag {
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid;
+        }
+
+        .hero-tag.purple { border-color: var(--accent-1); color: var(--accent-1); }
+        .hero-tag.teal { border-color: var(--accent-2); color: var(--accent-2); }
+        .hero-tag.pink { border-color: var(--accent-3); color: var(--accent-3); }
+        .hero-tag.gold { border-color: var(--accent-4); color: var(--accent-4); }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-2);
+            color: var(--accent-2);
+            transform: translateY(-2px);
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-label.purple { color: var(--accent-1); }
+        .section-label.teal { color: var(--accent-2); }
+        .section-label.pink { color: var(--accent-3); }
+        .section-label.gold { color: var(--accent-4); }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+        }
+
+        /* ── EDUCATION ── */
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .edu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .edu-school {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-degree {
+            font-size: 1.05rem;
+            color: var(--accent-1);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .edu-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .edu-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .edu-stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .edu-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .edu-nyu {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(108, 92, 231, 0.08);
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            border-radius: 12px;
+        }
+
+        .edu-nyu-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-nyu-detail {
+            color: var(--accent-2);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .coursework-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .course-chip {
+            padding: 0.3rem 0.75rem;
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .course-chip.grad {
+            border-color: rgba(0, 206, 201, 0.3);
+            background: rgba(0, 206, 201, 0.08);
+            color: var(--accent-2);
+        }
+
+        /* ── CARDS GRID ── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(108, 92, 231, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .card-accent.purple { background: var(--gradient-1); }
+        .card-accent.teal { background: var(--gradient-2); }
+        .card-accent.pink { background: var(--gradient-3); }
+        .card-accent.gold { background: var(--gradient-4); }
+
+        .card-overline {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-overline.purple { color: var(--accent-1); }
+        .card-overline.teal { color: var(--accent-2); }
+        .card-overline.pink { color: var(--accent-3); }
+        .card-overline.gold { color: var(--accent-4); }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-description {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .card-tag {
+            padding: 0.2rem 0.6rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .card-awards {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .award-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .award-badge.gold {
+            background: rgba(253, 203, 110, 0.15);
+            color: var(--accent-4);
+        }
+
+        .card-click-hint {
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .card-click-hint {
+            opacity: 1;
+        }
+
+        /* ── SLIDE-OUT PANEL ── */
+        .panel-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 200;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+            backdrop-filter: blur(4px);
+        }
+
+        .panel-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(600px, 90vw);
+            height: 100vh;
+            background: var(--panel-bg);
+            z-index: 201;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow-y: auto;
+            border-left: 1px solid var(--border);
+        }
+
+        .panel.active {
+            transform: translateX(0);
+        }
+
+        .panel-header {
+            position: sticky;
+            top: 0;
+            background: var(--panel-bg);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 1;
+        }
+
+        .panel-close {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .panel-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-3);
+        }
+
+        .panel-header-text {
+            flex: 1;
+            padding-right: 1rem;
+        }
+
+        .panel-overline {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .panel-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .panel-body {
+            padding: 2rem;
+        }
+
+        .panel-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .panel-section {
+            margin-bottom: 2rem;
+        }
+
+        .panel-section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .panel-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .panel-text li {
+            margin-bottom: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .panel-awards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .panel-award {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(253, 203, 110, 0.08);
+            border: 1px solid rgba(253, 203, 110, 0.2);
+            border-radius: 10px;
+        }
+
+        .panel-award-icon {
+            font-size: 1.2rem;
+        }
+
+        .panel-award-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-4);
+        }
+
+        .panel-award-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        .panel-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .panel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .panel-link.primary {
+            background: var(--gradient-1);
+            color: #fff;
+        }
+
+        .panel-link.primary:hover {
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .panel-link.outline {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .panel-link.outline:hover {
+            border-color: var(--accent-2);
+            color: var(--accent-2);
+        }
+
+        .panel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .panel-tag {
+            padding: 0.25rem 0.65rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ── SKILLS SECTION ── */
+        .skills-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+
+        .skill-category-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-item {
+            padding: 0.3rem 0.7rem;
+            background: rgba(108, 92, 231, 0.08);
+            border: 1px solid rgba(108, 92, 231, 0.15);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-1);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .nav-links, .nav-social {
+                display: none;
+            }
+
+            .nav-links.mobile-open, .nav-social.mobile-open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(10, 10, 15, 0.97);
+                z-index: 150;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                backdrop-filter: blur(20px);
+            }
+
+            .mobile-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu a {
+                color: var(--text);
+                text-decoration: none;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .mobile-menu .mobile-social {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .mobile-menu .mobile-social a {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.25rem;
+            }
+
+            .edu-card {
+                padding: 1.5rem;
+            }
+
+            .edu-stats {
+                gap: 1.5rem;
+            }
+        }
+
+        /* ── SCROLL ANIMATIONS ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-logo">DARA</div>
+    <ul class="nav-links">
+        <li><a href="#education">Education</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://github.com/darturi" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/darturi" target="_blank">LinkedIn</a>
+        <a href="./resume.pdf" target="_blank">Resume</a>
+    </div>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#education" onclick="toggleMobileMenu()">Education</a>
+    <a href="#research" onclick="toggleMobileMenu()">Research</a>
+    <a href="#experience" onclick="toggleMobileMenu()">Experience</a>
+    <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+    <div class="mobile-social">
+        <a href="https://github.com/darturi" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank">LinkedIn</a>
+        <a href="./resume.pdf" target="_blank">Resume</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content fade-up">
+        <h1>Hi, I'm <span class="gradient-text">Daniel</span></h1>
+        <p class="hero-subtitle">Software Engineer & AI Safety Researcher</p>
+        <p class="hero-meta">McGill University '26 &rarr; NYU Courant MS (Fall 2026)</p>
+        <div class="hero-tags">
+            <span class="hero-tag purple">Mechanistic Interpretability</span>
+            <span class="hero-tag teal">Distributed Systems</span>
+            <span class="hero-tag pink">AI Safety</span>
+            <span class="hero-tag gold">NeurIPS '25</span>
+        </div>
+        <div class="hero-buttons">
+            <a href="#research" class="btn btn-primary">View My Research</a>
+            <a href="./resume.pdf" class="btn btn-outline" target="_blank">Download Resume</a>
+        </div>
+    </div>
+</header>
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="section-header fade-up">
+        <div class="section-label purple">Education</div>
+        <h2 class="section-title">Academic Background</h2>
+    </div>
+    <div class="edu-card fade-up">
+        <div class="edu-school">McGill University</div>
+        <div class="edu-degree">B.Sc. Honours Software Engineering</div>
+        <div class="edu-meta">Montreal, Quebec &bull; Graduated April 2026</div>
+        <div class="edu-stats">
+            <div class="edu-stat">
+                <span class="edu-stat-value">3.98</span>
+                <span class="edu-stat-label">GPA / 4.0</span>
+            </div>
+            <div class="edu-stat">
+                <span class="edu-stat-value">Dean's List</span>
+                <span class="edu-stat-label">Honour Roll</span>
+            </div>
+        </div>
+        <div class="coursework-grid">
+            <span class="course-chip grad">Distributed Systems (Grad)</span>
+            <span class="course-chip grad">Applied ML (Grad)</span>
+            <span class="course-chip grad">Computer Networks (Grad)</span>
+            <span class="course-chip grad">Sustainability for ML (Grad)</span>
+            <span class="course-chip">Algorithm Design</span>
+            <span class="course-chip">Operating Systems</span>
+            <span class="course-chip">Database Systems</span>
+            <span class="course-chip">Probability Theory</span>
+            <span class="course-chip">Statistics</span>
+            <span class="course-chip">Linear Algebra</span>
+        </div>
+        <div class="edu-nyu">
+            <div class="edu-nyu-title">New York University, Courant Institute</div>
+            <div class="edu-nyu-detail">Incoming M.S. Student &bull; Fall 2026</div>
+        </div>
+    </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+    <div class="section-header fade-up">
+        <div class="section-label teal">Research</div>
+        <h2 class="section-title">Research Experience</h2>
+    </div>
+    <div class="cards-grid">
+        <!-- Algoverse -->
+        <div class="card fade-up" onclick="openPanel('algoverse')">
+            <div class="card-accent teal"></div>
+            <div class="card-overline teal">April 2025 &ndash; Present</div>
+            <div class="card-title">AI Safety & Interpretability Research Intern</div>
+            <div class="card-subtitle">Algoverse &bull; Remote</div>
+            <div class="card-description">Investigating parametric geometry to map high-level cognitive behaviors in LLMs. Researching multi-thousand turn conversation impacts on model persona stability.</div>
+            <div class="card-tags">
+                <span class="card-tag">Mech. Interp.</span>
+                <span class="card-tag">LLMs</span>
+                <span class="card-tag">LoRA/PEFT</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
+        <!-- McGill Graph DB -->
+        <div class="card fade-up" onclick="openPanel('mcgill-graph')">
+            <div class="card-accent purple"></div>
+            <div class="card-overline purple">Aug 2025 &ndash; Present</div>
+            <div class="card-title">Graph Database Systems Research Intern</div>
+            <div class="card-subtitle">McGill University</div>
+            <div class="card-description">Developing novel node annotation strategies to optimize query performance on tree substructures within graph databases.</div>
+            <div class="card-tags">
+                <span class="card-tag">Graph DBs</span>
+                <span class="card-tag">Query Optimization</span>
+                <span class="card-tag">Cypher</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
+        <!-- McGill Quantum -->
+        <div class="card fade-up" onclick="openPanel('mcgill-quantum')">
+            <div class="card-accent pink"></div>
+            <div class="card-overline pink">Jan 2026 &ndash; Present</div>
+            <div class="card-title">Quantum Computing Research Intern</div>
+            <div class="card-subtitle">McGill University &bull; Distributed Information Systems Group</div>
+            <div class="card-description">Researching quantum programming libraries for data allocation problems, formulating them as quantum optimization tasks.</div>
+            <div class="card-tags">
+                <span class="card-tag">Quantum</span>
+                <span class="card-tag">PennyLane</span>
+                <span class="card-tag">Optimization</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE (Publications / Awards) -->
+<section id="experience">
+    <div class="section-header fade-up">
+        <div class="section-label pink">Publications & Awards</div>
+        <h2 class="section-title">Publications</h2>
+    </div>
+    <div class="cards-grid">
+        <!-- NeurIPS Paper -->
+        <div class="card fade-up" onclick="openPanel('neurips-paper')">
+            <div class="card-accent gold"></div>
+            <div class="card-overline gold">NeurIPS 2025</div>
+            <div class="card-title">Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior</div>
+            <div class="card-subtitle">First Author &bull; Accepted to UniReps, MechInterp, & CogInterp</div>
+            <div class="card-awards">
+                <span class="award-badge gold">&#9733; Oral + Honorable Mention</span>
+                <span class="award-badge gold">&#9733; Spotlight</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="section-header fade-up">
+        <div class="section-label gold">Projects</div>
+        <h2 class="section-title">Selected Projects</h2>
+    </div>
+    <div class="cards-grid">
+        <!-- Paxos -->
+        <div class="card fade-up" onclick="openPanel('paxos')">
+            <div class="card-accent purple"></div>
+            <div class="card-overline purple">Distributed Systems</div>
+            <div class="card-title">Distributed Consensus System (Paxos)</div>
+            <div class="card-subtitle">Java</div>
+            <div class="card-description">Implemented the Paxos consensus protocol from scratch to manage state across distributed nodes with fault-tolerant leader election.</div>
+            <div class="card-tags">
+                <span class="card-tag">Java</span>
+                <span class="card-tag">Paxos</span>
+                <span class="card-tag">Concurrency</span>
+                <span class="card-tag">Sockets</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section">
+    <div class="section-header fade-up">
+        <div class="section-label purple">Technical</div>
+        <h2 class="section-title">Skills & Tools</h2>
+    </div>
+    <div class="skills-categories fade-up">
+        <div class="skill-category">
+            <div class="skill-category-title" style="color: var(--accent-1);">Languages</div>
+            <div class="skill-items">
+                <span class="skill-item">Python</span>
+                <span class="skill-item">Java</span>
+                <span class="skill-item">C/C++</span>
+                <span class="skill-item">OCaml</span>
+                <span class="skill-item">R</span>
+                <span class="skill-item">SQL</span>
+                <span class="skill-item">Cypher</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">Bash</span>
+                <span class="skill-item">Assembly</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <div class="skill-category-title" style="color: var(--accent-2);">Machine Learning</div>
+            <div class="skill-items">
+                <span class="skill-item">PyTorch</span>
+                <span class="skill-item">TensorFlow</span>
+                <span class="skill-item">NumPy</span>
+                <span class="skill-item">pandas</span>
+                <span class="skill-item">scikit-learn</span>
+                <span class="skill-item">LoRA/PEFT</span>
+                <span class="skill-item">Transformers</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <div class="skill-category-title" style="color: var(--accent-3);">Web & Tools</div>
+            <div class="skill-items">
+                <span class="skill-item">React</span>
+                <span class="skill-item">Vite</span>
+                <span class="skill-item">Django</span>
+                <span class="skill-item">HTML/CSS</span>
+                <span class="skill-item">Git</span>
+                <span class="skill-item">LaTeX</span>
+                <span class="skill-item">Zookeeper</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <div class="skill-category-title" style="color: var(--accent-4);">Concepts</div>
+            <div class="skill-items">
+                <span class="skill-item">Mech. Interp.</span>
+                <span class="skill-item">AI Safety</span>
+                <span class="skill-item">Fine-tuning</span>
+                <span class="skill-item">Distributed Computing</span>
+                <span class="skill-item">Graph Theory</span>
+                <span class="skill-item">Concurrency</span>
+                <span class="skill-item">Database Systems</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-links">
+        <a href="https://github.com/darturi" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank">LinkedIn</a>
+        <a href="mailto:dan.arturi@gmail.com">dan.arturi@gmail.com</a>
+        <a href="./resume.pdf" target="_blank">Resume</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Daniel Aarao Reis Arturi. All rights reserved.</div>
+</footer>
+
+<!-- PANEL OVERLAY -->
+<div class="panel-overlay" id="panelOverlay" onclick="closePanel()"></div>
+
+<!-- SLIDE-OUT PANEL -->
+<div class="panel" id="panel">
+    <div class="panel-header">
+        <div class="panel-header-text">
+            <div class="panel-overline" id="panelOverline"></div>
+            <div class="panel-title" id="panelTitle"></div>
+        </div>
+        <button class="panel-close" onclick="closePanel()">&times;</button>
+    </div>
+    <div class="panel-body" id="panelBody"></div>
+</div>
+
+<script>
+    // ── PANEL DATA ──
+    const panelData = {
+        'algoverse': {
+            overline: 'Research Intern',
+            overlineColor: 'var(--accent-2)',
+            title: 'Algoverse — AI Safety & Interpretability',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>Remote research internship focused on AI Safety and Mechanistic Interpretability, running since April 2025.</p>`
+                },
+                {
+                    title: 'Research Areas',
+                    content: `<ul>
+                        <li><strong>Mechanistic Interpretability:</strong> Investigating parametric geometry to map high-level cognitive behaviors in Large Language Models (LLMs).</li>
+                        <li><strong>Long-Context Alignment:</strong> Researching the impact of multi-thousand turn conversations on persistent memory stores, specifically analyzing how sensitive topics (e.g., mental health) influence model persona stability.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Output',
+                    content: `<p>Authored an extended abstract accepted to multiple NeurIPS 2025 workshops. Currently preparing a full manuscript on vaccination techniques for misaligned subspaces, and an additional publication on long-context alignment.</p>`
+                }
+            ],
+            awards: [
+                { text: 'Algoverse Merit Scholarship', date: 'Apr & Sep 2025', icon: '&#9733;' }
+            ],
+            links: [],
+            tags: ['PyTorch', 'LoRA/PEFT', 'Transformers', 'Mechanistic Interp.', 'AI Safety']
+        },
+        'mcgill-graph': {
+            overline: 'Research Intern',
+            overlineColor: 'var(--accent-1)',
+            title: 'McGill University — Graph Database Systems',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>Research internship at McGill University focused on graph database optimization, running since August 2025.</p>`
+                },
+                {
+                    title: 'Research Focus',
+                    content: `<ul>
+                        <li><strong>Index Optimization:</strong> Developed novel node annotation strategies to optimize query performance on tree substructures within graph databases.</li>
+                        <li><strong>System Analysis:</strong> Conducted internal systems analysis of multiple graph database architectures to inform index annotation design.</li>
+                        <li><strong>Automation:</strong> Built an automated pipeline for database annotation, regression testing, and visualization across systems.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [],
+            tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Automation']
+        },
+        'mcgill-quantum': {
+            overline: 'Research Intern',
+            overlineColor: 'var(--accent-3)',
+            title: 'McGill University — Quantum Computing',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>Research internship in the Distributed Information Systems Group at McGill University, running since January 2026.</p>`
+                },
+                {
+                    title: 'Research Focus',
+                    content: `<ul>
+                        <li>Researching the application of quantum programming libraries to solve data allocation problems, formulating them as quantum optimization tasks.</li>
+                        <li>Utilizing Calcul Québec quantum resources and PennyLane framework.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [],
+            tags: ['Quantum Computing', 'PennyLane', 'Optimization', 'Python', 'Calcul Québec']
+        },
+        'neurips-paper': {
+            overline: 'NeurIPS 2025',
+            overlineColor: 'var(--accent-4)',
+            title: 'Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior',
+            image: null, // Set to a path like 'images/paper-figure.png' to display an image
+            sections: [
+                {
+                    title: 'Abstract',
+                    content: `<p>Demonstrated parameter space convergence of emergently misaligned fine-tunes and analyzed the parametric geometry of LoRA-adapted models. This work shows that misaligned behaviors occupy identifiable subspaces in parameter space, opening paths for targeted intervention.</p>`
+                },
+                {
+                    title: 'Current Work',
+                    content: `<p>Currently expanding this work into a full paper, utilizing vaccination techniques during fine-tuning to mitigate misaligned subspaces.</p>`
+                }
+            ],
+            awards: [
+                { text: 'UniReps — Oral Presentation + Honorable Mention', date: 'Dec 2025', icon: '&#9733;' },
+                { text: 'MechInterp — Spotlight', date: 'Dec 2025', icon: '&#9733;' },
+                { text: 'CogInterp — Poster', date: 'Dec 2025', icon: '&#9733;' }
+            ],
+            links: [
+                // { label: 'arXiv', url: 'https://arxiv.org/abs/...', type: 'primary' },
+                // { label: 'GitHub', url: 'https://github.com/...', type: 'outline' },
+                // { label: 'Project Website', url: 'https://...', type: 'outline' },
+            ],
+            tags: ['Mechanistic Interp.', 'LoRA', 'AI Safety', 'Emergent Misalignment', 'Parameter Geometry']
+        },
+        'paxos': {
+            overline: 'Project',
+            overlineColor: 'var(--accent-1)',
+            title: 'Distributed Consensus System (Paxos Implementation)',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>A from-scratch implementation of the Paxos consensus protocol in Java, designed to manage state across distributed nodes and ensure consistency in the presence of network partitions.</p>`
+                },
+                {
+                    title: 'Technical Details',
+                    content: `<ul>
+                        <li>Implemented the full Paxos consensus protocol to manage state across distributed nodes, ensuring consistency in the presence of network partitions.</li>
+                        <li>Engineered a fault-tolerant leader election mechanism and log replication system using Java concurrency primitives and socket programming.</li>
+                        <li>Designed a simulation harness to inject random node failures and message delays, verifying system recovery and data integrity.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [
+                // { label: 'GitHub', url: 'https://github.com/...', type: 'primary' },
+            ],
+            tags: ['Java', 'Paxos', 'Distributed Systems', 'Concurrency', 'Socket Programming', 'Fault Tolerance']
+        }
+    };
+
+    // ── PANEL FUNCTIONS ──
+    function openPanel(id) {
+        const data = panelData[id];
+        if (!data) return;
+
+        const overlay = document.getElementById('panelOverlay');
+        const panel = document.getElementById('panel');
+        const overline = document.getElementById('panelOverline');
+        const title = document.getElementById('panelTitle');
+        const body = document.getElementById('panelBody');
+
+        overline.textContent = data.overline;
+        overline.style.color = data.overlineColor;
+        title.textContent = data.title;
+
+        let html = '';
+
+        // Image
+        if (data.image) {
+            html += `<img src="${data.image}" alt="${data.title}" class="panel-image">`;
+        }
+
+        // Sections
+        data.sections.forEach(section => {
+            html += `
+                <div class="panel-section">
+                    <div class="panel-section-title">${section.title}</div>
+                    <div class="panel-text">${section.content}</div>
+                </div>
+            `;
+        });
+
+        // Awards
+        if (data.awards && data.awards.length > 0) {
+            html += `<div class="panel-section">
+                <div class="panel-section-title">Awards & Recognition</div>
+                <div class="panel-awards">`;
+            data.awards.forEach(award => {
+                html += `
+                    <div class="panel-award">
+                        <span class="panel-award-icon">${award.icon}</span>
+                        <span class="panel-award-text">${award.text}</span>
+                        <span class="panel-award-date">${award.date}</span>
+                    </div>
+                `;
+            });
+            html += `</div></div>`;
+        }
+
+        // Links
+        if (data.links && data.links.length > 0) {
+            html += `<div class="panel-section">
+                <div class="panel-section-title">Links</div>
+                <div class="panel-links">`;
+            data.links.forEach(link => {
+                html += `<a href="${link.url}" target="_blank" class="panel-link ${link.type}">${link.label}</a>`;
+            });
+            html += `</div></div>`;
+        }
+
+        // Tags
+        if (data.tags && data.tags.length > 0) {
+            html += `<div class="panel-section">
+                <div class="panel-section-title">Technologies</div>
+                <div class="panel-tags">`;
+            data.tags.forEach(tag => {
+                html += `<span class="panel-tag">${tag}</span>`;
+            });
+            html += `</div></div>`;
+        }
+
+        body.innerHTML = html;
+
+        requestAnimationFrame(() => {
+            overlay.classList.add('active');
+            panel.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    function closePanel() {
+        document.getElementById('panelOverlay').classList.remove('active');
+        document.getElementById('panel').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closePanel();
+    });
+
+    // ── MOBILE MENU ──
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
+
+    // ── SCROLL ANIMATIONS ──
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
