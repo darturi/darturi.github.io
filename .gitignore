@@ -1,0 +1,11 @@
+DEPLOY.md
+.idea/
+
+# macOS duplicates
+* 2.*
+* 2
+
+# Scratch files
+*.pyc
+extract_readme.py
+readme_extracted.txt

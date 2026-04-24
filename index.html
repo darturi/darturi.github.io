@@ -7,21 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0f;
-            --bg-card: #13131a;
-            --bg-card-hover: #1a1a24;
-            --text: #e8e8ed;
-            --text-muted: #8888a0;
-            --accent-1: #6c5ce7;
-            --accent-2: #00cec9;
-            --accent-3: #fd79a8;
-            --accent-4: #fdcb6e;
-            --gradient-1: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            --gradient-2: linear-gradient(135deg, #00cec9, #55efc4);
-            --gradient-3: linear-gradient(135deg, #fd79a8, #fab1a0);
-            --gradient-4: linear-gradient(135deg, #fdcb6e, #f8a5c2);
-            --border: #2a2a3a;
-            --panel-bg: #16161f;
+            --bg: #F6F7EB;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f1e5;
+            --text: #393E41;
+            --text-muted: #6b7175;
+            --accent-1: #E94F37;
+            --accent-2: #3F88C5;
+            --accent-3: #44BBA4;
+            --accent-4: #393E41;
+            --gradient-1: linear-gradient(135deg, #E94F37, #f27961);
+            --gradient-2: linear-gradient(135deg, #3F88C5, #6aa3d4);
+            --gradient-3: linear-gradient(135deg, #44BBA4, #6dcdb9);
+            --gradient-4: linear-gradient(135deg, #393E41, #5a6063);
+            --border: #d8d9cc;
+            --panel-bg: #f0f1e5;
             --radius: 16px;
         }
 
@@ -55,7 +55,7 @@
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(20px);
-            background: rgba(10, 10, 15, 0.8);
+            background: rgba(246, 247, 235, 0.85);
             border-bottom: 1px solid var(--border);
         }
 
@@ -159,7 +159,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(108, 92, 231, 0.15), transparent 70%);
+            background: radial-gradient(circle, rgba(233, 79, 55, 0.1), transparent 70%);
             top: 10%;
             left: 10%;
             pointer-events: none;
@@ -170,7 +170,7 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(0, 206, 201, 0.1), transparent 70%);
+            background: radial-gradient(circle, rgba(63, 136, 197, 0.08), transparent 70%);
             bottom: 10%;
             right: 10%;
             pointer-events: none;
@@ -259,7 +259,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+            box-shadow: 0 8px 25px rgba(233, 79, 55, 0.3);
         }
 
         .btn-outline {
@@ -311,6 +311,7 @@
             padding: 2.5rem;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .edu-card::before {
@@ -373,8 +374,8 @@
         .edu-nyu {
             margin-top: 2rem;
             padding: 1.5rem;
-            background: rgba(108, 92, 231, 0.08);
-            border: 1px solid rgba(108, 92, 231, 0.2);
+            background: rgba(63, 136, 197, 0.08);
+            border: 1px solid rgba(63, 136, 197, 0.2);
             border-radius: 12px;
         }
 
@@ -399,16 +400,16 @@
 
         .course-chip {
             padding: 0.3rem 0.75rem;
-            background: rgba(108, 92, 231, 0.1);
-            border: 1px solid rgba(108, 92, 231, 0.2);
+            background: rgba(57, 62, 65, 0.06);
+            border: 1px solid rgba(57, 62, 65, 0.15);
             border-radius: 8px;
             font-size: 0.8rem;
             color: var(--text-muted);
         }
 
         .course-chip.grad {
-            border-color: rgba(0, 206, 201, 0.3);
-            background: rgba(0, 206, 201, 0.08);
+            border-color: rgba(63, 136, 197, 0.3);
+            background: rgba(63, 136, 197, 0.08);
             color: var(--accent-2);
         }
 
@@ -428,13 +429,14 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .card:hover {
             background: var(--bg-card-hover);
-            border-color: rgba(108, 92, 231, 0.3);
+            border-color: rgba(233, 79, 55, 0.3);
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
         }
 
         .card-accent {
@@ -495,7 +497,7 @@
 
         .card-tag {
             padding: 0.2rem 0.6rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(57, 62, 65, 0.06);
             border-radius: 6px;
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -520,8 +522,8 @@
         }
 
         .award-badge.gold {
-            background: rgba(253, 203, 110, 0.15);
-            color: var(--accent-4);
+            background: rgba(233, 79, 55, 0.1);
+            color: var(--accent-1);
         }
 
         .card-click-hint {
@@ -540,7 +542,7 @@
         .panel-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(57, 62, 65, 0.4);
             z-index: 200;
             opacity: 0;
             pointer-events: none;
@@ -584,7 +586,7 @@
         }
 
         .panel-close {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(57, 62, 65, 0.06);
             border: 1px solid var(--border);
             color: var(--text);
             width: 36px;
@@ -600,8 +602,8 @@
         }
 
         .panel-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-3);
+            background: rgba(57, 62, 65, 0.1);
+            border-color: var(--accent-1);
         }
 
         .panel-header-text {
@@ -669,8 +671,8 @@
             align-items: center;
             gap: 0.75rem;
             padding: 0.75rem 1rem;
-            background: rgba(253, 203, 110, 0.08);
-            border: 1px solid rgba(253, 203, 110, 0.2);
+            background: rgba(233, 79, 55, 0.06);
+            border: 1px solid rgba(233, 79, 55, 0.15);
             border-radius: 10px;
         }
 
@@ -681,7 +683,7 @@
         .panel-award-text {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--accent-4);
+            color: var(--accent-1);
         }
 
         .panel-award-date {
@@ -714,7 +716,7 @@
         }
 
         .panel-link.primary:hover {
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+            box-shadow: 0 4px 15px rgba(233, 79, 55, 0.3);
             transform: translateY(-1px);
         }
 
@@ -736,7 +738,7 @@
 
         .panel-tag {
             padding: 0.25rem 0.65rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(57, 62, 65, 0.06);
             border-radius: 6px;
             font-size: 0.8rem;
             color: var(--text-muted);
@@ -779,8 +781,8 @@
 
         .skill-item {
             padding: 0.3rem 0.7rem;
-            background: rgba(108, 92, 231, 0.08);
-            border: 1px solid rgba(108, 92, 231, 0.15);
+            background: rgba(63, 136, 197, 0.08);
+            border: 1px solid rgba(63, 136, 197, 0.15);
             border-radius: 8px;
             font-size: 0.8rem;
             font-family: 'JetBrains Mono', monospace;
@@ -841,7 +843,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba(10, 10, 15, 0.97);
+                background: rgba(246, 247, 235, 0.97);
                 z-index: 150;
                 flex-direction: column;
                 align-items: center;
@@ -911,9 +913,9 @@
     <div class="nav-logo">DARA</div>
     <ul class="nav-links">
         <li><a href="#education">Education</a></li>
-        <li><a href="#research">Research</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Engineering</a></li>
     </ul>
     <div class="nav-social">
         <a href="https://github.com/darturi" target="_blank">GitHub</a>
@@ -928,9 +930,9 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="#education" onclick="toggleMobileMenu()">Education</a>
-    <a href="#research" onclick="toggleMobileMenu()">Research</a>
     <a href="#experience" onclick="toggleMobileMenu()">Experience</a>
-    <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+    <a href="#research" onclick="toggleMobileMenu()">Research</a>
+    <a href="#projects" onclick="toggleMobileMenu()">Engineering</a>
     <div class="mobile-social">
         <a href="https://github.com/darturi" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank">LinkedIn</a>
@@ -963,6 +965,11 @@
         <div class="section-label purple">Education</div>
         <h2 class="section-title">Academic Background</h2>
     </div>
+    <div class="edu-card fade-up" style="margin-bottom: 1.5rem;">
+        <div class="edu-school">New York University, Courant Institute</div>
+        <div class="edu-degree">Master of Science (Incoming)</div>
+        <div class="edu-meta">New York City, NY &bull; Starting Fall 2026</div>
+    </div>
     <div class="edu-card fade-up">
         <div class="edu-school">McGill University</div>
         <div class="edu-degree">B.Sc. Honours Software Engineering</div>
@@ -989,46 +996,27 @@
             <span class="course-chip">Statistics</span>
             <span class="course-chip">Linear Algebra</span>
         </div>
-        <div class="edu-nyu">
-            <div class="edu-nyu-title">New York University, Courant Institute</div>
-            <div class="edu-nyu-detail">Incoming M.S. Student &bull; Fall 2026</div>
-        </div>
     </div>
 </section>
 
-<!-- RESEARCH -->
-<section id="research">
+<!-- EXPERIENCE -->
+<section id="experience">
     <div class="section-header fade-up">
-        <div class="section-label teal">Research</div>
+        <div class="section-label teal">Experience</div>
         <h2 class="section-title">Research Experience</h2>
     </div>
     <div class="cards-grid">
-        <!-- Algoverse -->
-        <div class="card fade-up" onclick="openPanel('algoverse')">
+        <!-- NYU Tandon ExpMath -->
+        <div class="card fade-up" onclick="openPanel('nyu-expmath')">
             <div class="card-accent teal"></div>
-            <div class="card-overline teal">April 2025 &ndash; Present</div>
-            <div class="card-title">AI Safety & Interpretability Research Intern</div>
-            <div class="card-subtitle">Algoverse &bull; Remote</div>
-            <div class="card-description">Investigating parametric geometry to map high-level cognitive behaviors in LLMs. Researching multi-thousand turn conversation impacts on model persona stability.</div>
+            <div class="card-overline teal">May 2026 &ndash; Present</div>
+            <div class="card-title">Research Scientist — ExpMath (DARPA)</div>
+            <div class="card-subtitle">NYU Tandon School of Engineering</div>
+            <div class="card-description">Working on DARPA's Exponentiating Mathematics program to develop AI co-authors capable of proposing and proving useful mathematical abstractions.</div>
             <div class="card-tags">
-                <span class="card-tag">Mech. Interp.</span>
-                <span class="card-tag">LLMs</span>
-                <span class="card-tag">LoRA/PEFT</span>
-            </div>
-            <div class="card-click-hint">Click to expand &rarr;</div>
-        </div>
-
-        <!-- McGill Graph DB -->
-        <div class="card fade-up" onclick="openPanel('mcgill-graph')">
-            <div class="card-accent purple"></div>
-            <div class="card-overline purple">Aug 2025 &ndash; Present</div>
-            <div class="card-title">Graph Database Systems Research Intern</div>
-            <div class="card-subtitle">McGill University</div>
-            <div class="card-description">Developing novel node annotation strategies to optimize query performance on tree substructures within graph databases.</div>
-            <div class="card-tags">
-                <span class="card-tag">Graph DBs</span>
-                <span class="card-tag">Query Optimization</span>
-                <span class="card-tag">Cypher</span>
+                <span class="card-tag">AI for Math</span>
+                <span class="card-tag">DARPA</span>
+                <span class="card-tag">Formal Verification</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -1047,50 +1035,151 @@
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
-    </div>
-</section>
 
-<!-- EXPERIENCE (Publications / Awards) -->
-<section id="experience">
-    <div class="section-header fade-up">
-        <div class="section-label pink">Publications & Awards</div>
-        <h2 class="section-title">Publications</h2>
-    </div>
-    <div class="cards-grid">
-        <!-- NeurIPS Paper -->
-        <div class="card fade-up" onclick="openPanel('neurips-paper')">
+        <!-- McGill Graph DB -->
+        <div class="card fade-up" onclick="openPanel('mcgill-graph')">
+            <div class="card-accent purple"></div>
+            <div class="card-overline purple">Aug 2025 &ndash; Mar 2026</div>
+            <div class="card-title">Graph Database Systems Research Intern</div>
+            <div class="card-subtitle">McGill University</div>
+            <div class="card-description">Developed novel node annotation strategies to optimize query performance on tree substructures within graph databases.</div>
+            <div class="card-tags">
+                <span class="card-tag">Graph DBs</span>
+                <span class="card-tag">Query Optimization</span>
+                <span class="card-tag">Cypher</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
+        <!-- Algoverse -->
+        <div class="card fade-up" onclick="openPanel('algoverse')">
             <div class="card-accent gold"></div>
-            <div class="card-overline gold">NeurIPS 2025</div>
-            <div class="card-title">Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior</div>
-            <div class="card-subtitle">First Author &bull; Accepted to UniReps, MechInterp, & CogInterp</div>
-            <div class="card-awards">
-                <span class="award-badge gold">&#9733; Oral + Honorable Mention</span>
-                <span class="award-badge gold">&#9733; Spotlight</span>
+            <div class="card-overline gold">April 2025 &ndash; Present</div>
+            <div class="card-title">AI Safety & Interpretability Research Intern</div>
+            <div class="card-subtitle">Algoverse &bull; Remote</div>
+            <div class="card-description">Investigating parametric geometry to map high-level cognitive behaviors in LLMs. Researching multi-thousand turn conversation impacts on model persona stability.</div>
+            <div class="card-tags">
+                <span class="card-tag">Mech. Interp.</span>
+                <span class="card-tag">LLMs</span>
+                <span class="card-tag">LoRA/PEFT</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
+<!-- RESEARCH -->
+<section id="research">
     <div class="section-header fade-up">
-        <div class="section-label gold">Projects</div>
-        <h2 class="section-title">Selected Projects</h2>
+        <div class="section-label pink">Research</div>
+        <h2 class="section-title">Research Output</h2>
     </div>
     <div class="cards-grid">
-        <!-- Paxos -->
-        <div class="card fade-up" onclick="openPanel('paxos')">
+        <!-- NeurIPS / COLM Paper -->
+        <div class="card fade-up" onclick="openPanel('neurips-paper')">
+            <div class="card-accent gold"></div>
+            <div class="card-overline gold">NeurIPS 2025 &bull; Under review at COLM</div>
+            <div class="card-title">Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior</div>
+            <div class="card-subtitle">Joint First Author &bull; Accepted to UniReps, MechInterp, & CogInterp</div>
+            <div class="card-description">Adopts a geometric perspective to show that emergent misalignment exhibits cross-task linear structure — different narrow tasks discover the same shared parameter directions in the weight landscape.</div>
+            <div class="card-awards">
+                <span class="award-badge gold">&#9733; Oral + Honorable Mention</span>
+                <span class="award-badge gold">&#9733; Spotlight</span>
+            </div>
+            <div class="card-tags">
+                <span class="card-tag">Mech. Interp.</span>
+                <span class="card-tag">LoRA</span>
+                <span class="card-tag">AI Safety</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
+        <!-- Graph DB Preprint -->
+        <div class="card fade-up" onclick="openPanel('mcgill-graph-paper')">
+            <div class="card-accent purple"></div>
+            <div class="card-overline purple">Preprint &bull; arXiv 2025</div>
+            <div class="card-title">Tree Substructure Indexing in Graph Databases</div>
+            <div class="card-subtitle">With reproducibility package</div>
+            <div class="card-awards">
+                <span class="award-badge gold">&#9733; McGill Science Undergraduate Research Showcase</span>
+            </div>
+            <div class="card-tags">
+                <span class="card-tag">Graph DBs</span>
+                <span class="card-tag">Query Optimization</span>
+                <span class="card-tag">Cypher</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
+        <!-- ML Energy Efficiency -->
+        <div class="card fade-up" onclick="openPanel('ml-sustainability')">
+            <div class="card-accent teal"></div>
+            <div class="card-overline teal">Machine Learning &bull; Sustainability</div>
+            <div class="card-title">Energy Efficiency Analysis of ML Architectures</div>
+            <div class="card-subtitle">Python &bull; PyTorch &bull; CodeCarbon</div>
+            <div class="card-description">Systematic energy profiling and sustainability analysis across neural network architectures including BERT, T5, ResNet, and ConvNeXt.</div>
+            <div class="card-tags">
+                <span class="card-tag">PyTorch</span>
+                <span class="card-tag">CodeCarbon</span>
+                <span class="card-tag">HuggingFace</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+    </div>
+</section>
+
+<!-- ENGINEERING -->
+<section id="projects">
+    <div class="section-header fade-up">
+        <div class="section-label gold">Engineering</div>
+        <h2 class="section-title">Engineering Projects</h2>
+    </div>
+    <div class="cards-grid">
+        <!-- ArxivReader -->
+        <div class="card fade-up" onclick="openPanel('arxiv-reader')">
+            <div class="card-accent teal"></div>
+            <div class="card-overline teal">Full-Stack &bull; Web + iOS</div>
+            <div class="card-title">ArxivReader</div>
+            <div class="card-subtitle">Next.js &bull; SwiftUI &bull; Supabase</div>
+            <div class="card-description">A web + iOS research library for saving, searching, and annotating arXiv papers — with reading lists, color-coded tags, author discovery, and real-time sync via Supabase.</div>
+            <div class="card-tags">
+                <span class="card-tag">Next.js</span>
+                <span class="card-tag">React</span>
+                <span class="card-tag">TypeScript</span>
+                <span class="card-tag">SwiftUI</span>
+                <span class="card-tag">Supabase</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
+        <!-- Mosaic Exchange -->
+        <div class="card fade-up" onclick="openPanel('mosaic-exchange')">
             <div class="card-accent purple"></div>
             <div class="card-overline purple">Distributed Systems</div>
-            <div class="card-title">Distributed Consensus System (Paxos)</div>
+            <div class="card-title">Mosaic Exchange</div>
+            <div class="card-subtitle">Java &bull; Python</div>
+            <div class="card-description">A distributed chatbot platform with persistent chat history and peer-to-peer network exchange functionality for conversational AI.</div>
+            <div class="card-tags">
+                <span class="card-tag">Java</span>
+                <span class="card-tag">Python</span>
+                <span class="card-tag">LLMs</span>
+                <span class="card-tag">Networking</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
+        <!-- Paxos -->
+        <div class="card fade-up" onclick="openPanel('paxos')">
+            <div class="card-accent gold"></div>
+            <div class="card-overline gold">Distributed Systems</div>
+            <div class="card-title">Paxos Treasure Island</div>
             <div class="card-subtitle">Java</div>
-            <div class="card-description">Implemented the Paxos consensus protocol from scratch to manage state across distributed nodes with fault-tolerant leader election.</div>
+            <div class="card-description">A distributed multiplayer game using the Paxos consensus protocol for total-order broadcast, with failure injection testing and an interactive protocol visualizer.</div>
             <div class="card-tags">
                 <span class="card-tag">Java</span>
                 <span class="card-tag">Paxos</span>
-                <span class="card-tag">Concurrency</span>
-                <span class="card-tag">Sockets</span>
+                <span class="card-tag">UDP</span>
+                <span class="card-tag">Fault Tolerance</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -1187,6 +1276,32 @@
 <script>
     // ── PANEL DATA ──
     const panelData = {
+        'nyu-expmath': {
+            overline: 'Research Scientist',
+            overlineColor: 'var(--accent-3)',
+            title: 'NYU Tandon — ExpMath (DARPA)',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>Research Scientist at NYU Tandon School of Engineering, working on DARPA's Exponentiating Mathematics (expMath) program starting May 2026. NYU is one of 13 teams in the inaugural cohort, with $2.2M in funding for 2026–2029.</p>`
+                },
+                {
+                    title: 'Research Focus',
+                    content: `<ul>
+                        <li>Developing a human-centered framework for AI-mathematician collaboration in research-level mathematics.</li>
+                        <li>Building AI co-authors capable of proposing and proving useful mathematical abstractions to radically accelerate progress in pure mathematics.</li>
+                        <li>Working on autoformalization of research-level mathematics as part of the expMath program.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [
+                { label: 'NYU Announcement', url: 'https://engineering.nyu.edu/news/nyu-participate-federal-effort-build-ai-collaborator-mathematics', type: 'primary' },
+                { label: 'DARPA expMath', url: 'https://www.darpa.mil/research/programs/expmath-exponential-mathematics', type: 'outline' },
+            ],
+            tags: ['AI for Mathematics', 'DARPA', 'Autoformalization', 'Formal Verification', 'Theorem Proving']
+        },
         'algoverse': {
             overline: 'Research Intern',
             overlineColor: 'var(--accent-2)',
@@ -1223,7 +1338,7 @@
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>Research internship at McGill University focused on graph database optimization, running since August 2025.</p>`
+                    content: `<p>Research internship at McGill University focused on graph database optimization, from August 2025 to March 2026. This work resulted in a publication and an open-source reproducibility package developed in collaboration with reproducibility engineering specialists.</p>`
                 },
                 {
                     title: 'Research Focus',
@@ -1234,9 +1349,38 @@
                     </ul>`
                 }
             ],
-            awards: [],
-            links: [],
-            tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Automation']
+            awards: [
+                { text: 'Selected for McGill Science Undergraduate Research Showcase', date: '2026', icon: '&#9733;' }
+            ],
+            links: [
+                { label: 'arXiv', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
+                { label: 'GitHub', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
+            ],
+            tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Automation', 'Reproducibility']
+        },
+        'mcgill-graph-paper': {
+            overline: 'Preprint',
+            overlineColor: 'var(--accent-1)',
+            title: 'Tree Substructure Indexing in Graph Databases',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>Research on novel node annotation strategies to optimize query performance on tree substructures within graph databases. Conducted internal systems analysis of multiple graph database architectures to inform index annotation design, and built an automated pipeline for database annotation, regression testing, and visualization.</p>`
+                },
+                {
+                    title: 'Reproducibility',
+                    content: `<p>Developed an open-source reproducibility package in collaboration with reproducibility engineering specialists, enabling independent verification of all experimental results.</p>`
+                }
+            ],
+            awards: [
+                { text: 'Selected for McGill Science Undergraduate Research Showcase', date: '2026', icon: '&#9733;' }
+            ],
+            links: [
+                { label: 'arXiv', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
+                { label: 'GitHub', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
+            ],
+            tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Reproducibility']
         },
         'mcgill-quantum': {
             overline: 'Research Intern',
@@ -1264,15 +1408,19 @@
             overline: 'NeurIPS 2025',
             overlineColor: 'var(--accent-4)',
             title: 'Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior',
-            image: null, // Set to a path like 'images/paper-figure.png' to display an image
+            image: null,
             sections: [
                 {
                     title: 'Abstract',
-                    content: `<p>Demonstrated parameter space convergence of emergently misaligned fine-tunes and analyzed the parametric geometry of LoRA-adapted models. This work shows that misaligned behaviors occupy identifiable subspaces in parameter space, opening paths for targeted intervention.</p>`
+                    content: `<p>Recent work has discovered that large language models can develop broadly misaligned behaviors after being fine-tuned on narrowly harmful datasets, a phenomenon known as emergent misalignment (EM). However, the fundamental mechanisms enabling such harmful generalization across disparate domains remain poorly understood. In this work, we adopt a geometric perspective to study EM and demonstrate that it exhibits a fundamental cross-task linear structure in how harmful behavior is encoded across different datasets. Specifically, we find a strong convergence in EM parameters across tasks, with the fine-tuned weight updates showing relatively high cosine similarities, as well as shared lower-dimensional subspaces as measured by their principal angles and projection overlaps. Furthermore, we also show functional equivalence via linear mode connectivity, wherein interpolated models across narrow misalignment tasks maintain coherent, broadly misaligned behavior. Our results indicate that EM arises from different narrow tasks discovering the same set of shared parameter directions, suggesting that harmful behaviors may be organized into specific, predictable regions of the weight landscape.</p>`
                 },
                 {
-                    title: 'Current Work',
-                    content: `<p>Currently expanding this work into a full paper, utilizing vaccination techniques during fine-tuning to mitigate misaligned subspaces.</p>`
+                    title: 'Co-Authors',
+                    content: `<p>Daniel Aarao Reis Arturi* (McGill), Eric Zhang* (McMaster), Andrew Ansah (U. of Alberta), Kevin Zhu (Algoverse AI Research), Ashwinee Panda (Algoverse AI Research), Aishwarya Balwani (St. Jude Children's Research Hospital). <em>* Joint first co-authors with equal contributions.</em></p>`
+                },
+                {
+                    title: 'Full Paper',
+                    content: `<p>This work has been expanded into a full-length paper titled <em>"Of Basins and Vaccines: Emergent Misalignment Through the Lens of Parametric Geometry,"</em> which utilizes vaccination techniques during fine-tuning to mitigate misaligned subspaces. Currently under review at COLM.</p>`
                 }
             ],
             awards: [
@@ -1281,36 +1429,135 @@
                 { text: 'CogInterp — Poster', date: 'Dec 2025', icon: '&#9733;' }
             ],
             links: [
-                // { label: 'arXiv', url: 'https://arxiv.org/abs/...', type: 'primary' },
-                // { label: 'GitHub', url: 'https://github.com/...', type: 'outline' },
-                // { label: 'Project Website', url: 'https://...', type: 'outline' },
+                { label: 'Project Website', url: 'https://darturi.github.io/shared-em-subspaces/', type: 'primary' },
+                { label: 'arXiv', url: 'https://arxiv.org/abs/2511.02022', type: 'outline' },
+                { label: 'GitHub', url: 'https://github.com/darturi/shared-em-subspaces', type: 'outline' },
             ],
-            tags: ['Mechanistic Interp.', 'LoRA', 'AI Safety', 'Emergent Misalignment', 'Parameter Geometry']
+            tags: ['Mechanistic Interp.', 'LoRA', 'AI Safety', 'Emergent Misalignment', 'Parameter Geometry', 'Linear Mode Connectivity', 'Grassmann Manifold']
         },
-        'paxos': {
+        'arxiv-reader': {
             overline: 'Project',
-            overlineColor: 'var(--accent-1)',
-            title: 'Distributed Consensus System (Paxos Implementation)',
+            overlineColor: 'var(--accent-3)',
+            title: 'ArxivReader',
             image: null,
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>A from-scratch implementation of the Paxos consensus protocol in Java, designed to manage state across distributed nodes and ensure consistency in the presence of network partitions.</p>`
+                    content: `<p>A personal research library for saving, organizing, and annotating papers from arXiv. Available as a web app (Next.js) and a native iOS app (SwiftUI), both backed by Supabase. Papers can be saved to "Read" and "To Read" lists, tagged with color-coded labels, annotated with notes, and tracked by read date — all synced across web and mobile.</p>`
                 },
                 {
-                    title: 'Technical Details',
+                    title: 'Features',
                     content: `<ul>
-                        <li>Implemented the full Paxos consensus protocol to manage state across distributed nodes, ensuring consistency in the presence of network partitions.</li>
-                        <li>Engineered a fault-tolerant leader election mechanism and log replication system using Java concurrency primitives and socket programming.</li>
-                        <li>Designed a simulation harness to inject random node failures and message delays, verifying system recovery and data integrity.</li>
+                        <li><strong>Search arXiv:</strong> Full-text keyword search, arXiv ID lookup, and DOI detection via the arXiv API with inline abstracts. Rate-limited to 20 searches/hr per user.</li>
+                        <li><strong>Reading lists:</strong> "Read" and "To Read" lists with free movement between them and optional read-date tracking.</li>
+                        <li><strong>Tags:</strong> User-owned tags with deterministic color assignment from a 12-color palette. Filter lists by one or more tags.</li>
+                        <li><strong>Author pages:</strong> Click any author to browse their other arXiv publications; add papers directly from the author view.</li>
+                        <li><strong>Notes:</strong> Freeform notes on any paper with debounced auto-save.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Tech Stack',
+                    content: `<ul>
+                        <li><strong>Web:</strong> Next.js 16, React 19, Tailwind CSS 4, TypeScript — deployed on Vercel.</li>
+                        <li><strong>Mobile:</strong> Native iOS app using SwiftUI (iOS 17+, Swift 5.9+) with Supabase Swift SDK via SPM.</li>
+                        <li><strong>Backend:</strong> Next.js API routes with Supabase (PostgreSQL, OAuth, Row Level Security). ArXiv XML parsed with fast-xml-parser.</li>
+                        <li><strong>API:</strong> 10+ REST endpoints for papers, tags, search, and author lookup — all server-side rate-limited.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Architecture',
+                    content: `<ul>
+                        <li><strong>Paper source adapter pattern:</strong> ArXiv fetching is abstracted behind a <code>PaperSourceAdapter</code> interface, making it straightforward to add sources like Semantic Scholar or IEEE in the future.</li>
+                        <li><strong>Dual auth model:</strong> Web uses Supabase SSR cookies; iOS authenticates via OAuth and passes <code>Bearer</code> tokens to Next.js API routes, verified server-side.</li>
+                        <li><strong>Shared paper cache:</strong> A global <code>paper_cache</code> table avoids redundant arXiv API calls across users.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Database & Security',
+                    content: `<p>Five PostgreSQL tables — <code>paper_cache</code>, <code>user_papers</code>, <code>tags</code>, <code>paper_tags</code>, and <code>rate_limit_log</code> — all protected by Row Level Security with a dedicated security hardening migration. Per-user quotas enforce 20 searches/hr, max 500 papers, and max 100 tags.</p>`
+                }
+            ],
+            awards: [],
+            links: [
+                { label: 'GitHub', url: 'https://github.com/darturi/ArxivReader', type: 'primary' },
+            ],
+            tags: ['Next.js', 'React', 'TypeScript', 'SwiftUI', 'Swift', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel', 'fast-xml-parser']
+        },
+        'mosaic-exchange': {
+            overline: 'Project',
+            overlineColor: 'var(--accent-2)',
+            title: 'Mosaic Exchange',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>A distributed chatbot platform with persistent chat history storage and peer-to-peer network exchange capabilities for conversational AI systems.</p>`
+                },
+                {
+                    title: 'Architecture',
+                    content: `<ul>
+                        <li><strong>Client:</strong> Java-based chatbot client with chat history storage and network exchange options.</li>
+                        <li><strong>LLM Server:</strong> Python backend service for large language model inference.</li>
+                        <li><strong>Exchange Server:</strong> Server component enabling peer-to-peer network exchange between chatbot instances.</li>
                     </ul>`
                 }
             ],
             awards: [],
             links: [
-                // { label: 'GitHub', url: 'https://github.com/...', type: 'primary' },
+                { label: 'GitHub', url: 'https://github.com/Mosaic-Exchange', type: 'primary' },
             ],
-            tags: ['Java', 'Paxos', 'Distributed Systems', 'Concurrency', 'Socket Programming', 'Fault Tolerance']
+            tags: ['Java', 'Python', 'LLMs', 'Distributed Systems', 'Networking', 'Chat Systems']
+        },
+        'ml-sustainability': {
+            overline: 'Project',
+            overlineColor: 'var(--accent-1)',
+            title: 'Energy Efficiency Analysis of ML Architectures',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>A systematic study of energy consumption and sustainability across machine learning architectures, using CodeCarbon for energy profiling during model training.</p>`
+                },
+                {
+                    title: 'Technical Details',
+                    content: `<ul>
+                        <li>Built a configurable framework for training and profiling multiple ML architectures including BERT, T5, ResNet, and ConvNeXt.</li>
+                        <li>Designed for both local execution and Slurm cluster deployment with HuggingFace Transformers and TorchVision.</li>
+                        <li>Measured and analyzed energy efficiency across architectures to inform sustainable ML systems design.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [
+                { label: 'GitHub', url: 'https://github.com/darturi/COMP_597_private', type: 'primary' },
+            ],
+            tags: ['Python', 'PyTorch', 'CodeCarbon', 'HuggingFace', 'Slurm', 'BERT', 'ResNet', 'Sustainability']
+        },
+        'paxos': {
+            overline: 'Project',
+            overlineColor: 'var(--accent-4)',
+            title: 'Paxos Treasure Island',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>A distributed multiplayer game where players explore a shared grid, with every move proposed through a full Paxos round to guarantee total-order broadcast. All players see the same sequence of moves, even under concurrent proposals and process failures.</p>`
+                },
+                {
+                    title: 'Technical Details',
+                    content: `<ul>
+                        <li>Implemented single-decree Paxos from scratch with propose/promise, accept/acknowledge, and confirm phases, using ballot IDs to resolve contention between concurrent proposers.</li>
+                        <li>Built a UDP-based group communication layer for message passing between distributed processes, with the Paxos layer sitting between the network and the application.</li>
+                        <li>Engineered a failure injection system supporting six distinct crash points in the protocol (e.g., fail after becoming leader, fail after value acceptance), each exercised by scripted JSON test scenarios with automated consensus verification.</li>
+                        <li>Developed an interactive protocol visualizer that renders Paxos message traces as color-coded sequence diagrams, showing proposal contention, ballot escalation, and crash recovery in real time.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [
+                { label: 'GitHub', url: 'https://github.com/darturi/Paxos', type: 'primary' },
+            ],
+            tags: ['Java', 'Paxos', 'Distributed Systems', 'UDP', 'Fault Tolerance', 'Total-Order Broadcast']
         }
     };
 
