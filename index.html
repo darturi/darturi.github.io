@@ -1115,13 +1115,14 @@
         <div class="card fade-up" onclick="openPanel('ml-sustainability')">
             <div class="card-accent teal"></div>
             <div class="card-overline teal">Machine Learning &bull; Sustainability</div>
-            <div class="card-title">Energy Efficiency Analysis of ML Architectures</div>
-            <div class="card-subtitle">Python &bull; PyTorch &bull; CodeCarbon</div>
-            <div class="card-description">Systematic energy profiling and sustainability analysis across neural network architectures including BERT, T5, ResNet, and ConvNeXt.</div>
+            <div class="card-title">Energy Profiling of GFlowNet Molecular Generation</div>
+            <div class="card-subtitle">Python &bull; PyTorch &bull; CodeCarbon &bull; CUDA</div>
+            <div class="card-description">Systematic energy profiling of a ~600M-parameter GFlowNet on an SEH fragment docking task, revealing that 94.4% of training time is CPU-bound sampling and achieving a 47% energy reduction via parallel workers.</div>
             <div class="card-tags">
                 <span class="card-tag">PyTorch</span>
                 <span class="card-tag">CodeCarbon</span>
-                <span class="card-tag">HuggingFace</span>
+                <span class="card-tag">GFlowNet</span>
+                <span class="card-tag">CUDA</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -1155,7 +1156,7 @@
         <!-- Mosaic Exchange -->
         <div class="card fade-up" onclick="openPanel('mosaic-exchange')">
             <div class="card-accent purple"></div>
-            <div class="card-overline purple">Distributed Systems</div>
+            <div class="card-overline purple">Distributed Systems &bull; Edge AI</div>
             <div class="card-title">Mosaic Exchange</div>
             <div class="card-subtitle">Java &bull; Python</div>
             <div class="card-description">A distributed chatbot platform with persistent chat history and peer-to-peer network exchange functionality for conversational AI.</div>
@@ -1512,27 +1513,37 @@
         'ml-sustainability': {
             overline: 'Project',
             overlineColor: 'var(--accent-1)',
-            title: 'Energy Efficiency Analysis of ML Architectures',
+            title: 'Profiling and Optimising Energy Efficiency in GFlowNet Molecular Generation',
             image: null,
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>A systematic study of energy consumption and sustainability across machine learning architectures, using CodeCarbon for energy profiling during model training.</p>`
+                    content: `<p>A systematic energy profiling study of GFlowNet training on the SEH (soluble epoxide hydrolase) fragment docking task. The project instruments a ~600M-parameter GraphTransformerGFN model with three measurement modes — timing-only, CodeCarbon end-to-end energy tracking, and fine-grained CUDA-synchronised per-phase profiling — to identify where energy is spent during training and quantify the impact of a concrete optimisation.</p>`
                 },
                 {
-                    title: 'Technical Details',
+                    title: 'Key Findings',
                     content: `<ul>
-                        <li>Built a configurable framework for training and profiling multiple ML architectures including BERT, T5, ResNet, and ConvNeXt.</li>
-                        <li>Designed for both local execution and Slurm cluster deployment with HuggingFace Transformers and TorchVision.</li>
-                        <li>Measured and analyzed energy efficiency across architectures to inform sustainable ML systems design.</li>
+                        <li><strong>94.4% of each training step is spent on CPU-bound molecular sampling</strong>, leaving the GPU idle at &lt;13% utilisation. The forward pass, backward pass, and optimizer update together account for only ~5.6% of wall time.</li>
+                        <li><strong>A <code>num_workers=4</code> optimisation reduces energy consumption by ~47%</strong> by overlapping CPU sampling with GPU execution, delivering a ~1.9× speedup and cutting total energy from 34.2 → 19.1 Wh (BS64) and 27.9 → 14.3 Wh (BS256).</li>
+                        <li><strong>Total system power is constant at ~430 W regardless of batch size.</strong> GPU contributes only 14–15% of total energy; the remaining ~85% is CPU/RAM infrastructure overhead.</li>
+                    </ul>`
+                },
+                {
+                    title: 'What I Built',
+                    content: `<ul>
+                        <li><strong>GFlowNet model integration</strong> — an adapter layer that bridges the framework's trainer/stats abstraction with the gflownet_lib research library, handling pickling issues for multiprocessing, seed management, and stats hook injection.</li>
+                        <li><strong>Three-mode measurement system</strong> — timing-only (zero-overhead baseline), CodeCarbon energy tracking (end-to-end GPU/CPU/RAM), and fine-grained CUDA-synchronised per-phase profiling with background NVML polling at 500ms intervals. All modes satisfy &lt;0.2% overhead.</li>
+                        <li><strong>Experiment orchestration</strong> — automated Slurm job scripts sweeping batch sizes {64, 128, 256} × 3 seeds × 3 measurement modes × {baseline, workers} for the full experimental matrix.</li>
+                        <li><strong>Analysis pipeline</strong> — Jupyter notebooks that process raw CSVs into figures and tables, including timeline visualisation, phase decomposition, and baseline-vs-workers comparison.</li>
                     </ul>`
                 }
             ],
             awards: [],
             links: [
-                { label: 'GitHub', url: 'https://github.com/darturi/COMP_597_private', type: 'primary' },
+                { label: 'GitHub', url: 'https://github.com/darturi/ml-energy-efficiency', type: 'primary' },
+                { label: 'Report', url: 'https://github.com/darturi/ml-energy-efficiency/blob/main/paper/Profiling_and_Optimising_Energy_in_GFlowNet_Molecular_Generation.pdf', type: 'outline' },
             ],
-            tags: ['Python', 'PyTorch', 'CodeCarbon', 'HuggingFace', 'Slurm', 'BERT', 'ResNet', 'Sustainability']
+            tags: ['Python', 'PyTorch', 'CodeCarbon', 'CUDA', 'NVML', 'Slurm', 'GFlowNet', 'Sustainability']
         },
         'paxos': {
             overline: 'Project',
