@@ -920,6 +920,7 @@
     <div class="nav-social">
         <a href="https://github.com/darturi" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/darturi" target="_blank">LinkedIn</a>
+        <a href="https://x.com/daniel_arturi" target="_blank">X</a>
         <a href="./resume.pdf" target="_blank">Resume</a>
     </div>
     <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -936,6 +937,7 @@
     <div class="mobile-social">
         <a href="https://github.com/darturi" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank">LinkedIn</a>
+        <a href="https://x.com/daniel_arturi" target="_blank">X</a>
         <a href="./resume.pdf" target="_blank">Resume</a>
     </div>
 </div>
@@ -1028,10 +1030,10 @@
             <div class="card-overline pink">Jan 2026 &ndash; Present</div>
             <div class="card-title">Quantum Computing Research Intern</div>
             <div class="card-subtitle">McGill University &bull; Distributed Information Systems Group</div>
-            <div class="card-description">Researching quantum programming libraries for data allocation problems, formulating them as quantum optimization tasks.</div>
+            <div class="card-description">Formulating data allocation as QUBO problems and benchmarking multiple solver formulations under Simulated Annealing and Simulated Quantum Annealing, with hardware feasibility analysis across D-Wave chip topologies.</div>
             <div class="card-tags">
-                <span class="card-tag">Quantum</span>
-                <span class="card-tag">PennyLane</span>
+                <span class="card-tag">QUBO</span>
+                <span class="card-tag">D-Wave</span>
                 <span class="card-tag">Optimization</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
@@ -1099,15 +1101,16 @@
         <div class="card fade-up" onclick="openPanel('mcgill-graph-paper')">
             <div class="card-accent purple"></div>
             <div class="card-overline purple">Preprint &bull; arXiv 2025</div>
-            <div class="card-title">Tree Substructure Indexing in Graph Databases</div>
-            <div class="card-subtitle">With reproducibility package</div>
+            <div class="card-title">Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs</div>
+            <div class="card-subtitle">With Christoph K&ouml;hnen, George Fletcher, Bettina Kemme, Stefanie Scherzinger</div>
+            <div class="card-description">Demonstrates the optimization potential of treating tree-shaped substructures as first-class citizens in graph database systems, achieving substantial speedups via structural indexes originally developed for XML databases.</div>
             <div class="card-awards">
                 <span class="award-badge gold">&#9733; McGill Science Undergraduate Research Showcase</span>
             </div>
             <div class="card-tags">
                 <span class="card-tag">Graph DBs</span>
                 <span class="card-tag">Query Optimization</span>
-                <span class="card-tag">Cypher</span>
+                <span class="card-tag">Structural Indexes</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -1254,6 +1257,7 @@
     <div class="footer-links">
         <a href="https://github.com/darturi" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank">LinkedIn</a>
+        <a href="https://x.com/daniel_arturi" target="_blank">X</a>
         <a href="mailto:dan.arturi@gmail.com">dan.arturi@gmail.com</a>
         <a href="./resume.pdf" target="_blank">Resume</a>
     </div>
@@ -1364,18 +1368,22 @@
             tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Automation', 'Reproducibility']
         },
         'mcgill-graph-paper': {
-            overline: 'Preprint',
+            overline: 'Preprint — arXiv 2025',
             overlineColor: 'var(--accent-1)',
-            title: 'Tree Substructure Indexing in Graph Databases',
+            title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs',
             image: null,
             sections: [
                 {
-                    title: 'Overview',
-                    content: `<p>Research on novel node annotation strategies to optimize query performance on tree substructures within graph databases. Conducted internal systems analysis of multiple graph database architectures to inform index annotation design, and built an automated pipeline for database annotation, regression testing, and visualization.</p>`
+                    title: 'Abstract',
+                    content: `<p>Property graphs often contain tree-shaped substructures, yet they are not captured by existing proposals for graph schemas; likewise, query languages and query engines offer little-to-no native support for managing them systematically. As a first contribution, we report on a micro experiment that demonstrates the optimization potential of treating tree-shaped substructures as first-class citizens in graph database systems. In systems backed by relational engines, substantial speedups can be achieved by leveraging structural indexes, as originally developed for XML databases, to accelerate path queries. Based on our findings, we put forward a vision in which tree-shaped substructures are systematically managed throughout the graph query lifecycle, from modeling and schema design to indexing and query processing.</p>`
+                },
+                {
+                    title: 'Co-Authors',
+                    content: `<p>Daniel Aarao Reis Arturi (McGill University), Christoph Köhnen (University of Passau), George Fletcher (Eindhoven University of Technology), Bettina Kemme (McGill University), and Stefanie Scherzinger (University of Passau).</p>`
                 },
                 {
                     title: 'Reproducibility',
-                    content: `<p>Developed an open-source reproducibility package in collaboration with reproducibility engineering specialists, enabling independent verification of all experimental results.</p>`
+                    content: `<p>Developed an open-source reproducibility package in collaboration with reproducibility engineering specialists at the University of Passau, enabling independent verification of all experimental results.</p>`
                 }
             ],
             awards: [
@@ -1385,29 +1393,37 @@
                 { label: 'arXiv', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
                 { label: 'GitHub', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
             ],
-            tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Reproducibility']
+            tags: ['Graph Databases', 'Property Graphs', 'Structural Indexes', 'Query Optimization', 'Cypher', 'Python', 'Reproducibility']
         },
         'mcgill-quantum': {
             overline: 'Research Intern',
             overlineColor: 'var(--accent-3)',
-            title: 'McGill University — Quantum Computing',
+            title: 'McGill University: Quantum Computing',
             image: null,
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>Research internship in the Distributed Information Systems Group at McGill University, running since January 2026.</p>`
+                    content: `<p>Research internship in the Distributed Information Systems Group at McGill University, running since January 2026. Investigating how data allocation problems, specifically assigning partitions to nodes under k-safety replication constraints, can be formulated as Quadratic Unconstrained Binary Optimization (QUBO) problems suitable for quantum hardware.</p>`
                 },
                 {
                     title: 'Research Focus',
                     content: `<ul>
-                        <li>Researching the application of quantum programming libraries to solve data allocation problems, formulating them as quantum optimization tasks.</li>
-                        <li>Utilizing Calcul Québec quantum resources and PennyLane framework.</li>
+                        <li><strong>QUBO Formulations:</strong> Designed and compared multiple QUBO formulations for the data allocation problem, including slack-variable, Mersenne-number, and domain-wall encodings, analyzing trade-offs in variable count, constraint structure, and qubit connectivity requirements.</li>
+                        <li><strong>Solver Benchmarking:</strong> Built an automated experiment harness to benchmark formulations under Simulated Annealing (SA via dimod) and Simulated Quantum Annealing (SQA via dwave-samplers), sweeping across grid sizes up to 9 nodes and 50 partitions with validity, cost, optimality gap, and timing metrics.</li>
+                        <li><strong>Hardware Feasibility Analysis:</strong> Derived analytical models for physical qubit requirements and maximum variable degree across D-Wave chip topologies (Chimera, Pegasus, Zephyr), identifying the feasibility frontier for each formulation on current quantum hardware.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Key Findings',
+                    content: `<ul>
+                        <li>One formulation achieved 99.2% solution validity with the fewest variables and no encoding restrictions, dominating across the benchmark suite.</li>
+                        <li>The domain-wall formulation, despite its theoretical coupling reduction, underperformed under SQA, though its structure may pay off on physical hardware where Zephyr's higher connectivity reduces chain overhead.</li>
                     </ul>`
                 }
             ],
             awards: [],
             links: [],
-            tags: ['Quantum Computing', 'PennyLane', 'Optimization', 'Python', 'Calcul Québec']
+            tags: ['Quantum Computing', 'QUBO', 'D-Wave', 'dimod', 'dwave-samplers', 'Optimization', 'Python', 'Calcul Québec']
         },
         'neurips-paper': {
             overline: 'NeurIPS 2025',
