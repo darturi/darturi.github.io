@@ -976,15 +976,19 @@
     <div class="edu-card fade-up">
         <div class="edu-school">McGill University</div>
         <div class="edu-degree">B.Sc. Honours Software Engineering</div>
-        <div class="edu-meta">Montreal, Quebec &bull; Graduated April 2026</div>
+        <div class="edu-meta">Montreal, Quebec &bull; Graduated May 2026</div>
         <div class="edu-stats">
             <div class="edu-stat">
-                <span class="edu-stat-value">3.98</span>
+                <span class="edu-stat-value">3.99</span>
                 <span class="edu-stat-label">GPA / 4.0</span>
             </div>
             <div class="edu-stat">
                 <span class="edu-stat-value">Dean's List</span>
                 <span class="edu-stat-label">Honour Roll</span>
+            </div>
+            <div class="edu-stat">
+                <span class="edu-stat-value">Wing Hing Chan</span>
+                <span class="edu-stat-label">Scholarship in Science</span>
             </div>
         </div>
         <div class="coursework-grid">
@@ -1015,7 +1019,7 @@
             <div class="card-overline teal">May 2026 &ndash; Present</div>
             <div class="card-title">Research Scientist — ExpMath (DARPA)</div>
             <div class="card-subtitle">NYU Tandon School of Engineering</div>
-            <div class="card-description">Working on DARPA's Exponentiating Mathematics program to develop AI co-authors capable of proposing and proving useful mathematical abstractions.</div>
+            <div class="card-description">Built the full-stack system placing a Lean 4 theorem-proving agent in mathematicians&apos; hands, plus a Chrome extension that formalizes LaTeX theorems from a live Overleaf document into Lean 4 &mdash; the program&apos;s LaTeX-to-Lean deliverable.</div>
             <div class="card-tags">
                 <span class="card-tag">AI for Math</span>
                 <span class="card-tag">DARPA</span>
@@ -1027,7 +1031,7 @@
         <!-- McGill Quantum -->
         <div class="card fade-up" onclick="openPanel('mcgill-quantum')">
             <div class="card-accent pink"></div>
-            <div class="card-overline pink">Jan 2026 &ndash; Present</div>
+            <div class="card-overline pink">Jan 2026 &ndash; Jun 2026</div>
             <div class="card-title">Quantum Computing Research Intern</div>
             <div class="card-subtitle">McGill University &bull; Distributed Information Systems Group</div>
             <div class="card-description">Formulating data allocation as QUBO problems and benchmarking multiple solver formulations under Simulated Annealing and Simulated Quantum Annealing, with hardware feasibility analysis across D-Wave chip topologies.</div>
@@ -1078,12 +1082,12 @@
         <h2 class="section-title">Research Output</h2>
     </div>
     <div class="cards-grid">
-        <!-- NeurIPS / COLM Paper -->
+        <!-- NeurIPS / TMLR Paper -->
         <div class="card fade-up" onclick="openPanel('neurips-paper')">
             <div class="card-accent gold"></div>
-            <div class="card-overline gold">NeurIPS 2025 &bull; Under review at COLM</div>
+            <div class="card-overline gold">NeurIPS 2025 &bull; Under review at TMLR</div>
             <div class="card-title">Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior</div>
-            <div class="card-subtitle">Joint First Author &bull; Accepted to UniReps, MechInterp, & CogInterp</div>
+            <div class="card-subtitle">First Author &bull; Accepted to UniReps, MechInterp, & CogInterp</div>
             <div class="card-description">Adopts a geometric perspective to show that emergent misalignment exhibits cross-task linear structure — different narrow tasks discover the same shared parameter directions in the weight landscape.</div>
             <div class="card-awards">
                 <span class="award-badge gold">&#9733; Oral + Honorable Mention</span>
@@ -1100,7 +1104,7 @@
         <!-- Graph DB Preprint -->
         <div class="card fade-up" onclick="openPanel('mcgill-graph-paper')">
             <div class="card-accent purple"></div>
-            <div class="card-overline purple">Preprint &bull; arXiv 2025</div>
+            <div class="card-overline purple">arXiv 2025 &bull; Under review at EDBT</div>
             <div class="card-title">Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs</div>
             <div class="card-subtitle">With Christoph K&ouml;hnen, George Fletcher, Bettina Kemme, Stefanie Scherzinger</div>
             <div class="card-description">Demonstrates the optimization potential of treating tree-shaped substructures as first-class citizens in graph database systems, achieving substantial speedups via structural indexes originally developed for XML databases.</div>
@@ -1127,6 +1131,23 @@
                 <span class="card-tag">CodeCarbon</span>
                 <span class="card-tag">GFlowNet</span>
                 <span class="card-tag">CUDA</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+        <!-- VLDB Quantum -->
+        <div class="card fade-up" onclick="openPanel('vldb-quantum')">
+            <div class="card-accent teal"></div>
+            <div class="card-overline teal">VLDB 2026 &bull; Accepted</div>
+            <div class="card-title">Evaluating a Quantum Solution: How Hard Can It Be?</div>
+            <div class="card-subtitle">First Author &bull; 2nd Workshop on Quantum Computing and Data/Knowledge Management (QDSM)</div>
+            <div class="card-description">An experience report on the practical complexity of building and evaluating database quantum solutions, using QUBO data allocation on D-Wave Advantage hardware and two simulators as a case study; identifies key scaling barriers.</div>
+            <div class="card-awards">
+                <span class="award-badge gold">&#9733; Accepted &mdash; Presenting</span>
+            </div>
+            <div class="card-tags">
+                <span class="card-tag">QUBO</span>
+                <span class="card-tag">D-Wave</span>
+                <span class="card-tag">Quantum</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -1188,6 +1209,21 @@
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
+        <!-- NYC Housing Law RAG -->
+        <div class="card fade-up" onclick="openPanel('nyc-housing-rag')">
+            <div class="card-accent pink"></div>
+            <div class="card-overline pink">Full-Stack &bull; RAG</div>
+            <div class="card-title">NYC Housing Law RAG</div>
+            <div class="card-subtitle">Python &bull; FastAPI &bull; PostgreSQL &bull; pgvector</div>
+            <div class="card-description">A full-stack RAG system answering NYC housing-law questions with citation-grounded, source-validated answers over official legal corpora &mdash; hybrid retrieval, session auth, rate limiting, and deployment runbooks.</div>
+            <div class="card-tags">
+                <span class="card-tag">FastAPI</span>
+                <span class="card-tag">PostgreSQL</span>
+                <span class="card-tag">pgvector</span>
+                <span class="card-tag">RAG</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
     </div>
 </section>
 
@@ -1211,6 +1247,9 @@
                 <span class="skill-item">JavaScript</span>
                 <span class="skill-item">Bash</span>
                 <span class="skill-item">Assembly</span>
+                <span class="skill-item">TypeScript</span>
+                <span class="skill-item">Swift</span>
+                <span class="skill-item">Lean</span>
             </div>
         </div>
         <div class="skill-category">
@@ -1223,6 +1262,7 @@
                 <span class="skill-item">scikit-learn</span>
                 <span class="skill-item">LoRA/PEFT</span>
                 <span class="skill-item">Transformers</span>
+                <span class="skill-item">CodeCarbon</span>
             </div>
         </div>
         <div class="skill-category">
@@ -1235,6 +1275,11 @@
                 <span class="skill-item">Git</span>
                 <span class="skill-item">LaTeX</span>
                 <span class="skill-item">Zookeeper</span>
+                <span class="skill-item">Next.js</span>
+                <span class="skill-item">SwiftUI</span>
+                <span class="skill-item">Tailwind CSS</span>
+                <span class="skill-item">Supabase</span>
+                <span class="skill-item">Lean 4</span>
             </div>
         </div>
         <div class="skill-category">
@@ -1247,6 +1292,9 @@
                 <span class="skill-item">Graph Theory</span>
                 <span class="skill-item">Concurrency</span>
                 <span class="skill-item">Database Systems</span>
+                <span class="skill-item">Autoformalization</span>
+                <span class="skill-item">Formal Verification</span>
+                <span class="skill-item">Multi-Agent Systems</span>
             </div>
         </div>
     </div>
@@ -1282,6 +1330,54 @@
 <script>
     // ── PANEL DATA ──
     const panelData = {
+        'vldb-quantum': {
+            overline: 'VLDB 2026 — QDSM Workshop',
+            overlineColor: 'var(--accent-3)',
+            title: 'Evaluating a Quantum Solution: How Hard Can It Be?',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>An experience report on the practical complexity of building and evaluating database quantum solutions, accepted to the 2nd Workshop on Quantum Computing and Data/Knowledge Management (QDSM) at VLDB 2026.</p>`
+                },
+                {
+                    title: 'Contributions',
+                    content: `<ul>
+                        <li>Uses QUBO data allocation on D-Wave Advantage hardware and two annealing simulators as a case study.</li>
+                        <li>Quantifies the programming, tuning, and execution overhead of quantum versus traditional database evaluation.</li>
+                        <li>Traces hardware scaling limits and identifies key barriers to practical quantum database solutions.</li>
+                    </ul>`
+                }
+            ],
+            awards: [
+                { text: 'Accepted — Presenting', date: 'VLDB 2026', icon: '&#9733;' }
+            ],
+            links: [],
+            tags: ['QUBO', 'D-Wave', 'Quantum', 'Databases']
+        },
+        'nyc-housing-rag': {
+            overline: 'Full-Stack — RAG',
+            overlineColor: 'var(--accent-1)',
+            title: 'NYC Housing Law RAG',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>A full-stack retrieval-augmented generation system that answers NYC housing-law questions with citation-grounded, source-validated answers over official legal corpora.</p>`
+                },
+                {
+                    title: 'Highlights',
+                    content: `<ul>
+                        <li>Hybrid retrieval over official legal corpora with citation-grounded, source-validated answers.</li>
+                        <li>Session authentication, rate limiting, and deployment runbooks for production use.</li>
+                        <li>Built with FastAPI, PostgreSQL, and pgvector.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [],
+            tags: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'RAG']
+        },
         'nyu-expmath': {
             overline: 'Research Scientist',
             overlineColor: 'var(--accent-3)',
@@ -1298,6 +1394,9 @@
                         <li>Developing a human-centered framework for AI-mathematician collaboration in research-level mathematics.</li>
                         <li>Building AI co-authors capable of proposing and proving useful mathematical abstractions to radically accelerate progress in pure mathematics.</li>
                         <li>Working on autoformalization of research-level mathematics as part of the expMath program.</li>
+                        <li>Built the full-stack system placing a Lean 4 theorem-proving agent in mathematicians&apos; hands: a React/Vite UI and in-process FastAPI backend that streams typed proof events over SSE, with git-backed storage and a derived-state SQLite timeline.</li>
+                        <li>Designed a Chrome extension and local companion server that formalizes labeled LaTeX theorem blocks directly from a live Overleaf document into Lean 4 &mdash; the program&apos;s LaTeX-to-Lean deliverable &mdash; with self-repair, per-file progress, and GitHub export.</li>
+                        <li>Hardened the system for real use: event-driven live updates, spend controls, and an end-to-end integration test harness, re-architecting proof-state tracking around a single source of truth (git for proof content, SQLite for metadata).</li>
                     </ul>`
                 }
             ],
@@ -1368,7 +1467,7 @@
             tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Automation', 'Reproducibility']
         },
         'mcgill-graph-paper': {
-            overline: 'Preprint — arXiv 2025',
+            overline: 'arXiv 2025 — Under review at EDBT',
             overlineColor: 'var(--accent-1)',
             title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs',
             image: null,
@@ -1403,7 +1502,7 @@
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>Research internship in the Distributed Information Systems Group at McGill University, running since January 2026. Investigating how data allocation problems, specifically assigning partitions to nodes under k-safety replication constraints, can be formulated as Quadratic Unconstrained Binary Optimization (QUBO) problems suitable for quantum hardware.</p>`
+                    content: `<p>Research internship in the Distributed Information Systems Group at McGill University, which ran from January to June 2026. Investigating how data allocation problems, specifically assigning partitions to nodes under k-safety replication constraints, can be formulated as Quadratic Unconstrained Binary Optimization (QUBO) problems suitable for quantum hardware.</p>`
                 },
                 {
                     title: 'Research Focus',
@@ -1441,7 +1540,7 @@
                 },
                 {
                     title: 'Full Paper',
-                    content: `<p>This work has been expanded into a full-length paper titled <em>"Of Basins and Vaccines: Emergent Misalignment Through the Lens of Parametric Geometry,"</em> which utilizes vaccination techniques during fine-tuning to mitigate misaligned subspaces. Currently under review at COLM.</p>`
+                    content: `<p>This work has been expanded into a full-length paper titled <em>"Of Basins and Vaccines: Emergent Misalignment Through the Lens of Parametric Geometry,"</em> which utilizes vaccination techniques during fine-tuning to mitigate misaligned subspaces. Currently under review at TMLR.</p>`
                 }
             ],
             awards: [
