@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Aarao Reis Arturi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
+    <template id="legacy-styles-source" hidden>
         :root {
             --bg: #F6F7EB;
             --bg-card: #ffffff;
@@ -35,8 +34,37 @@
             scroll-behavior: smooth;
         }
 
+        .skip-link {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            padding: .7rem .9rem;
+            border: 1px solid var(--blue);
+            background: var(--paper);
+            color: var(--blue);
+            font-family: var(--ledger-sans);
+            font-weight: 600;
+            text-decoration: none;
+            transform: translateY(-160%);
+        }
+
+        .skip-link:focus { transform: translateY(0); }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -501,7 +529,7 @@
             border-radius: 6px;
             font-size: 0.75rem;
             color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
         }
 
         .card-awards {
@@ -742,7 +770,7 @@
             border-radius: 6px;
             font-size: 0.8rem;
             color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
         }
 
         /* ── SKILLS SECTION ── */
@@ -785,7 +813,7 @@
             border: 1px solid rgba(63, 136, 197, 0.15);
             border-radius: 8px;
             font-size: 0.8rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
             color: var(--text-muted);
         }
 
@@ -904,9 +932,2641 @@
             opacity: 1;
             transform: translateY(0);
         }
+    </template>
+    <style id="ledger-styles">
+        @font-face {
+            font-family: 'IBM Plex Sans Condensed';
+            src: url('./assets/fonts/ibm-plex-sans-condensed-400.ttf') format('truetype');
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'IBM Plex Sans Condensed';
+            src: url('./assets/fonts/ibm-plex-sans-condensed-500.ttf') format('truetype');
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'IBM Plex Sans Condensed';
+            src: url('./assets/fonts/ibm-plex-sans-condensed-600.ttf') format('truetype');
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'IBM Plex Sans Condensed';
+            src: url('./assets/fonts/ibm-plex-sans-condensed-700.ttf') format('truetype');
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        :root {
+            --paper: #f7f8fa;
+            --ink: #0a0c38;
+            --muted-ink: #596286;
+            --rule: #aeb8cf;
+            --rule-soft: #d9dfeb;
+            --blue: #0755f5;
+            --filter-blue: #1f63d8;
+            --red: #c9211e;
+            --red-wash: #fff1f2;
+            --ledger-sans: 'IBM Plex Sans Condensed', sans-serif;
+            --ledger-display: 'IBM Plex Sans Condensed', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-color: var(--blue) var(--paper);
+            scrollbar-width: thin;
+        }
+
+        ::selection {
+            background: var(--blue);
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--paper);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border: 2px solid var(--paper);
+            background: var(--blue);
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--ledger-sans);
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        #legacy-site {
+            display: none;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            padding: .7rem .9rem;
+            border: 1px solid var(--blue);
+            background: var(--paper);
+            color: var(--blue);
+            font-weight: 600;
+            text-decoration: none;
+            transform: translateY(-160%);
+        }
+
+        .skip-link:focus { transform: translateY(0); }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        #ledger-app,
+        #ledger-app * {
+            box-sizing: border-box;
+        }
+
+        #ledger-app {
+            min-width: 0;
+            min-height: 100vh;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--ledger-sans);
+        }
+
+        .ledger-frame {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            min-height: 768px;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .ledger-masthead {
+            position: absolute;
+            inset: 0 1.2% auto;
+            height: 9.4%;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .ledger-masthead-main {
+            height: 56%;
+            display: grid;
+            grid-template-columns: minmax(330px, 28%) 1fr auto;
+            align-items: center;
+            column-gap: 2rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .ledger-name {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            white-space: nowrap;
+            font-family: var(--ledger-display);
+            font-size: clamp(22px, 1.75vw, 28px);
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -.01em;
+        }
+
+        .ledger-name::after {
+            content: '';
+            width: 1px;
+            height: 29px;
+            background: var(--rule);
+        }
+
+        .ledger-role {
+            font-size: clamp(14px, 1.1vw, 18px);
+            color: var(--muted-ink);
+            white-space: nowrap;
+        }
+
+        .ledger-actions {
+            position: static;
+            inset: auto;
+            z-index: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: clamp(1.8rem, 3.2vw, 3.7rem);
+            padding: 0;
+            background: transparent;
+            border: 0;
+            backdrop-filter: none;
+        }
+
+        .ledger-actions a {
+            color: var(--blue);
+            font-size: clamp(15px, 1.15vw, 19px);
+            text-decoration: none;
+        }
+
+        .ledger-actions a:hover,
+        .ledger-actions a:focus-visible {
+            text-decoration: underline;
+            text-underline-offset: .3em;
+        }
+
+        .ledger-masthead-meta {
+            height: 44%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.1rem;
+            color: #354069;
+            font-size: clamp(11px, .72vw, 12px);
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .ledger-masthead-meta span:last-child {
+            letter-spacing: .04em;
+            text-transform: none;
+        }
+
+        .ledger-body {
+            position: absolute;
+            inset: 9.4% 1.2% 6.5%;
+            display: grid;
+            grid-template-columns: 14% 52% 34%;
+        }
+
+        .ledger-filters {
+            position: relative;
+            border-right: 1px solid var(--rule);
+            padding: 2.1% 8.5% 0 0;
+        }
+
+        .reference-key {
+            display: grid;
+            gap: 1.35rem;
+            padding: .35rem .75rem 0 0;
+        }
+
+        .reference-key h2 {
+            max-width: 9ch;
+            font-size: clamp(22px, 1.8vw, 28px);
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -.02em;
+        }
+
+        .reference-key dl {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .reference-key div {
+            padding-top: .75rem;
+            border-top: 1px solid var(--rule-soft);
+        }
+
+        .reference-key dt {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .reference-key dd {
+            margin-top: .25rem;
+            color: var(--muted-ink);
+            font-size: clamp(13px, .95vw, 15px);
+            line-height: 1.3;
+        }
+
+        .reference-key-note {
+            color: #354069;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            line-height: 1.4;
+        }
+
+        .filter-list {
+            display: grid;
+            gap: .15rem;
+        }
+
+        .filter-button {
+            appearance: none;
+            width: 100%;
+            min-height: clamp(44px, 5.2vh, 58px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 .75rem;
+            border: 0;
+            background: transparent;
+            color: var(--ink);
+            font-family: var(--ledger-sans);
+            font-size: clamp(15px, 1.15vw, 19px);
+            font-weight: 500;
+            text-align: left;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .filter-button span:last-child {
+            color: var(--muted-ink);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .filter-button[aria-pressed="true"] {
+            color: white;
+            background: var(--filter-blue);
+        }
+
+        .filter-button[aria-pressed="true"] span:last-child {
+            color: white;
+        }
+
+        .filter-button:hover:not([aria-pressed="true"]),
+        .filter-button:focus-visible:not([aria-pressed="true"]) {
+            color: var(--blue);
+            outline: 1px solid var(--blue);
+            outline-offset: -1px;
+        }
+
+        .ledger-index {
+            min-width: 0;
+            max-width: none;
+            margin: 0;
+            border-right: 0;
+            box-shadow: 1px 0 var(--rule);
+            padding: 2.1% 18px 0;
+        }
+
+        .index-intro {
+            height: 22%;
+        }
+
+        .micro-label {
+            color: #354069;
+            font-size: clamp(11px, .75vw, 12px);
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .index-title {
+            margin: .35rem 0 .3rem;
+            font-family: var(--ledger-sans);
+            font-size: clamp(42px, 3.95vw, 61px);
+            font-weight: 600;
+            line-height: .94;
+            letter-spacing: -.03em;
+        }
+
+        .index-deck {
+            max-width: 93%;
+            color: var(--muted-ink);
+            font-size: clamp(15px, 1.15vw, 19px);
+            line-height: 1.35;
+        }
+
+        .index-table {
+            height: 78%;
+            display: grid;
+            grid-template-rows: 44px repeat(6, minmax(0, 1fr));
+        }
+
+        .index-columns,
+        .index-row {
+            display: grid;
+            grid-template-columns: 13% 18% minmax(0, 1fr) 18% 14%;
+            align-items: center;
+            column-gap: .8rem;
+        }
+
+        .index-columns {
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 8px;
+            color: #414b75;
+            font-size: clamp(11px, .68vw, 12px);
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .index-columns span:nth-child(3) {
+            grid-column: 3;
+        }
+
+        .index-row {
+            position: relative;
+            border-bottom: 1px solid var(--rule-soft);
+            min-height: 0;
+        }
+
+        .index-row.selected { background: rgba(255, 241, 242, .55); }
+
+        .index-row.pair-start::after {
+            content: '';
+            position: absolute;
+            left: 12.6%;
+            bottom: -48%;
+            width: 17px;
+            height: 49%;
+            box-sizing: border-box;
+            border-left: 3px solid var(--blue);
+            border-top: 3px solid var(--blue);
+            border-bottom: 3px solid var(--blue);
+            border-radius: 10px 0 0 10px;
+            z-index: 2;
+        }
+
+        .index-row.selected.pair-start::after {
+            border-color: var(--red);
+        }
+
+        .index-row.pair-start::before,
+        .index-row.pair-start + .index-row::before {
+            content: '';
+            position: absolute;
+            left: calc(12.6% + 17px);
+            width: 12px;
+            height: 12px;
+            box-sizing: border-box;
+            border: 3px solid var(--blue);
+            border-radius: 50%;
+            background: var(--paper);
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        .index-row.pair-start::before { bottom: -6px; }
+
+        .index-row.pair-start + .index-row::before {
+            top: calc(48% - 6px);
+        }
+
+        .index-row.selected.pair-start::before,
+        .index-row.selected.pair-start + .index-row::before {
+            border-color: var(--red);
+        }
+
+        .record-code {
+            padding-left: .7rem;
+            font-family: var(--ledger-sans);
+            font-size: clamp(28px, 2.6vw, 40px);
+            font-weight: 600;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .selected .record-code,
+        .selected .record-type {
+            color: var(--red);
+        }
+
+        .paired .record-code,
+        .paired .record-type {
+            color: var(--blue);
+        }
+
+        .record-type {
+            color: #303b68;
+            font-size: clamp(11px, .71vw, 12px);
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        .record-type::after {
+            content: '';
+            display: block;
+            width: 24px;
+            margin-top: .4rem;
+            border-top: 1px solid currentColor;
+        }
+
+        .record-title,
+        .record-origin {
+            font-size: clamp(14px, 1.12vw, 18px);
+            line-height: 1.08;
+        }
+
+        .record-title { font-weight: 500; }
+
+        .record-origin {
+            color: #1e2857;
+        }
+
+        .open-control {
+            justify-self: stretch;
+            min-height: 39px;
+            border: 1px solid var(--blue);
+            background: transparent;
+            color: var(--blue);
+            font-family: var(--ledger-sans);
+            font-size: clamp(11px, .7vw, 12px);
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .index-row .open-control {
+            width: 86px;
+            justify-self: end;
+        }
+
+        .selected .open-control {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .open-control:hover,
+        .open-control:focus-visible {
+            background: var(--blue);
+            color: white;
+            outline: 0;
+        }
+
+        .selected .open-control:hover,
+        .selected .open-control:focus-visible,
+        .dossier-output-action:hover,
+        .dossier-output-action:focus-visible {
+            background: var(--red);
+        }
+
+        .ledger-dossier {
+            min-width: 0;
+            padding: 2.2% 1.2% 0 4.6%;
+            display: grid;
+            grid-template-rows: 17% 22% 28% 1fr;
+        }
+
+        .dossier-top {
+            display: grid;
+            grid-template-columns: 1fr 46%;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .dossier-code {
+            margin-top: .65rem;
+            color: var(--red);
+            font-family: var(--ledger-sans);
+            font-size: clamp(50px, 4vw, 64px);
+            font-weight: 600;
+            line-height: .9;
+            letter-spacing: -.04em;
+        }
+
+        .dossier-aside {
+            padding-left: 1.5rem;
+            border-left: 1px solid var(--rule);
+            color: #354069;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            line-height: 1.45;
+        }
+
+        .dossier-aside .short-rule,
+        .dossier-notes .short-rule {
+            display: block;
+            width: 30px;
+            margin: 1.1rem 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .dossier-role-block {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 26%;
+            gap: 2rem;
+            align-items: center;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .dossier-role-block > .open-control,
+        .dossier-output-action {
+            border-color: var(--blue);
+            color: var(--blue);
+            font-size: 13px;
+        }
+
+        .dossier-role-block > .open-control {
+            width: 148px;
+            min-height: 42px;
+            justify-self: end;
+            transform: translateY(20px);
+        }
+
+        .dossier-role-block > .open-control:hover,
+        .dossier-role-block > .open-control:focus-visible,
+        .dossier-output-action:hover,
+        .dossier-output-action:focus-visible {
+            background: var(--blue);
+            color: white;
+        }
+
+        .dossier-role-title {
+            margin: 0;
+            font-family: var(--ledger-sans);
+            font-size: clamp(24px, 1.65vw, 28px);
+            font-weight: 600;
+            line-height: .98;
+        }
+
+        .dossier-origin {
+            margin-top: .45rem;
+            color: var(--muted-ink);
+            font-size: clamp(15px, 1.1vw, 18px);
+        }
+
+        .dossier-output-block {
+            position: relative;
+            padding-top: .8rem;
+            display: block;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .related-title {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: .8rem;
+            align-items: start;
+            margin-top: 1.2rem;
+            font-family: var(--ledger-sans);
+            font-size: clamp(19px, 1.4vw, 23px);
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .related-code {
+            color: var(--red);
+            font-family: var(--ledger-sans);
+            font-size: clamp(32px, 2.8vw, 44px);
+            font-weight: 600;
+            line-height: .9;
+            letter-spacing: -.04em;
+        }
+
+        .related-meta {
+            max-width: 58%;
+            margin: .7rem 0 0 calc(clamp(32px, 2.8vw, 44px) + .8rem);
+            color: var(--muted-ink);
+            font-size: clamp(14px, 1.15vw, 18px);
+        }
+
+        .dossier-output-action {
+            position: absolute;
+            right: 0;
+            bottom: 1rem;
+            width: 29%;
+        }
+
+        .dossier-notes {
+            padding-top: 1.4rem;
+            color: var(--muted-ink);
+            font-size: clamp(12px, .98vw, 16px);
+            line-height: 1.35;
+        }
+
+        .dossier-notes strong {
+            display: block;
+            margin-top: .75rem;
+            color: #354069;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .04em;
+        }
+
+        .dossier-key {
+            display: grid;
+            gap: .45rem;
+            margin-top: 1rem;
+        }
+
+        .dossier-key div {
+            display: grid;
+            grid-template-columns: 58px 1fr;
+            gap: .8rem;
+            align-items: baseline;
+        }
+
+        .dossier-key dt {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .dossier-key dd {
+            color: var(--muted-ink);
+        }
+
+        .dossier-notes p {
+            max-width: 76%;
+            margin: 1rem 0;
+        }
+
+        .ledger-body.intro-spread {
+            position: relative;
+            grid-template-columns: 58% 42%;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .intro-spread::after {
+            content: '';
+            position: absolute;
+            inset: 0 auto 0 58%;
+            width: 1px;
+            background: var(--rule);
+            animation: intro-rule-draw .7s cubic-bezier(.16, 1, .3, 1) both;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .intro-architecture {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 58%;
+            height: 84.1vh;
+            color: var(--blue);
+            pointer-events: none;
+            shape-rendering: geometricPrecision;
+        }
+
+        @media (min-width: 769px) {
+            .ledger-body.intro-spread {
+                overflow: visible;
+            }
+
+            .intro-architecture {
+                overflow: visible;
+            }
+        }
+
+        .intro-architecture path,
+        .intro-architecture line {
+            fill: none;
+            stroke: currentColor;
+            vector-effect: non-scaling-stroke;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .mesh-depth path {
+            stroke-width: .8;
+            stroke-opacity: .05;
+        }
+
+        .mesh-depth line {
+            stroke-width: .9;
+            stroke-opacity: .14;
+        }
+
+        .mesh-ribs path {
+            stroke-width: .72;
+            stroke-opacity: .095;
+        }
+
+        .mesh-longitudes path {
+            stroke-width: .78;
+            stroke-opacity: .12;
+        }
+
+        .mesh-outline path,
+        .mesh-outline line {
+            stroke-width: 1.05;
+            stroke-opacity: .18;
+        }
+
+        @keyframes intro-rule-draw {
+            from { clip-path: inset(0 0 88% 0); }
+            to { clip-path: inset(0); }
+        }
+
+        .intro-about {
+            position: relative;
+            z-index: 1;
+            min-width: 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(220px, .72fr);
+            gap: clamp(2rem, 3.2vw, 4.6rem);
+            align-items: center;
+            padding: clamp(2.4rem, 4.3vw, 5.5rem) clamp(2rem, 3.8vw, 4.8rem) clamp(2rem, 3.4vw, 4.2rem) 0;
+        }
+
+        .intro-about-copy {
+            align-self: center;
+        }
+
+        .intro-title,
+        .intro-now h2 {
+            text-wrap: balance;
+            font-family: var(--ledger-display);
+            font-weight: 600;
+            letter-spacing: -.035em;
+        }
+
+        .intro-title {
+            max-width: 6ch;
+            margin: 0 0 clamp(1.4rem, 2.2vw, 2.7rem);
+            font-size: clamp(58px, 6.7vw, 96px);
+            line-height: .86;
+        }
+
+        .intro-lead {
+            max-width: 38ch;
+            color: #232d5d;
+            font-size: clamp(19px, 1.55vw, 25px);
+            line-height: 1.3;
+        }
+
+        .intro-support {
+            max-width: 54ch;
+            margin-top: clamp(1.1rem, 1.5vw, 1.8rem);
+            color: var(--muted-ink);
+            font-size: clamp(14px, 1vw, 17px);
+            line-height: 1.45;
+        }
+
+        .portrait-figure {
+            align-self: center;
+            width: 100%;
+            margin: 0;
+        }
+
+        .portrait-window {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border: 1px solid var(--ink);
+            background: #edf1f8;
+        }
+
+        .portrait-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-now {
+            position: relative;
+            z-index: 1;
+            min-width: 0;
+            display: grid;
+            grid-template-rows: auto repeat(2, minmax(0, 1fr));
+            padding: clamp(2.4rem, 4.3vw, 5.5rem) 0 clamp(2rem, 3.4vw, 4.2rem) clamp(2rem, 3.8vw, 4.8rem);
+        }
+
+        .intro-now-header {
+            padding: 0 clamp(1rem, 1.8vw, 2.2rem) clamp(1.6rem, 2.2vw, 2.7rem) 0;
+        }
+
+        .intro-now h2 {
+            max-width: 9ch;
+            font-size: clamp(42px, 4.3vw, 68px);
+            line-height: .92;
+        }
+
+        .intro-now-header p {
+            max-width: 46ch;
+            margin-top: 1.1rem;
+            color: var(--muted-ink);
+            font-size: clamp(14px, 1vw, 17px);
+            line-height: 1.42;
+        }
+
+        .pursuit {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-rows: auto auto 1fr;
+            gap: .75rem 1.5rem;
+            align-content: center;
+            padding: clamp(1.4rem, 2vw, 2.4rem) clamp(1rem, 1.8vw, 2.2rem) clamp(1.4rem, 2vw, 2.4rem) 0;
+            border-top: 1px solid var(--rule);
+            transition: background-color .28s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .pursuit:hover {
+            background: rgba(7, 85, 245, .035);
+        }
+
+        .pursuit-index {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            color: var(--blue);
+            font-size: clamp(12px, .8vw, 14px);
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .pursuit-a01 .pursuit-index {
+            color: var(--red);
+        }
+
+        .pursuit h3 {
+            grid-column: 1;
+            grid-row: 1;
+            max-width: 18ch;
+            font-size: clamp(22px, 1.9vw, 30px);
+            font-weight: 600;
+            line-height: 1.03;
+            letter-spacing: -.02em;
+        }
+
+        .pursuit > p {
+            grid-column: 1;
+            grid-row: 3;
+            max-width: 52ch;
+            color: var(--muted-ink);
+            font-size: clamp(14px, .96vw, 16px);
+            line-height: 1.4;
+        }
+
+        .pursuit-actions {
+            grid-column: 2;
+            grid-row: 1 / 4;
+            align-self: center;
+            display: grid;
+            gap: .55rem;
+            width: clamp(112px, 8.7vw, 140px);
+        }
+
+        .pursuit-actions .open-control {
+            width: 100%;
+            min-height: 42px;
+            padding: .5rem .75rem;
+        }
+
+        .pursuit-a01 .open-control {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .pursuit-a01 .open-control:hover,
+        .pursuit-a01 .open-control:focus-visible {
+            background: var(--red);
+            color: white;
+        }
+
+        .ledger-folio a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .ledger-folio a:hover,
+        .ledger-folio a:focus-visible {
+            color: var(--blue);
+            text-decoration: underline;
+            text-underline-offset: .3em;
+        }
+
+        .ledger-folio {
+            position: absolute;
+            inset: auto 1.2% 0;
+            height: 6.5%;
+            max-width: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--rule);
+            margin: 0;
+            padding: 0;
+            color: #44517b;
+            font-size: clamp(11px, .72vw, 12px);
+            font-weight: 500;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .archive-section,
+        .practice-section {
+            max-width: none;
+            margin: 0;
+            padding: 0 1.2%;
+            background: var(--paper);
+        }
+
+        .archive-header,
+        .practice-header {
+            min-height: 240px;
+            display: grid;
+            grid-template-columns: 14% 47% 1fr;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .archive-graph,
+        .practice-folio {
+            border-right: 1px solid var(--rule);
+            color: var(--blue);
+        }
+
+        .archive-graph {
+            position: relative;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .archive-graph svg {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .archive-graph path,
+        .archive-graph line {
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
+        }
+
+        .archive-graph .field-ribs path {
+            opacity: .095;
+            stroke-width: .7px;
+        }
+
+        .archive-graph .field-contours path {
+            opacity: .14;
+            stroke-width: .78px;
+        }
+
+        .archive-graph .field-outline path,
+        .archive-graph .field-outline line {
+            opacity: .25;
+            stroke-width: 1px;
+        }
+
+        .practice-folio {
+            padding: 2.2rem 1.2rem 2rem 0;
+            font-family: var(--ledger-sans);
+            font-size: clamp(54px, 6vw, 92px);
+            font-weight: 600;
+            line-height: .82;
+            letter-spacing: -.05em;
+        }
+
+        .archive-heading,
+        .practice-heading {
+            padding: 2.2rem 2rem;
+            border-right: 1px solid var(--rule);
+        }
+
+        .archive-heading h2,
+        .practice-heading h2 {
+            margin: .55rem 0 .7rem;
+            font-size: clamp(42px, 4vw, 64px);
+            font-weight: 600;
+            line-height: .95;
+            letter-spacing: -.035em;
+        }
+
+        .archive-heading p,
+        .practice-heading p {
+            max-width: 620px;
+            color: var(--muted-ink);
+            font-size: clamp(16px, 1.25vw, 20px);
+            line-height: 1.35;
+        }
+
+        .archive-principle,
+        .practice-principle {
+            padding: 2.2rem 2rem;
+            color: #354069;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: .04em;
+            line-height: 1.45;
+        }
+
+        .archive-principle::before,
+        .practice-principle::before {
+            content: '';
+            display: block;
+            width: 34px;
+            margin-bottom: 1.2rem;
+            border-top: 1px solid var(--rule);
+        }
+
+        .archive-shell {
+            display: grid;
+            grid-template-columns: 14% 86%;
+        }
+
+        .archive-nav {
+            align-self: stretch;
+            border-right: 1px solid var(--rule);
+            padding: 1.4rem 1rem 8rem 0;
+        }
+
+        .archive-nav-inner {
+            position: sticky;
+            top: 1rem;
+        }
+
+        .archive-nav .filter-button {
+            min-height: 48px;
+        }
+
+        .archive-register {
+            min-width: 0;
+            padding: 0 0 8rem 1.4rem;
+        }
+
+        .register-head,
+        .register-row {
+            display: grid;
+            grid-template-columns: 12% 15% minmax(260px, 1fr) 24% 13%;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .register-head {
+            min-height: 58px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--rule);
+            color: #414b75;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .15em;
+        }
+
+        .register-row {
+            min-height: 108px;
+            border-bottom: 1px solid var(--rule-soft);
+            transition: background-color 160ms ease, border-color 160ms ease;
+        }
+
+        .register-related-shell {
+            --route-color: var(--blue);
+            position: relative;
+        }
+
+        .register-related-shell[data-code="A01"] {
+            --route-color: var(--red);
+        }
+
+        .register-title-cell {
+            min-width: 0;
+        }
+
+        .register-related-toggle {
+            appearance: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            margin-top: .65rem;
+            padding: .18rem 0;
+            border: 0;
+            background: transparent;
+            color: var(--route-color, var(--blue));
+            font-family: var(--ledger-sans);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .register-related-toggle:hover {
+            text-decoration: underline;
+            text-underline-offset: .3em;
+        }
+
+        .register-related-toggle:focus-visible {
+            outline: 1px solid currentColor;
+            outline-offset: 4px;
+        }
+
+        .register-related-toggle-mark {
+            width: 7px;
+            height: 7px;
+            border-right: 1px solid currentColor;
+            border-bottom: 1px solid currentColor;
+            transform: translateY(-2px) rotate(45deg);
+            transition: transform 220ms cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .register-related-toggle[aria-expanded="true"] .register-related-toggle-mark {
+            transform: translateY(2px) rotate(225deg);
+        }
+
+        .register-related-preview {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 280ms cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .register-related-shell.is-expanded .register-related-preview {
+            grid-template-rows: 1fr;
+        }
+
+        .register-related-preview-clip {
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .register-related-preview-list {
+            position: relative;
+            margin-left: clamp(24px, 2.4vw, 38px);
+            padding: 0 0 .9rem clamp(42px, 4vw, 62px);
+        }
+
+        .register-related-route {
+            position: absolute;
+            top: -55px;
+            bottom: calc(42px + .9rem);
+            left: 8px;
+            width: 30px;
+            border-left: 2px solid var(--route-color);
+            border-bottom: 2px solid var(--route-color);
+            border-radius: 0 0 0 12px;
+            clip-path: inset(0 100% 100% 0);
+            transition: clip-path 320ms cubic-bezier(.16, 1, .3, 1) 40ms;
+            pointer-events: none;
+        }
+
+        .register-related-shell.is-expanded .register-related-route {
+            clip-path: inset(-8px -8px -8px -8px);
+        }
+
+        .register-related-route::before,
+        .register-related-route::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid var(--route-color);
+            border-radius: 50%;
+            background: var(--paper);
+        }
+
+        .register-related-route::before {
+            top: 0;
+            left: -6px;
+            transform: translateY(-50%);
+        }
+
+        .register-related-route::after {
+            right: 0;
+            bottom: -6px;
+            transform: translateX(50%);
+        }
+
+        .register-related-row {
+            min-height: 84px;
+            display: grid;
+            grid-template-columns: 16% minmax(220px, 1fr) 26% minmax(150px, 18%);
+            gap: 1rem;
+            align-items: center;
+            border-bottom: 1px solid var(--rule-soft);
+            background: rgba(238, 244, 255, .52);
+        }
+
+        .register-related-row + .register-related-row {
+            border-top: 1px solid var(--rule-soft);
+        }
+
+        .register-related-shell[data-code="A01"] .register-related-row {
+            background: rgba(255, 241, 242, .62);
+        }
+
+        .register-related-kind {
+            color: var(--route-color);
+            font-weight: 600;
+            font-size: clamp(18px, 1.55vw, 25px);
+            letter-spacing: -.02em;
+            line-height: .95;
+            text-transform: uppercase;
+        }
+
+        .register-related-title {
+            font-size: clamp(17px, 1.35vw, 21px);
+            font-weight: 500;
+            line-height: 1.08;
+        }
+
+        .register-related-origin {
+            color: var(--muted-ink);
+            font-size: 15px;
+            line-height: 1.2;
+        }
+
+        .register-related-locate {
+            min-height: 40px;
+            padding: .45rem .7rem;
+            border-color: var(--route-color);
+            color: var(--route-color);
+            line-height: 1.2;
+        }
+
+        .register-related-locate:hover,
+        .register-related-locate:focus-visible {
+            background: var(--route-color);
+            color: white;
+        }
+
+        .register-row.is-located {
+            animation: register-locate 1.45s cubic-bezier(.16, 1, .3, 1);
+            outline: 1px solid var(--route-color, var(--blue));
+            outline-offset: -1px;
+        }
+
+        @keyframes register-locate {
+            0% {
+                background: rgba(7, 85, 245, .18);
+                box-shadow: inset 0 0 0 1px var(--route-color, var(--blue));
+            }
+            100% {
+                background: transparent;
+                box-shadow: inset 0 0 0 1px transparent;
+            }
+        }
+
+        .register-group {
+            position: relative;
+        }
+
+        .register-group.is-linked {
+            --route-color: var(--blue);
+            margin: .75rem 0 1.1rem;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+            background: rgba(238, 244, 255, .38);
+        }
+
+        .register-group.is-linked[data-code="A01"] {
+            --route-color: var(--red);
+        }
+
+        .register-group.is-linked .register-row:last-child {
+            border-bottom: 0;
+        }
+
+        .register-relation-track {
+            position: absolute;
+            top: 54px;
+            bottom: 54px;
+            left: -17px;
+            width: 14px;
+            background: linear-gradient(var(--route-color), var(--route-color)) center / 3px 100% no-repeat;
+            pointer-events: none;
+        }
+
+        .register-relation-track::before,
+        .register-relation-track::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            box-sizing: border-box;
+            border: 3px solid var(--route-color);
+            border-radius: 50%;
+            background: var(--paper);
+            transform: translateX(-50%);
+        }
+
+        .register-relation-track::before {
+            top: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        .register-relation-track::after {
+            bottom: 0;
+            transform: translate(-50%, 50%);
+        }
+
+        .register-row:hover,
+        .register-row:focus-within {
+            background: #eef4ff;
+        }
+
+        .register-row[data-code="A01"]:hover,
+        .register-row[data-code="A01"]:focus-within {
+            background: var(--red-wash);
+        }
+
+        .register-kind {
+            color: var(--ink);
+            font-size: clamp(22px, 2vw, 34px);
+            font-weight: 600;
+            letter-spacing: -.02em;
+            line-height: .9;
+            text-transform: uppercase;
+        }
+
+        .register-row[data-paired="true"] .register-kind {
+            color: var(--blue);
+        }
+
+        .register-row[data-code="A01"] .register-kind {
+            color: var(--red);
+        }
+
+        .register-period {
+            color: #36416d;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            line-height: 1.25;
+            text-transform: uppercase;
+        }
+
+        .register-title {
+            font-size: clamp(19px, 1.6vw, 26px);
+            font-weight: 500;
+            line-height: 1.08;
+        }
+
+        .register-origin {
+            color: var(--muted-ink);
+            font-size: 17px;
+            line-height: 1.2;
+        }
+
+        .register-empty {
+            min-height: 220px;
+            display: grid;
+            place-items: center;
+            border-bottom: 1px solid var(--rule);
+            color: var(--muted-ink);
+            font-size: 18px;
+        }
+
+        .practice-body {
+            display: grid;
+            grid-template-columns: 14% 43% 43%;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .practice-index {
+            border-right: 1px solid var(--rule);
+            padding: 2rem 1rem 6rem 0;
+            color: #354069;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            line-height: 1.7;
+        }
+
+        .academic-ledger,
+        .skills-ledger {
+            padding: 2rem;
+        }
+
+        .academic-ledger {
+            border-right: 1px solid var(--rule);
+        }
+
+        .practice-subhead {
+            margin-bottom: 1.4rem;
+            color: #354069;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .04em;
+        }
+
+        .academic-entry,
+        .skill-entry {
+            padding: 1.3rem 0;
+            border-top: 1px solid var(--rule-soft);
+        }
+
+        .academic-entry:first-of-type,
+        .skill-entry:first-of-type {
+            border-top-color: var(--rule);
+        }
+
+        .academic-entry h3,
+        .skill-entry h3 {
+            margin: 0 0 .45rem;
+            font-size: clamp(22px, 1.8vw, 29px);
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .academic-meta,
+        .skill-list,
+        .academic-detail {
+            color: var(--muted-ink);
+            font-size: 16px;
+            line-height: 1.45;
+        }
+
+        .academic-detail {
+            margin-top: .8rem;
+        }
+
+        .academic-stats {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--rule-soft);
+            border-bottom: 1px solid var(--rule-soft);
+        }
+
+        .academic-stat {
+            padding: .9rem .8rem .9rem 0;
+            border-right: 1px solid var(--rule-soft);
+        }
+
+        .academic-stat:last-child {
+            border-right: 0;
+            padding-left: .8rem;
+        }
+
+        .academic-stat strong {
+            display: block;
+            color: var(--ink);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .academic-stat span {
+            color: var(--muted-ink);
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .course-list {
+            margin-top: 1rem;
+            color: #354069;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .site-footer-new {
+            min-height: 190px;
+            max-width: none;
+            margin: 0 1.2%;
+            padding: 2.4rem 0;
+            display: grid;
+            grid-template-columns: 14% minmax(0, 1fr) 240px;
+            column-gap: 2rem;
+            align-items: start;
+            border-top: 0;
+            color: var(--muted-ink);
+            text-align: left;
+        }
+
+        .footer-mark {
+            color: var(--blue);
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .footer-links-new {
+            position: static;
+            inset: auto;
+            z-index: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            backdrop-filter: none;
+        }
+
+        .footer-links-new a {
+            color: var(--ink);
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .footer-links-new a:hover,
+        .footer-links-new a:focus-visible {
+            color: var(--blue);
+            text-decoration: underline;
+            text-underline-offset: .3em;
+        }
+
+        .footer-copy-new {
+            font-size: 12px;
+            letter-spacing: .04em;
+            line-height: 1.55;
+            text-align: right;
+        }
+
+        .record-dialog {
+            width: min(720px, 52vw);
+            max-width: none;
+            height: 100dvh;
+            max-height: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+            border: 0;
+            border-left: 0;
+            box-shadow: -1px 0 var(--rule);
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--ledger-sans);
+            opacity: 0;
+            transform: translateX(42px);
+            transition:
+                opacity 220ms ease,
+                transform 320ms cubic-bezier(.2, .72, .2, 1),
+                overlay 320ms allow-discrete,
+                display 320ms allow-discrete;
+        }
+
+        .record-dialog[open] {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @starting-style {
+            .record-dialog[open] {
+                opacity: 0;
+                transform: translateX(42px);
+            }
+        }
+
+        .record-dialog::backdrop {
+            background: rgba(10, 12, 56, .28);
+            opacity: 0;
+            transition:
+                opacity 240ms ease,
+                overlay 320ms allow-discrete,
+                display 320ms allow-discrete;
+        }
+
+        .record-dialog[open]::backdrop {
+            opacity: 1;
+        }
+
+        @starting-style {
+            .record-dialog[open]::backdrop { opacity: 0; }
+        }
+
+        .dialog-shell {
+            min-height: 100%;
+        }
+
+        .dialog-header {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.4rem;
+            border-bottom: 1px solid var(--rule);
+            background: rgba(247, 248, 250, .96);
+        }
+
+        .dialog-close {
+            appearance: none;
+            min-width: 88px;
+            min-height: 38px;
+            border: 1px solid var(--blue);
+            background: transparent;
+            color: var(--blue);
+            font: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .dialog-close:hover,
+        .dialog-close:focus-visible {
+            background: var(--blue);
+            color: white;
+            outline: 0;
+        }
+
+        .dialog-content {
+            padding: 2rem 2.4rem 5rem;
+        }
+
+        .dialog-kind {
+            color: var(--blue);
+            font-size: 46px;
+            font-weight: 600;
+            letter-spacing: -.02em;
+            line-height: .95;
+            text-transform: uppercase;
+        }
+
+        .dialog-classification {
+            margin-bottom: 2rem;
+            color: #354069;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        .dialog-title {
+            margin: .65rem 0 .8rem;
+            font-size: clamp(34px, 3.3vw, 52px);
+            font-weight: 600;
+            line-height: .98;
+            letter-spacing: -.025em;
+        }
+
+        .dialog-section,
+        .dialog-awards,
+        .dialog-links,
+        .dialog-tags {
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .dialog-section h3,
+        .dialog-awards h3,
+        .dialog-links h3,
+        .dialog-tags h3 {
+            margin: 0 0 .8rem;
+            color: #354069;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        .dialog-section p,
+        .dialog-section li,
+        .dialog-awards li {
+            color: #333b65;
+            font-size: 17px;
+            line-height: 1.55;
+        }
+
+        .dialog-section ul,
+        .dialog-awards ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .dialog-section li + li,
+        .dialog-awards li + li {
+            margin-top: .65rem;
+        }
+
+        .dialog-section code {
+            padding: 0 .25em;
+            background: #e8edf7;
+            color: var(--ink);
+            font-size: .88em;
+        }
+
+        .dialog-link-list,
+        .dialog-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .7rem;
+        }
+
+        .dialog-link-list a,
+        .dialog-tag-list span {
+            padding: .55rem .75rem;
+            border: 1px solid var(--blue);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .dialog-link-list a:hover,
+        .dialog-link-list a:focus-visible {
+            background: var(--blue);
+            color: white;
+        }
+
+        .dialog-tag-list span {
+            letter-spacing: .02em;
+            text-transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-delay: 0ms !important;
+                transition-duration: .01ms !important;
+                transition-delay: 0ms !important;
+            }
+        }
+
+        @media (min-width: 981px) and (max-width: 1120px) {
+            .register-head,
+            .register-row {
+                grid-template-columns: 13% 14% minmax(210px, 1fr) 22% 13%;
+                gap: .7rem;
+            }
+
+            .archive-register {
+                padding-left: 1rem;
+            }
+        }
+
+        @media (max-width: 980px) {
+            #ledger-app {
+                min-width: 0;
+            }
+
+            .ledger-frame {
+                width: 100%;
+                height: auto;
+                min-height: 0;
+                padding: 0 16px;
+                overflow: visible;
+            }
+
+            .ledger-masthead {
+                position: static;
+                height: auto;
+            }
+
+            .ledger-masthead-main {
+                min-height: 124px;
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto;
+                gap: .7rem 1rem;
+                padding: 1rem 0;
+            }
+
+            .ledger-name {
+                grid-column: 1 / -1;
+                white-space: normal;
+                font-size: 25px;
+                line-height: 1.05;
+            }
+
+            .ledger-name::after { display: none; }
+
+            .ledger-role {
+                font-size: 14px;
+                white-space: normal;
+            }
+
+            .ledger-actions {
+                grid-column: 1 / -1;
+                justify-content: flex-start;
+                gap: 1.35rem;
+            }
+
+            .ledger-actions a {
+                font-size: 14px;
+            }
+
+            .ledger-masthead-meta {
+                min-height: 42px;
+                height: auto;
+                gap: 1rem;
+                padding: .65rem 0;
+                font-size: 11px;
+                letter-spacing: .05em;
+            }
+
+            .ledger-masthead-meta span:last-child { text-align: right; }
+
+            .ledger-body {
+                position: static;
+                display: block;
+            }
+
+            .ledger-body.intro-spread {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .intro-architecture {
+                top: 21%;
+                right: -18%;
+                left: auto;
+                width: min(110vw, 440px);
+                height: auto;
+                transform: rotate(-31deg);
+                opacity: .58;
+            }
+
+            .intro-spread::after {
+                content: none;
+            }
+
+            .intro-about {
+                display: contents;
+            }
+
+            .intro-about-copy {
+                position: relative;
+                z-index: 1;
+                order: 1;
+                padding: 2.1rem 0 1.8rem;
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .intro-title {
+                max-width: none;
+                margin-bottom: 1.1rem;
+                font-size: clamp(58px, 17vw, 72px);
+            }
+
+            .intro-lead {
+                max-width: 34ch;
+                font-size: 20px;
+            }
+
+            .intro-support {
+                max-width: 48ch;
+                margin-top: .9rem;
+                font-size: 15px;
+            }
+
+            .portrait-figure {
+                position: relative;
+                z-index: 1;
+                order: 3;
+                width: min(100%, 340px);
+                margin: 2.2rem 0 .7rem;
+            }
+
+            .intro-now {
+                order: 2;
+                display: block;
+                padding: 17rem 0 1.6rem;
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .intro-now-header {
+                padding: 0 0 1.6rem;
+            }
+
+            .intro-now h2 {
+                max-width: none;
+                font-size: 44px;
+            }
+
+            .intro-now-header p {
+                max-width: 38ch;
+                font-size: 16px;
+            }
+
+            .pursuit {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: .75rem;
+                padding: 1.7rem 0;
+            }
+
+            .pursuit h3,
+            .pursuit > p,
+            .pursuit-actions {
+                grid-column: 1;
+            }
+
+            .pursuit h3 {
+                font-size: 27px;
+            }
+
+            .pursuit > p {
+                font-size: 16px;
+            }
+
+            .pursuit-actions {
+                grid-row: auto;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: 100%;
+                margin-top: .7rem;
+            }
+
+            .ledger-filters {
+                border-right: 0;
+                border-bottom: 1px solid var(--rule);
+                padding: 1.25rem 0;
+            }
+
+            .reference-key {
+                gap: 1rem;
+                padding: 0;
+            }
+
+            .reference-key h2 {
+                max-width: none;
+                font-size: 25px;
+            }
+
+            .reference-key dl {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: .8rem 1rem;
+            }
+
+            .reference-key dl div:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .reference-key dd { font-size: 13px; }
+
+            .filter-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 4px;
+            }
+
+            .filter-button {
+                min-height: 42px;
+                padding: 0 .65rem;
+                font-size: 13px;
+            }
+
+            .archive-nav .filter-button:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .ledger-index {
+                border-right: 0;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .index-intro {
+                height: auto;
+                padding: 2rem 0 1.5rem;
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .index-title {
+                max-width: 340px;
+                margin: .45rem 0 .7rem;
+                font-size: 43px;
+                line-height: .93;
+            }
+
+            .index-deck {
+                max-width: none;
+                font-size: 16px;
+                line-height: 1.32;
+            }
+
+            .index-deck br { display: none; }
+
+            .index-table {
+                height: auto;
+                display: block;
+            }
+
+            .index-columns { display: none; }
+
+            .index-row {
+                min-height: 118px;
+                display: grid;
+                grid-template-columns: 72px minmax(0, 1fr) 58px;
+                grid-template-rows: auto auto auto;
+                gap: .35rem .7rem;
+                align-content: center;
+                padding: 1rem 0;
+            }
+
+            .index-row.pair-start::after {
+                left: 35px;
+                bottom: -13px;
+                width: 13px;
+                height: 26px;
+            }
+
+            .index-row.pair-start::before,
+            .index-row.pair-start + .index-row::before {
+                left: 48px;
+            }
+
+            .index-row.pair-start::before { bottom: 7px; }
+
+            .index-row.pair-start + .index-row::before { top: 7px; }
+
+            .index-row .record-code {
+                grid-column: 1;
+                grid-row: 1 / 3;
+                align-self: start;
+                padding: 0;
+                font-size: 30px;
+            }
+
+            .index-row .record-type {
+                grid-column: 1;
+                grid-row: 3;
+                font-size: 11px;
+                letter-spacing: .04em;
+            }
+
+            .record-type::after { width: 18px; }
+
+            .index-row .record-title {
+                grid-column: 2;
+                grid-row: 1 / 3;
+                align-self: center;
+                font-size: 17px;
+                line-height: 1.08;
+            }
+
+            .index-row .record-origin {
+                grid-column: 2;
+                grid-row: 3;
+                font-size: 13px;
+            }
+
+            .index-row .open-control {
+                grid-column: 3;
+                grid-row: 1 / 4;
+                align-self: stretch;
+                width: 58px;
+                min-height: 0;
+                padding: .25rem;
+                font-size: 11px;
+                line-height: 1.2;
+            }
+
+            .index-row .open-control::after {
+                content: none;
+            }
+
+            .ledger-dossier {
+                padding: 2rem 0 1rem;
+                display: block;
+                border-top: 1px solid var(--rule);
+            }
+
+            .dossier-top {
+                grid-template-columns: 1fr 48%;
+                padding-bottom: 1.5rem;
+            }
+
+            .dossier-code {
+                margin-top: .75rem;
+                font-size: 54px;
+            }
+
+            .dossier-aside {
+                padding-left: 1.2rem;
+                font-size: 12px;
+            }
+
+            .dossier-role-block {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                padding: 1.5rem 0;
+            }
+
+            .dossier-role-title { font-size: 27px; }
+            .dossier-origin { font-size: 17px; }
+
+            .dossier-role-block > .open-control {
+                width: 100%;
+                transform: none;
+            }
+
+            .dossier-output-block {
+                padding: 1.5rem 0;
+            }
+
+            .related-title {
+                grid-template-columns: 52px minmax(0, 1fr);
+                margin-top: 1rem;
+                font-size: 22px;
+            }
+
+            .related-code { font-size: 45px; }
+
+            .related-meta {
+                max-width: none;
+                margin: 1rem 0 0;
+                font-size: 15px;
+            }
+
+            .dossier-output-action {
+                position: static;
+                width: 100%;
+                margin-top: 1.2rem;
+            }
+
+            .dossier-notes {
+                padding: 1.5rem 0 2rem;
+                font-size: 14px;
+            }
+
+            .dossier-notes p { max-width: none; }
+
+            .dossier-key div {
+                grid-template-columns: 62px 1fr;
+            }
+
+            .ledger-folio {
+                position: static;
+                min-height: 58px;
+                height: auto;
+                gap: 1rem;
+                font-size: 11px;
+            }
+
+            .archive-section,
+            .practice-section {
+                padding: 0 16px;
+            }
+
+            .archive-header,
+            .practice-header {
+                display: block;
+                min-height: 0;
+            }
+
+            .archive-graph,
+            .practice-folio {
+                border-right: 0;
+                border-bottom: 1px solid var(--rule-soft);
+            }
+
+            .archive-graph {
+                height: 112px;
+            }
+
+            .practice-folio {
+                padding: 1.5rem 0;
+                font-size: 58px;
+            }
+
+            .archive-heading,
+            .practice-heading {
+                padding: 1.8rem 12px 1.8rem 0;
+                border-right: 0;
+                border-bottom: 1px solid var(--rule-soft);
+            }
+
+            .archive-heading h2,
+            .practice-heading h2 {
+                font-size: 42px;
+            }
+
+            .archive-heading p,
+            .practice-heading p {
+                font-size: 16px;
+            }
+
+            .archive-principle,
+            .practice-principle {
+                padding: 1.5rem 0;
+                font-size: 13px;
+            }
+
+            .archive-shell { display: block; }
+
+            .archive-nav {
+                border-right: 0;
+                border-bottom: 1px solid var(--rule);
+                padding: 1rem 0;
+            }
+
+            .archive-nav-inner { position: static; }
+
+            .archive-register { padding: 0 0 5rem; }
+            .register-head { display: none; }
+
+            .register-row {
+                min-height: 132px;
+                grid-template-columns: 72px minmax(0, 1fr) 50px;
+                grid-template-rows: auto auto auto;
+                gap: .35rem .7rem;
+                padding: 1rem 0;
+            }
+
+            .register-group.is-linked {
+                margin: .8rem 0 1.2rem;
+            }
+
+            .register-group.is-linked .register-row {
+                padding-left: 16px;
+                padding-right: 4px;
+            }
+
+            .register-relation-track {
+                top: 66px;
+                bottom: 66px;
+                left: -3px;
+            }
+
+            .register-kind {
+                grid-column: 1;
+                grid-row: 1 / 3;
+                align-self: start;
+                font-size: 22px;
+            }
+
+            .register-period {
+                grid-column: 2;
+                grid-row: 3;
+                font-size: 11px;
+            }
+
+            .register-title-cell {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .register-title {
+                font-size: 20px;
+            }
+
+            .register-related-toggle {
+                margin-top: .55rem;
+                font-size: 10px;
+            }
+
+            .register-related-preview-list {
+                margin-left: 0;
+                padding: 0 0 1rem 34px;
+            }
+
+            .register-related-route {
+                top: -66px;
+                bottom: calc(64px + 1rem);
+                left: 1px;
+                width: 18px;
+            }
+
+            .register-related-row {
+                min-height: 128px;
+                grid-template-columns: 58px minmax(0, 1fr);
+                grid-template-rows: auto auto auto;
+                gap: .45rem .7rem;
+                align-content: center;
+                padding: .9rem 0 .9rem 12px;
+            }
+
+            .register-related-kind {
+                grid-column: 1;
+                grid-row: 1 / 3;
+                align-self: start;
+                font-size: 19px;
+            }
+
+            .register-related-title {
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 18px;
+            }
+
+            .register-related-origin {
+                grid-column: 2;
+                grid-row: 2;
+                font-size: 14px;
+            }
+
+            .register-related-locate {
+                grid-column: 1 / -1;
+                grid-row: 3;
+                width: 100%;
+                margin-top: .35rem;
+            }
+
+            .register-origin {
+                grid-column: 2;
+                grid-row: 2;
+                font-size: 15px;
+            }
+
+            .register-row .open-control {
+                grid-column: 3;
+                grid-row: 1 / 4;
+                align-self: stretch;
+                min-height: 0;
+                padding: .25rem;
+                font-size: 11px;
+                line-height: 1.2;
+            }
+
+            .register-row .open-control::after {
+                content: none;
+            }
+
+            .practice-body { display: block; }
+
+            .practice-index {
+                border-right: 0;
+                border-bottom: 1px solid var(--rule);
+                padding: 1.4rem 0;
+            }
+
+            .academic-ledger,
+            .skills-ledger {
+                padding: 1.8rem 12px 1.8rem 0;
+            }
+
+            .academic-ledger {
+                border-right: 0;
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .academic-stats { grid-template-columns: 1fr; }
+
+            .academic-stat,
+            .academic-stat:last-child {
+                padding: .8rem .5rem .8rem 0;
+                border-right: 0;
+                border-bottom: 1px solid var(--rule-soft);
+            }
+
+            .academic-stat:last-child { border-bottom: 0; }
+
+            .site-footer-new {
+                min-height: 220px;
+                display: block;
+                margin: 0 16px;
+                padding: 2rem 0 3rem;
+            }
+
+            .footer-links-new {
+                margin: 1.5rem 0 2rem;
+                gap: .8rem 1.4rem;
+            }
+
+            .footer-copy-new { text-align: left; }
+
+            .record-dialog {
+                width: 100vw;
+            }
+
+            .dialog-header {
+                min-height: 66px;
+                padding: .8rem 16px;
+            }
+
+            .dialog-content { padding: 1.5rem 16px 4rem; }
+            .dialog-kind { font-size: 38px; }
+            .dialog-title { font-size: 36px; }
+            .dialog-section p,
+            .dialog-section li,
+            .dialog-awards li { font-size: 16px; }
+        }
     </style>
 </head>
 <body>
+
+<a class="skip-link" href="#collection">Skip to work and research</a>
+
+<main id="ledger-app">
+    <section class="ledger-frame" aria-label="Portfolio index">
+        <header class="ledger-masthead">
+            <div class="ledger-masthead-main">
+                <div class="ledger-name" data-region="masthead-name">Daniel Aarao Reis Arturi</div>
+                <div class="ledger-role" data-region="masthead-role">Research scientist &amp; research engineer</div>
+                <nav class="ledger-actions" data-region="masthead-actions" aria-label="Primary links">
+                    <a href="./resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+                    <a href="https://github.com/darturi" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href="mailto:dar579@nyu.edu">Contact</a>
+                </nav>
+            </div>
+            <div class="ledger-masthead-meta" data-region="folio-strip">
+                <span>Research. Systems. Evidence.</span>
+                <span>Research and engineering work.</span>
+            </div>
+        </header>
+
+        <div class="ledger-body intro-spread">
+            <svg class="intro-architecture" viewBox="0 0 920 760" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <g class="mesh-depth"></g>
+                <g class="mesh-ribs"></g>
+                <g class="mesh-longitudes"></g>
+                <g class="mesh-outline"></g>
+            </svg>
+            <section class="intro-about" aria-labelledby="about-title">
+                <div class="intro-about-copy">
+                    <h1 class="intro-title" id="about-title">About me.</h1>
+                    <p class="intro-lead">I’m a research scientist and engineer who turns open-ended questions into rigorous experiments, reproducible evidence, and working systems.</p>
+                    <p class="intro-support">My work spans research science and research engineering: framing questions, designing evaluations, building experimental infrastructure, and communicating results with precision. I’ve applied that approach across AI safety, formal methods, database systems, and quantum optimization, producing first-author papers, open-source research artifacts, and production-minded tools. I currently work at NYU Tandon’s VIDA Center on DARPA’s expMath program, helping develop Lea as an open-source platform for mathematician-controlled formalization.</p>
+                </div>
+                <figure class="portrait-figure">
+                    <div class="portrait-window">
+                        <img class="portrait-image" src="assets/daniel-arturi-portrait.png" alt="Portrait of Daniel Arturi">
+                    </div>
+                </figure>
+            </section>
+
+            <section class="intro-now" aria-labelledby="now-title">
+                <header class="intro-now-header">
+                    <h2 id="now-title">What I’m working on.</h2>
+                    <p>Current work in AI for mathematics and mechanistic interpretability.</p>
+                </header>
+
+                <article class="pursuit pursuit-r04">
+                    <div class="pursuit-index"><span>System</span><span>AI for mathematics</span></div>
+                    <h3>Formalization with the mathematician in control.</h3>
+                    <p>I helped build Lea’s Lean 4 agentic harness and release its open-source ecosystem, including a browser client and an Overleaf workflow, through NYU Tandon’s VIDA Center and DARPA expMath.</p>
+                    <div class="pursuit-actions">
+                        <button class="open-control" type="button" data-record-id="lea">View Lea →</button>
+                        <button class="open-control" type="button" data-record-id="nyu-expmath">View VIDA role →</button>
+                    </div>
+                </article>
+
+                <article class="pursuit pursuit-a01">
+                    <div class="pursuit-index"><span>Research</span><span>AI safety</span></div>
+                    <h3>Mechanistic interpretability.</h3>
+                    <p>Studying the parameter geometry of emergent misalignment and how long context changes model behavior through ongoing Algoverse research.</p>
+                    <div class="pursuit-actions">
+                        <button class="open-control" type="button" data-record-id="algoverse">View Algoverse role →</button>
+                        <button class="open-control" type="button" data-record-id="neurips-paper">View paper →</button>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <footer class="ledger-folio" data-region="footer-folio">
+            <span>About · Current work</span>
+            <a href="#collection">View all work ↓</a>
+        </footer>
+    </section>
+<section class="archive-section" id="collection" aria-labelledby="collection-title">
+    <header class="archive-header">
+        <div class="archive-graph" aria-hidden="true">
+            <svg viewBox="0 0 180 240" preserveAspectRatio="none" focusable="false">
+                <g class="field-ribs"></g>
+                <g class="field-contours"></g>
+                <g class="field-outline"></g>
+            </svg>
+        </div>
+        <div class="archive-heading">
+            <h2 id="collection-title">Work and research.</h2>
+            <p>Roles, publications, projects, and education in one filterable view.</p>
+        </div>
+        <div class="archive-principle">Research across AI safety, formal methods,<br>database systems, and quantum optimization.<br>Engineering across interfaces and infrastructure.</div>
+    </header>
+    <div class="archive-shell">
+        <aside class="archive-nav" aria-label="Work and research filters">
+            <div class="archive-nav-inner">
+                <div class="filter-list">
+                    <button class="filter-button js-filter" type="button" data-filter="all" aria-pressed="true"><span>All</span><span data-filter-count>…</span></button>
+                    <button class="filter-button js-filter" type="button" data-filter="research" aria-pressed="false"><span>Publications / Research</span><span data-filter-count>…</span></button>
+                    <button class="filter-button js-filter" type="button" data-filter="experience" aria-pressed="false"><span>Experience</span><span data-filter-count>…</span></button>
+                    <button class="filter-button js-filter" type="button" data-filter="engineering" aria-pressed="false"><span>Engineering</span><span data-filter-count>…</span></button>
+                    <button class="filter-button js-filter" type="button" data-filter="education" aria-pressed="false"><span>Education</span><span data-filter-count>…</span></button>
+                </div>
+            </div>
+        </aside>
+        <div class="archive-register">
+            <p class="sr-only" id="filterStatus" role="status" aria-live="polite">Showing all 15 entries.</p>
+            <div class="register-head" aria-hidden="true"><span>Kind</span><span>Dates</span><span>Title</span><span>Context</span><span>Details</span></div>
+            <div id="registerRows"></div>
+        </div>
+    </div>
+</section>
+
+<section class="practice-section" id="practice" aria-labelledby="practice-title">
+    <header class="practice-header">
+        <div class="practice-folio">Core</div>
+        <div class="practice-heading">
+            <h2 id="practice-title">Foundations and working tools.</h2>
+            <p>Academic training, technical skills, and research methods behind the work above.</p>
+        </div>
+        <div class="practice-principle">Computer science at NYU Courant.<br>Honours software engineering at McGill.<br>Tools for research and production.</div>
+    </header>
+    <div class="practice-body">
+        <aside class="practice-index">Education<br>Languages<br>Machine learning<br>Systems &amp; tools<br>Concepts<br>Research practice</aside>
+        <div class="academic-ledger">
+            <div class="practice-subhead">Education</div>
+            <article class="academic-entry">
+                <h3>New York University</h3>
+                <div class="academic-meta">M.S. in Computer Science</div>
+                <div class="academic-detail">Graduate School of Arts and Science · Courant Institute of Mathematical Sciences · School of Mathematics, Computing, and Data Science · New York City, NY · Fall 2026 – Present</div>
+            </article>
+            <article class="academic-entry">
+                <h3>McGill University</h3>
+                <div class="academic-meta">B.Sc. Honours Software Engineering</div>
+                <div class="academic-detail">Montreal, Quebec · Graduated May 2026 · First Class Honours</div>
+                <div class="academic-stats">
+                    <div class="academic-stat"><strong>3.99</strong><span>GPA / 4.0</span></div>
+                    <div class="academic-stat"><strong>Dean's List</strong><span>Academic award</span></div>
+                    <div class="academic-stat"><strong>Wing Hing Chan</strong><span>Scholarship in Science</span></div>
+                </div>
+                <p class="course-list">Distributed Systems (Grad) · Applied ML (Grad) · Computer Networks (Grad) · Sustainability for ML (Grad) · Algorithm Design · Operating Systems · Database Systems · Probability Theory · Statistics · Linear Algebra</p>
+            </article>
+        </div>
+        <div class="skills-ledger">
+            <div class="practice-subhead">Technical skills and research practice</div>
+            <article class="skill-entry"><h3>Languages</h3><p class="skill-list">Python · Java · C/C++ · OCaml · R · SQL · Cypher · JavaScript · Bash · Assembly · TypeScript · Swift · Lean</p></article>
+            <article class="skill-entry"><h3>Machine Learning</h3><p class="skill-list">PyTorch · TensorFlow · NumPy · pandas · scikit-learn · LoRA/PEFT · Transformers · CodeCarbon</p></article>
+            <article class="skill-entry"><h3>Systems &amp; Tools</h3><p class="skill-list">React · Vite · FastAPI · Node.js · SQLite · Docker · GitHub Actions · Chrome Extensions · HTML/CSS · Git · LaTeX/Overleaf · Next.js · SwiftUI · Supabase · Lean 4</p></article>
+            <article class="skill-entry"><h3>Concepts</h3><p class="skill-list">Mech. Interp. · AI Safety · Fine-tuning · Distributed Computing · Graph Theory · Concurrency · Database Systems · Autoformalization · Formal Verification · Multi-Agent Systems · Human-AI Interaction · Event-Driven Architecture · Data Provenance</p></article>
+            <article class="skill-entry"><h3>Research Practice</h3><p class="skill-list">Literature Synthesis · Research Framing · Case-Study Design · Technical Writing · Reproducible Evaluation · Open-Source Communication</p></article>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer-new">
+    <div class="footer-mark">DARA</div>
+    <nav class="footer-links-new" aria-label="External links">
+        <a href="https://github.com/darturi" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://x.com/daniel_arturi" target="_blank" rel="noreferrer">X</a>
+        <a href="mailto:dar579@nyu.edu">dar579@nyu.edu</a>
+        <a href="./resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+    </nav>
+    <div class="footer-copy-new">© 2026 Daniel Aarao Reis Arturi.</div>
+</footer>
+
+<dialog class="record-dialog" id="recordDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-shell">
+        <header class="dialog-header"><span class="micro-label">Details</span><button class="dialog-close" type="button" id="dialogClose">Close ×</button></header>
+        <div class="dialog-content" id="dialogContent"></div>
+    </div>
+</dialog>
+
+<div id="legacy-site" hidden>
 
 <!-- NAV -->
 <nav>
@@ -919,7 +3579,7 @@
     </ul>
     <div class="nav-social">
         <a href="https://github.com/darturi" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/darturi" target="_blank">LinkedIn</a>
+        <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank">LinkedIn</a>
         <a href="https://x.com/daniel_arturi" target="_blank">X</a>
         <a href="./resume.pdf" target="_blank">Resume</a>
     </div>
@@ -947,7 +3607,7 @@
     <div class="hero-content fade-up">
         <h1>Hi, I'm <span class="gradient-text">Daniel</span></h1>
         <p class="hero-subtitle">Software Engineer & AI Safety Researcher</p>
-        <p class="hero-meta">McGill University '26 &rarr; NYU Courant MS (Fall 2026)</p>
+        <p class="hero-meta">McGill University '26 &rarr; NYU Courant MS (2026&ndash;Present)</p>
         <div class="hero-tags">
             <span class="hero-tag purple">Mechanistic Interpretability</span>
             <span class="hero-tag teal">Distributed Systems</span>
@@ -957,7 +3617,7 @@
         <div class="hero-buttons">
             <a href="#research" class="btn btn-primary">View My Research</a>
             <a href="./resume.pdf" class="btn btn-outline" target="_blank">Download Resume</a>
-            <a href="mailto:dan.arturi@gmail.com" class="btn btn-outline">Contact Me</a>
+            <a href="mailto:dar579@nyu.edu" class="btn btn-outline">Contact Me</a>
         </div>
     </div>
 </header>
@@ -970,8 +3630,8 @@
     </div>
     <div class="edu-card fade-up" style="margin-bottom: 1.5rem;">
         <div class="edu-school">New York University, Courant Institute</div>
-        <div class="edu-degree">Master of Science (Incoming)</div>
-        <div class="edu-meta">New York City, NY &bull; Starting Fall 2026</div>
+        <div class="edu-degree">Master of Science</div>
+        <div class="edu-meta">New York City, NY &bull; Fall 2026 &ndash; Present</div>
     </div>
     <div class="edu-card fade-up">
         <div class="edu-school">McGill University</div>
@@ -1017,9 +3677,9 @@
         <div class="card fade-up" onclick="openPanel('nyu-expmath')">
             <div class="card-accent teal"></div>
             <div class="card-overline teal">May 2026 &ndash; Present</div>
-            <div class="card-title">Research Scientist — ExpMath (DARPA)</div>
+            <div class="card-title">Research Scientist @ VIDA</div>
             <div class="card-subtitle">NYU Tandon School of Engineering</div>
-            <div class="card-description">Built the full-stack system placing a Lean 4 theorem-proving agent in mathematicians&apos; hands, plus a Chrome extension that formalizes LaTeX theorems from a live Overleaf document into Lean 4 &mdash; the program&apos;s LaTeX-to-Lean deliverable.</div>
+            <div class="card-description">Built the full-stack system placing a Lean 4 theorem-proving agent in mathematicians&apos; hands, plus a Chrome extension that formalizes LaTeX theorems from a live Overleaf document into Lean 4 as the program&apos;s LaTeX-to-Lean deliverable.</div>
             <div class="card-tags">
                 <span class="card-tag">AI for Math</span>
                 <span class="card-tag">DARPA</span>
@@ -1034,11 +3694,11 @@
             <div class="card-overline pink">Jan 2026 &ndash; Jun 2026</div>
             <div class="card-title">Quantum Computing Research Intern</div>
             <div class="card-subtitle">McGill University &bull; Distributed Information Systems Group</div>
-            <div class="card-description">Formulating data allocation as QUBO problems and benchmarking multiple solver formulations under Simulated Annealing and Simulated Quantum Annealing, with hardware feasibility analysis across D-Wave chip topologies.</div>
+            <div class="card-description">Translated a fault-tolerant distributed-data problem into QUBO models, then built a reproducible benchmark spanning exact ILP, simulation, D-Wave hybrid solvers, and Advantage quantum hardware. The work became an open-source research artifact and a VLDB 2026 workshop paper.</div>
             <div class="card-tags">
                 <span class="card-tag">QUBO</span>
                 <span class="card-tag">D-Wave</span>
-                <span class="card-tag">Optimization</span>
+                <span class="card-tag">Experimental Systems</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -1048,8 +3708,8 @@
             <div class="card-accent purple"></div>
             <div class="card-overline purple">Aug 2025 &ndash; Mar 2026</div>
             <div class="card-title">Graph Database Systems Research Intern</div>
-            <div class="card-subtitle">McGill University</div>
-            <div class="card-description">Developed novel node annotation strategies to optimize query performance on tree substructures within graph databases.</div>
+            <div class="card-subtitle">McGill University &bull; University of Passau collaboration</div>
+            <div class="card-description">Implemented and benchmarked Dewey and PrePost structural indexes for tree-shaped substructures across Apache AGE, Kuzu, and Neo4j, then helped turn the experiments into a public reproducibility artifact and an EDBT 2027 vision-paper submission. The work contributes to a broader vision of optimizing queries using knowledge of the shape and properties of data.</div>
             <div class="card-tags">
                 <span class="card-tag">Graph DBs</span>
                 <span class="card-tag">Query Optimization</span>
@@ -1082,13 +3742,13 @@
         <h2 class="section-title">Research Output</h2>
     </div>
     <div class="cards-grid">
-        <!-- NeurIPS / TMLR Paper -->
+        <!-- NeurIPS / ICLR Paper -->
         <div class="card fade-up" onclick="openPanel('neurips-paper')">
             <div class="card-accent gold"></div>
-            <div class="card-overline gold">NeurIPS 2025 &bull; Under review at TMLR</div>
+            <div class="card-overline gold">NeurIPS 2025 &bull; ICLR submission</div>
             <div class="card-title">Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior</div>
             <div class="card-subtitle">First Author &bull; Accepted to UniReps, MechInterp, & CogInterp</div>
-            <div class="card-description">Adopts a geometric perspective to show that emergent misalignment exhibits cross-task linear structure — different narrow tasks discover the same shared parameter directions in the weight landscape.</div>
+            <div class="card-description">Adopts a geometric perspective to show that emergent misalignment exhibits cross-task linear structure. Different narrow tasks discover the same shared parameter directions in the weight landscape.</div>
             <div class="card-awards">
                 <span class="award-badge gold">&#9733; Oral + Honorable Mention</span>
                 <span class="award-badge gold">&#9733; Spotlight</span>
@@ -1104,10 +3764,10 @@
         <!-- Graph DB Preprint -->
         <div class="card fade-up" onclick="openPanel('mcgill-graph-paper')">
             <div class="card-accent purple"></div>
-            <div class="card-overline purple">arXiv 2025 &bull; Under review at EDBT</div>
+            <div class="card-overline purple">EDBT 2027 &bull; Under review</div>
             <div class="card-title">Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs</div>
             <div class="card-subtitle">With Christoph K&ouml;hnen, George Fletcher, Bettina Kemme, Stefanie Scherzinger</div>
-            <div class="card-description">Demonstrates the optimization potential of treating tree-shaped substructures as first-class citizens in graph database systems, achieving substantial speedups via structural indexes originally developed for XML databases.</div>
+            <div class="card-description">Defines tree-shaped substructures and evaluates XML-inspired Dewey and PrePost indexes across three graph database systems. It advances a vision of optimizing queries using knowledge of the shape and properties of data. The clearest gains appear on Apache AGE&apos;s relational backend, while Neo4j&apos;s native traversal produces mixed results.</div>
             <div class="card-awards">
                 <span class="award-badge gold">&#9733; McGill Science Undergraduate Research Showcase</span>
             </div>
@@ -1137,17 +3797,14 @@
         <!-- VLDB Quantum -->
         <div class="card fade-up" onclick="openPanel('vldb-quantum')">
             <div class="card-accent teal"></div>
-            <div class="card-overline teal">VLDB 2026 &bull; Accepted</div>
+            <div class="card-overline teal">VLDB 2026 &bull; QC&amp;DKM Workshop</div>
             <div class="card-title">Evaluating a Quantum Solution: How Hard Can It Be?</div>
-            <div class="card-subtitle">First Author &bull; 2nd Workshop on Quantum Computing and Data/Knowledge Management (QDSM)</div>
-            <div class="card-description">An experience report on the practical complexity of building and evaluating database quantum solutions, using QUBO data allocation on D-Wave Advantage hardware and two simulators as a case study; identifies key scaling barriers.</div>
-            <div class="card-awards">
-                <span class="award-badge gold">&#9733; Accepted &mdash; Presenting</span>
-            </div>
+            <div class="card-subtitle">First Author &bull; Workshop Presenter &bull; Published in the VLDB Workshop Proceedings</div>
+            <div class="card-description">An evidence-backed guide to implementing and evaluating Quantum-for-DB systems. The paper documents the full path from QUBO formulation to simulators, hybrid solvers, and real hardware, giving database researchers practical methods and honest expectations for current quantum systems.</div>
             <div class="card-tags">
-                <span class="card-tag">QUBO</span>
-                <span class="card-tag">D-Wave</span>
-                <span class="card-tag">Quantum</span>
+                <span class="card-tag">Quantum-for-DB</span>
+                <span class="card-tag">Experimental Methods</span>
+                <span class="card-tag">Open Science</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -1167,7 +3824,7 @@
             <div class="card-overline teal">Full-Stack &bull; Web + iOS</div>
             <div class="card-title">ArxivReader</div>
             <div class="card-subtitle">Next.js &bull; SwiftUI &bull; Supabase</div>
-            <div class="card-description">A web + iOS research library for saving, searching, and annotating arXiv papers — with reading lists, color-coded tags, author discovery, and real-time sync via Supabase.</div>
+            <div class="card-description">A web + iOS research library for saving, searching, and annotating arXiv papers, with reading lists, color-coded tags, author discovery, and real-time sync via Supabase.</div>
             <div class="card-tags">
                 <span class="card-tag">Next.js</span>
                 <span class="card-tag">React</span>
@@ -1215,7 +3872,7 @@
             <div class="card-overline pink">Full-Stack &bull; RAG</div>
             <div class="card-title">NYC Housing Law RAG</div>
             <div class="card-subtitle">Python &bull; FastAPI &bull; PostgreSQL &bull; pgvector</div>
-            <div class="card-description">A full-stack RAG system answering NYC housing-law questions with citation-grounded, source-validated answers over official legal corpora &mdash; hybrid retrieval, session auth, rate limiting, and deployment runbooks.</div>
+            <div class="card-description">A full-stack RAG system answering NYC housing-law questions with citation-grounded, source-validated answers over official legal corpora, including hybrid retrieval, session auth, rate limiting, and deployment runbooks.</div>
             <div class="card-tags">
                 <span class="card-tag">FastAPI</span>
                 <span class="card-tag">PostgreSQL</span>
@@ -1306,7 +3963,7 @@
         <a href="https://github.com/darturi" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/daniel-aarao-reis-arturi" target="_blank">LinkedIn</a>
         <a href="https://x.com/daniel_arturi" target="_blank">X</a>
-        <a href="mailto:dan.arturi@gmail.com">dan.arturi@gmail.com</a>
+        <a href="mailto:dar579@nyu.edu">dar579@nyu.edu</a>
         <a href="./resume.pdf" target="_blank">Resume</a>
     </div>
     <div class="footer-copy">&copy; 2026 Daniel Aarao Reis Arturi. All rights reserved.</div>
@@ -1331,32 +3988,43 @@
     // ── PANEL DATA ──
     const panelData = {
         'vldb-quantum': {
-            overline: 'VLDB 2026 — QDSM Workshop',
+            overline: 'VLDB 2026 · QC&DKM · Workshop Presenter',
             overlineColor: 'var(--accent-3)',
             title: 'Evaluating a Quantum Solution: How Hard Can It Be?',
             image: null,
             sections: [
                 {
-                    title: 'Overview',
-                    content: `<p>An experience report on the practical complexity of building and evaluating database quantum solutions, accepted to the 2nd Workshop on Quantum Computing and Data/Knowledge Management (QDSM) at VLDB 2026.</p>`
+                    title: 'Why This Work Matters',
+                    content: `<p>As first author, I helped turn an unfamiliar and often under-documented Quantum-for-DB workflow into a practical experience report for the database community. Published at the 2nd Workshop on Quantum Computing and Data/Knowledge Management (QC&amp;DKM), co-located with VLDB 2026, the paper shows what it actually takes to move from a database optimization problem to executable quantum programs and defensible results. I presented the paper at the workshop, communicating its methodology, findings, and open research challenges directly to the Quantum-for-DB community.</p>`
                 },
                 {
-                    title: 'Contributions',
+                    title: 'Research Contributions',
                     content: `<ul>
-                        <li>Uses QUBO data allocation on D-Wave Advantage hardware and two annealing simulators as a case study.</li>
-                        <li>Quantifies the programming, tuning, and execution overhead of quantum versus traditional database evaluation.</li>
-                        <li>Traces hardware scaling limits and identifies key barriers to practical quantum database solutions.</li>
+                        <li><strong>End-to-end comparison:</strong> Implemented distributed data allocation through the D-Wave QPU and hybrid CQM interfaces, a simulated quantum annealer, and a Qiskit Aer QAOA simulation.</li>
+                        <li><strong>Evaluation methodology:</strong> Compared validity, solution quality, scalability, and runtime against exact ILP and greedy classical baselines while separating quantum access time from cloud, queue, initialization, and readout overhead.</li>
+                        <li><strong>Bottleneck analysis:</strong> Traced how slack variables, dense QUBO connectivity, minor embedding, chain behavior, and parameter tuning constrain useful problem sizes on current hardware.</li>
+                        <li><strong>Actionable negative results:</strong> Showed that the tested quantum approaches did not establish a quantum advantage, and identified problem reformulation, decomposition, tuning, and better tooling as the most valuable directions for follow-up work.</li>
                     </ul>`
+                },
+                {
+                    title: 'Community Impact',
+                    content: `<p>The paper lowers the entry barrier for database researchers by translating quantum terminology and evaluation choices into a familiar systems-research workflow. It also gives the community a more rigorous standard for future claims: test simulators against hardware, report feasibility as well as cost, account for embedding and end-to-end execution overhead, and publish limitations alongside positive results. The accompanying open-source code, data, test banks, result files, and analysis notebooks make the study inspectable and reusable rather than leaving its conclusions locked inside the paper.</p>`
+                },
+                {
+                    title: 'Research Collaboration',
+                    content: `<p>Co-authored with Emilie Fahber and Bettina Kemme at McGill University and Stefanie Scherzinger at the University of Passau, connecting distributed database systems, empirical software engineering, and quantum-computing expertise.</p>`
                 }
             ],
-            awards: [
-                { text: 'Accepted — Presenting', date: 'VLDB 2026', icon: '&#9733;' }
+            awards: [],
+            links: [
+                { label: 'Read the Paper (VLDB PDF)', url: 'https://www.vldb.org/2026/Workshops/VLDB-Workshops-2026/QCDKM/QCDKM26_7.pdf', type: 'primary' },
+                { label: 'Explore the Reproducibility Artifact', url: 'https://github.com/DISLMcGill/EvaluatingAQuantumSolution', type: 'outline' },
+                { label: 'View the VLDB Workshop Proceedings', url: 'https://www.vldb.org/2026/Workshops/vldb.html', type: 'outline' },
             ],
-            links: [],
-            tags: ['QUBO', 'D-Wave', 'Quantum', 'Databases']
+            tags: ['Quantum-for-DB', 'QUBO', 'D-Wave Ocean', 'QAOA', 'Qiskit Aer', 'Quantum Annealing', 'Experimental Systems', 'Workshop Presentation', 'Research Communication', 'Open Science']
         },
         'nyc-housing-rag': {
-            overline: 'Full-Stack — RAG',
+            overline: 'Full-Stack · RAG',
             overlineColor: 'var(--accent-1)',
             title: 'NYC Housing Law RAG',
             image: null,
@@ -1379,38 +4047,102 @@
             tags: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'RAG']
         },
         'nyu-expmath': {
-            overline: 'Research Scientist',
+            overline: 'Research Scientist · May 2026 – Present',
             overlineColor: 'var(--accent-3)',
-            title: 'NYU Tandon — ExpMath (DARPA)',
+            title: 'Research Scientist · VIDA Center',
             image: null,
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>Research Scientist at NYU Tandon School of Engineering, working on DARPA's Exponentiating Mathematics (expMath) program starting May 2026. NYU is one of 13 teams in the inaugural cohort, with $2.2M in funding for 2026–2029.</p>`
+                    content: `<p>Since May 2026, I have worked as a research scientist in the Visualization, Imaging and Data Analysis (VIDA) Center at NYU Tandon School of Engineering on DARPA&apos;s Exponentiating Mathematics (expMath) program. NYU is one of 13 inaugural teams developing AI collaborators for research-level mathematics.</p>`
                 },
                 {
-                    title: 'Research Focus',
+                    title: 'Role and Growth',
                     content: `<ul>
-                        <li>Developing a human-centered framework for AI-mathematician collaboration in research-level mathematics.</li>
-                        <li>Building AI co-authors capable of proposing and proving useful mathematical abstractions to radically accelerate progress in pure mathematics.</li>
-                        <li>Working on autoformalization of research-level mathematics as part of the expMath program.</li>
-                        <li>Built the full-stack system placing a Lean 4 theorem-proving agent in mathematicians&apos; hands: a React/Vite UI and in-process FastAPI backend that streams typed proof events over SSE, with git-backed storage and a derived-state SQLite timeline.</li>
-                        <li>Designed a Chrome extension and local companion server that formalizes labeled LaTeX theorem blocks directly from a live Overleaf document into Lean 4 &mdash; the program&apos;s LaTeX-to-Lean deliverable &mdash; with self-repair, per-file progress, and GitHub export.</li>
-                        <li>Hardened the system for real use: event-driven live updates, spend controls, and an end-to-end integration test harness, re-architecting proof-state tracking around a single source of truth (git for proof content, SQLite for metadata).</li>
+                        <li>Worked across the complete research-software lifecycle: literature synthesis and research framing, agent and product architecture, implementation, evaluation, technical writing, open-source release, and community communication.</li>
+                        <li>Translated a human-centered AI research goal into working software that lets mathematicians decompose proofs, intervene during a run, inspect agent trajectories, and audit generated Lean rather than treating formalization as a one-shot autonomous task.</li>
+                        <li>Collaborated with research mathematicians and systems researchers across NYU, VIDA, and the wider DARPA expMath program, turning live workflow feedback into product and reliability improvements.</li>
                     </ul>`
+                },
+                {
+                    title: 'Engineering Contribution',
+                    content: `<ul>
+                        <li>Worked directly on Lea&apos;s agentic harness, integrating its project-aware controller, bounded sub-agent orchestration, tools, skills, MCP servers, Lean runtime, and persistent event history.</li>
+                        <li>Built and integrated LeaChat&apos;s React/Vite/TypeScript interface with an in-process Python/FastAPI agent backend, typed server-sent events, resumable sessions, live proof updates, usage tracking, and spend controls.</li>
+                        <li>Developed LeaOverleaf across a Chrome extension and local Node.js companion: LaTeX annotation parsing, dependency-aware formalization, inline status, manual editing and audit flows, counterexample handling, self-repair, cross-client session links, and GitHub export.</li>
+                        <li>Reworked proof-state persistence around a derived SQLite event ledger and content-addressed proof history, then hardened concurrent runs, reconnection, configuration, installation, Docker distribution, and end-to-end testing.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Research Contribution',
+                    content: `<p>Alongside implementation, I contributed to Lea&apos;s evolving research narrative and internal scholarly materials, spanning related-work synthesis, the system&apos;s human-in-the-loop framing, architecture documentation, case-study analysis, and precise communication of what formalization and verification do and do not guarantee.</p>`
+                },
+                {
+                    title: 'Outcome',
+                    content: `<p>The work has produced a public open-source release: an installable research platform, a standalone proof-authoring client, and an Overleaf-to-Lean workflow that other mathematicians and developers can inspect, extend, and build on.</p>`
                 }
             ],
             awards: [],
             links: [
                 { label: 'NYU Announcement', url: 'https://engineering.nyu.edu/news/nyu-participate-federal-effort-build-ai-collaborator-mathematics', type: 'primary' },
+                { label: 'VIDA Center', url: 'https://vida.engineering.nyu.edu/', type: 'outline' },
                 { label: 'DARPA expMath', url: 'https://www.darpa.mil/research/programs/expmath-exponential-mathematics', type: 'outline' },
+                { label: 'Lea Project', url: 'https://vida-nyu.github.io/Lea/', type: 'outline' },
             ],
-            tags: ['AI for Mathematics', 'DARPA', 'Autoformalization', 'Formal Verification', 'Theorem Proving']
+            tags: ['AI for Mathematics', 'DARPA expMath', 'Human-AI Interaction', 'Research Engineering', 'Agentic Harnesses', 'Autoformalization', 'Formal Verification', 'Agent Systems', 'React', 'TypeScript', 'FastAPI', 'SSE', 'SQLite', 'Chrome Extensions', 'Node.js', 'Docker', 'Technical Writing']
+        },
+        'lea': {
+            overline: 'Open-source research project',
+            overlineColor: 'var(--accent-3)',
+            title: 'Lea',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>Lea combines a Lean-specific agentic harness with an open-source, application-neutral backbone for mathematician-controlled formalization. Developed at NYU Tandon&apos;s VIDA Center through DARPA&apos;s expMath program, it gives mathematicians control over decomposition, mid-run intervention, and review through one backend shared by LeaChat and LeaOverleaf.</p>`
+                },
+                {
+                    title: 'My Contribution',
+                    content: `<ul>
+                        <li>As of September 10, 2026, GitHub lists my account as Lea&apos;s leading public contributor, with 144 contributions across the ecosystem repository.</li>
+                        <li>Worked directly on the agentic harness, including project-aware agent execution, configurable sub-agent roles, tools, skills and MCP integration, Lean checking, and the typed event stream connecting agent actions to durable proof state.</li>
+                        <li>Built the full-stack path from agent events to a usable research interface: React/Vite/TypeScript on the client; Python, FastAPI, SQLite, git-backed project state, and typed SSE streams on the backend.</li>
+                        <li>Developed the Overleaf-to-Lean workflow from prototype through release, including LaTeX annotations and dependency parsing, theorem and definition states, a resizable Lean review pane, manual edits, theorem-specific chat, counterexamples, self-repair, progress reporting, cross-client continuity, and GitHub export.</li>
+                        <li>Led substantial reliability and distribution work: concurrency and reconnection behavior, single-source-of-truth state, automated tests, install and health-check tooling, and a multi-architecture Docker release with Lean and Mathlib included.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Research Practice',
+                    content: `<p>The project strengthened my ability to connect human-AI interaction evidence to system design, compare autonomy-first provers with general-purpose coding agents, document a complex architecture, and evaluate complete research-mathematics formalization workflows for ongoing scholarly work.</p>`
+                },
+                {
+                    title: 'Research Evaluation',
+                    content: `<p>I contributed to internal evaluations of long-horizon formalization, studying how the harness decomposes research-level proofs, draws on Mathlib, records human intervention, and exposes failure modes that require substantive correction. This work reinforced why transparent human control is central to Lea&apos;s design.</p>`
+                },
+                {
+                    title: 'Community Impact',
+                    content: `<ul>
+                        <li>Lea lowers the setup barrier for formalization research by shipping its Lean tooling, project memory, blueprints, configurable sub-agent roles, verification path, and local-first applications as one open-source platform with Docker and local install routes.</li>
+                        <li>The shared API is designed as community infrastructure: researchers can build new mathematician-facing clients without reimplementing the agent loop, Lean runtime, or proof history.</li>
+                        <li>By September 10, 2026, the public repository had drawn 71 stars and 6 forks, while Professor Chinmay Hegde&apos;s launch announcement had received 1,083 reactions and 22 comments and invited users into a public Discord.</li>
+                        <li>At launch, Professor Hegde reported a 9/23 result on Math Inc.&apos;s FormalQualBench and internal use on multiple open problems, including a long-standing conjecture in nonlinear elliptic PDEs.</li>
+                    </ul>`
+                }
+            ],
+            awards: [],
+            links: [
+                { label: 'Project Website', url: 'https://vida-nyu.github.io/Lea/', type: 'primary' },
+                { label: 'GitHub Repository', url: 'https://github.com/VIDA-NYU/Lea', type: 'outline' },
+                { label: 'Launch Article', url: 'https://www.linkedin.com/pulse/introducing-lea-chinmay-hegde-skpwf/', type: 'outline' },
+                { label: 'Launch Post', url: 'https://www.linkedin.com/posts/chinmay-hegde-8a2a153_today-we-are-releasing-lea-lea-is-a-powerful-ugcPost-7494048440834850816-DcrM/', type: 'outline' },
+                { label: 'Lea Discord', url: 'https://discord.gg/CtEJvUTjm', type: 'outline' },
+            ],
+            tags: ['Lean 4', 'Mathlib', 'Formal Verification', 'AI for Mathematics', 'Agentic Harnesses', 'Human-AI Interaction', 'Multi-Agent Systems', 'React', 'TypeScript', 'FastAPI', 'SSE', 'SQLite', 'Chrome Extensions', 'Node.js', 'LaTeX/Overleaf', 'Docker', 'Testing']
         },
         'algoverse': {
             overline: 'Research Intern',
             overlineColor: 'var(--accent-2)',
-            title: 'Algoverse — AI Safety & Interpretability',
+            title: 'Algoverse · AI Safety & Interpretability',
             image: null,
             sections: [
                 {
@@ -1426,103 +4158,126 @@
                 },
                 {
                     title: 'Output',
-                    content: `<p>Authored an extended abstract accepted to multiple NeurIPS 2025 workshops. Currently preparing a full manuscript on vaccination techniques for misaligned subspaces, and an additional publication on long-context alignment.</p>`
+                    content: `<p>Authored an extended abstract accepted to multiple NeurIPS 2025 workshops. The work has since expanded into a full manuscript that studies both post-hoc vaccination and interventions during fine-tuning to mitigate misaligned subspaces; it is now being submitted to ICLR. A separate project investigates long-context alignment.</p>`
                 }
             ],
             awards: [
                 { text: 'Algoverse Merit Scholarship', date: 'Apr & Sep 2025', icon: '&#9733;' },
-                { text: 'NeurIPS UniReps — Oral Presentation + Honorable Mention', date: 'Dec 2025', icon: '&#9733;' },
-                { text: 'NeurIPS MechInterp — Spotlight', date: 'Dec 2025', icon: '&#9733;' },
-                { text: 'NeurIPS CogInterp — Poster', date: 'Dec 2025', icon: '&#9733;' }
+                { text: 'NeurIPS UniReps · Oral Presentation + Honorable Mention', date: 'Dec 2025', icon: '&#9733;' },
+                { text: 'NeurIPS MechInterp · Spotlight', date: 'Dec 2025', icon: '&#9733;' },
+                { text: 'NeurIPS CogInterp · Poster', date: 'Dec 2025', icon: '&#9733;' }
             ],
             links: [],
             tags: ['PyTorch', 'LoRA/PEFT', 'Transformers', 'Mechanistic Interp.', 'AI Safety']
         },
         'mcgill-graph': {
-            overline: 'Research Intern',
+            overline: 'Research Intern · Aug 2025 – Mar 2026',
             overlineColor: 'var(--accent-1)',
-            title: 'McGill University — Graph Database Systems',
+            title: 'McGill University · Graph Database Systems with the University of Passau',
             image: null,
             sections: [
                 {
-                    title: 'Overview',
-                    content: `<p>Research internship at McGill University focused on graph database optimization, from August 2025 to March 2026. This work resulted in a publication and an open-source reproducibility package developed in collaboration with reproducibility engineering specialists.</p>`
+                    title: 'Role and Collaboration',
+                    content: `<p>At McGill University, I worked with researchers at the University of Passau on recognizing and optimizing tree-shaped substructures inside property graphs. I am an author on the resulting vision paper, which is under review at EDBT 2027. The public arXiv preprint and reproducibility artifact are linked below. The project was partly funded by the Passau International Centre for Advanced Interdisciplinary Studies.</p>`
                 },
                 {
-                    title: 'Research Focus',
+                    title: 'Systems and Evaluation',
                     content: `<ul>
-                        <li><strong>Index Optimization:</strong> Developed novel node annotation strategies to optimize query performance on tree substructures within graph databases.</li>
-                        <li><strong>System Analysis:</strong> Conducted internal systems analysis of multiple graph database architectures to inform index annotation design.</li>
-                        <li><strong>Automation:</strong> Built an automated pipeline for database annotation, regression testing, and visualization across systems.</li>
+                        <li><strong>Structural indexes:</strong> Implemented Dewey and PrePost node annotations, adapting techniques from XML databases to accelerate descendant and ancestor queries over tree-shaped graph data.</li>
+                        <li><strong>Cross-system benchmark:</strong> Evaluated baseline traversal and indexed variants on Apache AGE, Kuzu, and Neo4j using synthetic trees up to 100,000 nodes and the full LDBC Social Network Benchmark scale-factor-1 graph.</li>
+                        <li><strong>End-to-end workloads:</strong> Extended the evaluation beyond microbenchmarks to three official LDBC SNB interactive-workload queries, with controlled node-selection scenarios, absolute baseline runtimes, and median measurements over five runs.</li>
+                        <li><strong>Open artifact:</strong> Built and documented a Docker-based pipeline for dataset preparation, database initialization, parameterized queries, experiment execution, reference results, regression checks, and cross-system visualizations.</li>
                     </ul>`
+                },
+                {
+                    title: 'Results and Boundaries',
+                    content: `<p>The result was architectural rather than a universal speedup. On Apache AGE, the structural indexes delivered 6.7&times; to more than 300,000&times; speedups in the microbenchmarks and 1.1&times; to 16&times; on the three LDBC queries. Kuzu benefited strongly on several microbenchmarks but slowed down where its available hash index could not serve range-style lookups. Neo4j showed mixed results because its native pointer-based storage already makes neighborhood traversal efficient. A ballpark Apache AGE update experiment also exposed the maintenance tradeoff: appending a node increased runtime by 30&ndash;150%, averaging 95%, in the prototype implemented outside the database kernel.</p>`
                 }
             ],
             awards: [
                 { text: 'Selected for McGill Science Undergraduate Research Showcase', date: '2026', icon: '&#9733;' }
             ],
             links: [
-                { label: 'arXiv', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
-                { label: 'GitHub', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
+                { label: 'Read the arXiv Preprint', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
+                { label: 'Explore the Reproducibility Artifact', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
             ],
-            tags: ['Graph Databases', 'Cypher', 'Query Optimization', 'Python', 'Automation', 'Reproducibility']
+            tags: ['Graph Databases', 'Apache AGE', 'Kuzu', 'Neo4j', 'Dewey', 'PrePost', 'LDBC SNB', 'Python', 'Docker', 'Reproducibility']
         },
         'mcgill-graph-paper': {
-            overline: 'arXiv 2025 — Under review at EDBT',
+            overline: 'EDBT 2027 · Under review',
             overlineColor: 'var(--accent-1)',
             title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs',
             image: null,
             sections: [
                 {
-                    title: 'Abstract',
-                    content: `<p>Property graphs often contain tree-shaped substructures, yet they are not captured by existing proposals for graph schemas; likewise, query languages and query engines offer little-to-no native support for managing them systematically. As a first contribution, we report on a micro experiment that demonstrates the optimization potential of treating tree-shaped substructures as first-class citizens in graph database systems. In systems backed by relational engines, substantial speedups can be achieved by leveraging structural indexes, as originally developed for XML databases, to accelerate path queries. Based on our findings, we put forward a vision in which tree-shaped substructures are systematically managed throughout the graph query lifecycle, from modeling and schema design to indexing and query processing.</p>`
+                    title: 'Vision and Contribution',
+                    content: `<p>Property graphs frequently contain semantically meaningful forests, including comment threads, place hierarchies, and tag ontologies, but current graph schemas, languages, and engines rarely manage them explicitly. This vision paper defines tree-shaped substructures and asks how structural indexes originally developed for XML can make recursive property-graph queries faster. The broader vision is to optimize queries using explicit knowledge of the shape and properties of the data throughout the graph query lifecycle: discovery, schema design, index maintenance, query rewriting, optimization, and interaction design.</p>`
+                },
+                {
+                    title: 'Review Status',
+                    content: `<p>I am an author on this paper, which is under review at EDBT 2027. The public arXiv preprint and reproducibility artifact are linked below.</p>`
+                },
+                {
+                    title: 'Evaluation and Findings',
+                    content: `<p>The evaluation compares baseline traversal with Dewey and PrePost encodings across Apache AGE, Kuzu, and Neo4j. Apache AGE shows the strongest result: 6.7&times; to more than 300,000&times; speedups in microbenchmarks and 1.1&times; to 16&times; on three LDBC queries. Kuzu is strong on many microbenchmarks but is limited where its hash index cannot support the required range predicates. Neo4j is mixed, ranging from a 2&times; slowdown to a 1.6&times; speedup, because native adjacency traversal leaves less room for improvement. The paper therefore scopes its claim to systems and queries whose architecture can exploit structural indexes.</p>`
                 },
                 {
                     title: 'Co-Authors',
-                    content: `<p>Daniel Aarao Reis Arturi (McGill University), Christoph Köhnen (University of Passau), George Fletcher (Eindhoven University of Technology), Bettina Kemme (McGill University), and Stefanie Scherzinger (University of Passau).</p>`
+                    content: `<p>Christoph Köhnen (University of Passau), Daniel Aarao Reis Arturi (McGill University), George Fletcher (Eindhoven University of Technology), Bettina Kemme (McGill University), and Stefanie Scherzinger (University of Passau).</p>`
                 },
                 {
-                    title: 'Reproducibility',
-                    content: `<p>Developed an open-source reproducibility package in collaboration with reproducibility engineering specialists at the University of Passau, enabling independent verification of all experimental results.</p>`
+                    title: 'Open Reproducibility Artifact',
+                    content: `<p>The public repository contains Dockerized setups for all three database systems; prepared synthetic and LDBC SNB datasets; baseline, Dewey, and PrePost query suites; experiment runners; committed reference results and execution plans; and report generators for heatmaps and cross-system speedup plots. Kuzu and Neo4j each cover ten logical operations per encoding, Apache AGE covers four, and the artifact also includes the three LDBC interactive queries used in the revised paper.</p>`
                 }
             ],
             awards: [
                 { text: 'Selected for McGill Science Undergraduate Research Showcase', date: '2026', icon: '&#9733;' }
             ],
             links: [
-                { label: 'arXiv', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
-                { label: 'GitHub', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
+                { label: 'Read the arXiv Preprint', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
+                { label: 'Explore the Code and Artifact', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
             ],
-            tags: ['Graph Databases', 'Property Graphs', 'Structural Indexes', 'Query Optimization', 'Cypher', 'Python', 'Reproducibility']
+            tags: ['Graph Databases', 'Property Graphs', 'Structural Indexes', 'Apache AGE', 'Kuzu', 'Neo4j', 'Dewey', 'PrePost', 'LDBC SNB', 'Query Optimization', 'Reproducibility']
         },
         'mcgill-quantum': {
             overline: 'Research Intern',
             overlineColor: 'var(--accent-3)',
-            title: 'McGill University: Quantum Computing',
+            title: 'McGill University · Quantum Computing for Data Systems',
             image: null,
             sections: [
                 {
-                    title: 'Overview',
-                    content: `<p>Research internship in the Distributed Information Systems Group at McGill University, which ran from January to June 2026. Investigating how data allocation problems, specifically assigning partitions to nodes under k-safety replication constraints, can be formulated as Quadratic Unconstrained Binary Optimization (QUBO) problems suitable for quantum hardware.</p>`
+                    title: 'Role and Research Question',
+                    content: `<p>From January to June 2026, I worked in McGill University's Distributed Information Systems Group on a deceptively simple question: how can a fault-tolerant data-allocation problem be expressed, executed, and evaluated on current quantum systems? I translated partition placement, node capacity, replication, and communication cost into constrained optimization models and then into Quadratic Unconstrained Binary Optimization (QUBO) programs.</p>`
                 },
                 {
-                    title: 'Research Focus',
+                    title: 'Optimization and Quantum Methods',
                     content: `<ul>
-                        <li><strong>QUBO Formulations:</strong> Designed and compared multiple QUBO formulations for the data allocation problem, including slack-variable, Mersenne-number, and domain-wall encodings, analyzing trade-offs in variable count, constraint structure, and qubit connectivity requirements.</li>
-                        <li><strong>Solver Benchmarking:</strong> Built an automated experiment harness to benchmark formulations under Simulated Annealing (SA via dimod) and Simulated Quantum Annealing (SQA via dwave-samplers), sweeping across grid sizes up to 9 nodes and 50 partitions with validity, cost, optimality gap, and timing metrics.</li>
-                        <li><strong>Hardware Feasibility Analysis:</strong> Derived analytical models for physical qubit requirements and maximum variable degree across D-Wave chip topologies (Chimera, Pegasus, Zephyr), identifying the feasibility frontier for each formulation on current quantum hardware.</li>
+                        <li><strong>Mathematical modeling:</strong> Implemented binary-slack, calibrated unbalanced-penalty, and domain-wall QUBO encodings while reasoning about constraint penalties, variable growth, interaction density, and expressiveness for both unit-sized and arbitrary partitions.</li>
+                        <li><strong>Classical baselines:</strong> Built exact ILP/CBC and brute-force oracles so every quantum or quantum-inspired result could be checked for feasibility and measured against a provable optimum.</li>
+                        <li><strong>Quantum execution:</strong> Worked across D-Wave Ocean's simulated annealing, Leap hybrid, and Advantage QPU paths, including minor embedding, physical-qubit chains, chain-strength tuning, annealing schedules, reads, and QPU timing.</li>
+                        <li><strong>Gate-based exploration:</strong> Implemented and evaluated a QAOA formulation with Qiskit Aer, testing classical optimizers, circuit depth, measurement shots, and the trade-off between quantum constraints and classical post-processing.</li>
                     </ul>`
                 },
                 {
-                    title: 'Key Findings',
+                    title: 'Experimental and Software Engineering',
                     content: `<ul>
-                        <li>One formulation achieved 99.2% solution validity with the fewest variables and no encoding restrictions, dominating across the benchmark suite.</li>
-                        <li>The domain-wall formulation, despite its theoretical coupling reduction, underperformed under SQA, though its structure may pay off on physical hardware where Zephyr's higher connectivity reduces chain overhead.</li>
+                        <li><strong>Benchmark design:</strong> Created seeded, paired test banks spanning node count, partition count, partition-size distributions, and capacity tightness, with feasibility probes and both lean and full experiment grids.</li>
+                        <li><strong>Research infrastructure:</strong> Built resumable experiment runners that preserve partial QPU work and record cost, validity, constraint violations, optimality gaps, BQM size, physical-qubit use, chain breaks, and timing in analysis-ready JSON.</li>
+                        <li><strong>Analysis and visualization:</strong> Developed Jupyter, pandas, and Matplotlib workflows for validity and optimality heatmaps, scaling curves, solver comparisons, parameter distributions, and hardware-runtime breakdowns.</li>
+                        <li><strong>Correctness and reproducibility:</strong> Added deterministic exact-solver oracles, property-based tests with Hypothesis, regression coverage with pytest, detailed documentation, machine-readable citation metadata, and a public MIT-licensed artifact.</li>
                     </ul>`
+                },
+                {
+                    title: 'Research Judgment and Outcomes',
+                    content: `<p>The strongest outcome was not a headline claim of quantum advantage; it was a defensible map of where current approaches succeed, fail, and need better abstractions. I learned to distinguish formulation errors from sampler noise, simulation behavior from hardware behavior, and QPU access time from end-to-end cloud latency. The repository preserves negative results, including a domain-wall encoding that does not reduce coupling for this problem class, and documents later audits and remediation rather than hiding them. That work culminated in a first-author paper in the VLDB 2026 QC&amp;DKM workshop proceedings, which I presented to the workshop community, and an open benchmark that other researchers can inspect, reproduce, and extend.</p>`
                 }
             ],
             awards: [],
-            links: [],
-            tags: ['Quantum Computing', 'QUBO', 'D-Wave', 'dimod', 'dwave-samplers', 'Optimization', 'Python', 'Calcul Québec']
+            links: [
+                { label: 'Explore the Open-Source Benchmark', url: 'https://github.com/DISLMcGill/EvaluatingAQuantumSolution', type: 'primary' },
+                { label: 'Read the VLDB Workshop Paper', url: 'https://www.vldb.org/2026/Workshops/VLDB-Workshops-2026/QCDKM/QCDKM26_7.pdf', type: 'outline' },
+            ],
+            tags: ['Python', 'QUBO', 'Integer Programming', 'D-Wave Ocean', 'Qiskit Aer', 'QAOA', 'Quantum Annealing', 'Experimental Design', 'Technical Communication', 'pytest', 'Hypothesis', 'pandas', 'Jupyter', 'Data Visualization', 'Reproducible Research']
         },
         'neurips-paper': {
             overline: 'NeurIPS 2025',
@@ -1540,13 +4295,13 @@
                 },
                 {
                     title: 'Full Paper',
-                    content: `<p>This work has been expanded into a full-length paper titled <em>"Of Basins and Vaccines: Emergent Misalignment Through the Lens of Parametric Geometry,"</em> which utilizes vaccination techniques during fine-tuning to mitigate misaligned subspaces. Currently under review at TMLR.</p>`
+                    content: `<p>This work has been expanded into a full-length paper titled <em>"Of Basins and Vaccines: Emergent Misalignment Through the Lens of Parametric Geometry,"</em> which studies both post-hoc vaccination and interventions during fine-tuning to mitigate misaligned subspaces. The manuscript is now being submitted to ICLR.</p>`
                 }
             ],
             awards: [
-                { text: 'UniReps — Oral Presentation + Honorable Mention', date: 'Dec 2025', icon: '&#9733;' },
-                { text: 'MechInterp — Spotlight', date: 'Dec 2025', icon: '&#9733;' },
-                { text: 'CogInterp — Poster', date: 'Dec 2025', icon: '&#9733;' }
+                { text: 'UniReps · Oral Presentation + Honorable Mention', date: 'Dec 2025', icon: '&#9733;' },
+                { text: 'MechInterp · Spotlight', date: 'Dec 2025', icon: '&#9733;' },
+                { text: 'CogInterp · Poster', date: 'Dec 2025', icon: '&#9733;' }
             ],
             links: [
                 { label: 'Project Website', url: 'https://darturi.github.io/shared-em-subspaces/', type: 'primary' },
@@ -1563,7 +4318,7 @@
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>A personal research library for saving, organizing, and annotating papers from arXiv. Available as a web app (Next.js) and a native iOS app (SwiftUI), both backed by Supabase. Papers can be saved to "Read" and "To Read" lists, tagged with color-coded labels, annotated with notes, and tracked by read date — all synced across web and mobile.</p>`
+                    content: `<p>A personal research library for saving, organizing, and annotating papers from arXiv. Available as a web app (Next.js) and a native iOS app (SwiftUI), both backed by Supabase. Papers can be saved to "Read" and "To Read" lists, tagged with color-coded labels, annotated with notes, and tracked by read date. Everything stays synced across web and mobile.</p>`
                 },
                 {
                     title: 'Features',
@@ -1578,10 +4333,10 @@
                 {
                     title: 'Tech Stack',
                     content: `<ul>
-                        <li><strong>Web:</strong> Next.js 16, React 19, Tailwind CSS 4, TypeScript — deployed on Vercel.</li>
+                        <li><strong>Web:</strong> Next.js 16, React 19, Tailwind CSS 4, and TypeScript, deployed on Vercel.</li>
                         <li><strong>Mobile:</strong> Native iOS app using SwiftUI (iOS 17+, Swift 5.9+) with Supabase Swift SDK via SPM.</li>
                         <li><strong>Backend:</strong> Next.js API routes with Supabase (PostgreSQL, OAuth, Row Level Security). ArXiv XML parsed with fast-xml-parser.</li>
-                        <li><strong>API:</strong> 10+ REST endpoints for papers, tags, search, and author lookup — all server-side rate-limited.</li>
+                        <li><strong>API:</strong> 10+ REST endpoints for papers, tags, search, and author lookup, all rate-limited on the server.</li>
                     </ul>`
                 },
                 {
@@ -1594,7 +4349,7 @@
                 },
                 {
                     title: 'Database & Security',
-                    content: `<p>Five PostgreSQL tables — <code>paper_cache</code>, <code>user_papers</code>, <code>tags</code>, <code>paper_tags</code>, and <code>rate_limit_log</code> — all protected by Row Level Security with a dedicated security hardening migration. Per-user quotas enforce 20 searches/hr, max 500 papers, and max 100 tags.</p>`
+                    content: `<p>Five PostgreSQL tables (<code>paper_cache</code>, <code>user_papers</code>, <code>tags</code>, <code>paper_tags</code>, and <code>rate_limit_log</code>) are protected by Row Level Security with a dedicated security hardening migration. Per-user quotas enforce 20 searches/hr, max 500 papers, and max 100 tags.</p>`
                 }
             ],
             awards: [],
@@ -1637,7 +4392,7 @@
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>A systematic energy profiling study of GFlowNet training on the SEH (soluble epoxide hydrolase) fragment docking task. The project instruments a ~600M-parameter GraphTransformerGFN model with three measurement modes — timing-only, CodeCarbon end-to-end energy tracking, and fine-grained CUDA-synchronised per-phase profiling — to identify where energy is spent during training and quantify the impact of a concrete optimisation.</p>`
+                    content: `<p>A systematic energy profiling study of GFlowNet training on the SEH (soluble epoxide hydrolase) fragment docking task. The project instruments a ~600M-parameter GraphTransformerGFN model with three measurement modes: timing-only, CodeCarbon end-to-end energy tracking, and fine-grained CUDA-synchronised per-phase profiling. The study identifies where energy is spent during training and quantifies the impact of a concrete optimisation.</p>`
                 },
                 {
                     title: 'Key Findings',
@@ -1650,10 +4405,10 @@
                 {
                     title: 'What I Built',
                     content: `<ul>
-                        <li><strong>GFlowNet model integration</strong> — an adapter layer that bridges the framework's trainer/stats abstraction with the gflownet_lib research library, handling pickling issues for multiprocessing, seed management, and stats hook injection.</li>
-                        <li><strong>Three-mode measurement system</strong> — timing-only (zero-overhead baseline), CodeCarbon energy tracking (end-to-end GPU/CPU/RAM), and fine-grained CUDA-synchronised per-phase profiling with background NVML polling at 500ms intervals. All modes satisfy &lt;0.2% overhead.</li>
-                        <li><strong>Experiment orchestration</strong> — automated Slurm job scripts sweeping batch sizes {64, 128, 256} × 3 seeds × 3 measurement modes × {baseline, workers} for the full experimental matrix.</li>
-                        <li><strong>Analysis pipeline</strong> — Jupyter notebooks that process raw CSVs into figures and tables, including timeline visualisation, phase decomposition, and baseline-vs-workers comparison.</li>
+                        <li><strong>GFlowNet model integration:</strong> An adapter layer bridges the framework's trainer/stats abstraction with the gflownet_lib research library, handling pickling issues for multiprocessing, seed management, and stats hook injection.</li>
+                        <li><strong>Three-mode measurement system:</strong> Timing-only (zero-overhead baseline), CodeCarbon energy tracking (end-to-end GPU/CPU/RAM), and fine-grained CUDA-synchronised per-phase profiling with background NVML polling at 500ms intervals. All modes satisfy &lt;0.2% overhead.</li>
+                        <li><strong>Experiment orchestration:</strong> Automated Slurm job scripts sweep batch sizes {64, 128, 256} × 3 seeds × 3 measurement modes × {baseline, workers} for the full experimental matrix.</li>
+                        <li><strong>Analysis pipeline:</strong> Jupyter notebooks process raw CSVs into figures and tables, including timeline visualisation, phase decomposition, and baseline-vs-workers comparison.</li>
                     </ul>`
                 }
             ],
@@ -1803,5 +4558,573 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
+</div>
+<script>
+    const registerRecords = [
+        { id: 'nyu-expmath', code: 'R04', category: 'experience', type: 'Role', period: 'May 2026 – Present', title: 'Research Scientist · VIDA Center', origin: 'NYU Tandon · DARPA expMath', paired: true },
+        { id: 'lea', code: 'R04', categories: ['research', 'engineering'], type: 'System', period: '2026', title: 'Lea', origin: 'Open source · NYU Tandon · VIDA · DARPA', paired: true },
+        { id: 'algoverse', code: 'A01', category: 'experience', type: 'Role', period: 'Apr 2025 – Present', title: 'AI Safety & Interpretability Research Intern', origin: 'Algoverse · Remote', paired: true },
+        { id: 'neurips-paper', code: 'A01', category: 'research', type: 'Paper', period: '2025', title: 'Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior', origin: 'NeurIPS · Joint first author · ICLR submission', paired: true },
+        { id: 'mcgill-quantum', code: 'Q02', category: 'experience', type: 'Role', period: 'Jan – Jun 2026', title: 'Quantum Computing Research Intern', origin: 'McGill University · DISL', paired: true },
+        { id: 'vldb-quantum', code: 'Q02', category: 'research', type: 'Paper', period: '2026', title: 'Evaluating a Quantum Solution: How Hard Can It Be?', origin: 'VLDB QC&DKM · First author · Presenter', paired: true },
+        { id: 'mcgill-graph', code: 'G03', category: 'experience', type: 'Role', period: 'Aug 2025 – Mar 2026', title: 'Graph Database Systems Research Intern', origin: 'McGill · University of Passau', paired: true },
+        { id: 'mcgill-graph-paper', code: 'G03', category: 'research', type: 'Paper', period: '2027', title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs', origin: 'EDBT · Under review · arXiv preprint', paired: true },
+        { id: 'ml-sustainability', code: 'S06', category: 'research', type: 'Study', period: '—', title: 'Energy Profiling of GFlowNet Molecular Generation', origin: 'ML sustainability · PyTorch · CodeCarbon · CUDA', paired: false },
+        { id: 'arxiv-reader', code: 'E05', category: 'engineering', type: 'System', period: '—', title: 'ArxivReader', origin: 'Web + iOS · Next.js · SwiftUI · Supabase', paired: false },
+        { id: 'mosaic-exchange', code: 'E07', category: 'engineering', type: 'System', period: '—', title: 'Mosaic Exchange', origin: 'Distributed systems · Java · Python', paired: false },
+        { id: 'paxos', code: 'E08', category: 'engineering', type: 'System', period: '—', title: 'Paxos Treasure Island', origin: 'Distributed systems · Java · Paxos · UDP', paired: false },
+        { id: 'nyc-housing-rag', code: 'E09', category: 'engineering', type: 'System', period: '—', title: 'NYC Housing Law RAG', origin: 'RAG · FastAPI · PostgreSQL · pgvector', paired: false },
+        { id: 'edu-nyu', code: 'D10', category: 'education', type: 'Degree', period: 'Fall 2026 – Present', title: 'M.S. in Computer Science', origin: 'NYU · Graduate School of Arts and Science · Courant Institute', paired: false },
+        { id: 'edu-mcgill', code: 'D11', category: 'education', type: 'Degree', period: 'Graduated May 2026', title: 'B.Sc. Honours Software Engineering', origin: 'McGill University', paired: false }
+    ];
+
+    const educationData = {
+        'edu-nyu': {
+            overline: 'Education · Fall 2026 – Present',
+            title: 'New York University',
+            sections: [
+                { title: 'Degree', content: '<p>Master of Science in Computer Science.</p>' },
+                { title: 'School', content: '<p>Graduate School of Arts and Science.</p>' },
+                { title: 'Institute', content: '<p>Courant Institute of Mathematical Sciences · School of Mathematics, Computing, and Data Science.</p>' },
+                { title: 'Location', content: '<p>New York City, NY.</p>' }
+            ],
+            awards: [], links: [], tags: []
+        },
+        'edu-mcgill': {
+            overline: 'Education · Graduated May 2026',
+            title: 'McGill University',
+            sections: [
+                { title: 'Degree', content: '<p>B.Sc. Honours Software Engineering · Montreal, Quebec.</p>' },
+                { title: 'Graduation distinction', content: '<p>First Class Honours.</p>' },
+                { title: 'Academic record', content: '<p>3.99 GPA / 4.0.</p>' },
+                { title: 'Awards', content: '<p>Dean\'s List · Wing Hing Chan Scholarship in Science.</p>' },
+                { title: 'Coursework', content: '<p>Distributed Systems (Grad) · Applied ML (Grad) · Computer Networks (Grad) · Sustainability for ML (Grad) · Algorithm Design · Operating Systems · Database Systems · Probability Theory · Statistics · Linear Algebra.</p>' }
+            ],
+            awards: [], links: [], tags: []
+        }
+    };
+
+    const registerRows = document.getElementById('registerRows');
+    const recordDialog = document.getElementById('recordDialog');
+    const dialogContent = document.getElementById('dialogContent');
+    const filterStatus = document.getElementById('filterStatus');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let activeRegisterFilter = 'all';
+    let expandedRelationId = null;
+
+    function escapeText(value) {
+        return String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
+    }
+
+    function recordMatchesFilter(record, filter) {
+        if (filter === 'all') return true;
+        const categories = record.categories || [record.category];
+        return categories.includes(filter);
+    }
+
+    function syncFilterCounts() {
+        document.querySelectorAll('.js-filter').forEach(button => {
+            const count = registerRecords.filter(record => recordMatchesFilter(record, button.dataset.filter)).length;
+            const output = button.querySelector('[data-filter-count]');
+            if (output) output.textContent = String(count).padStart(2, '0');
+        });
+    }
+
+    function groupVisibleRecords(records) {
+        return records.reduce((groups, record) => {
+            const previousGroup = groups[groups.length - 1];
+            if (record.paired && previousGroup && previousGroup.code === record.code) {
+                previousGroup.records.push(record);
+                return groups;
+            }
+            groups.push({ code: record.code, records: [record] });
+            return groups;
+        }, []);
+    }
+
+    function relatedRecordsFor(record) {
+        if (!record.paired) return [];
+        return registerRecords.filter(candidate => candidate.id !== record.id && candidate.paired && candidate.code === record.code);
+    }
+
+    function primaryFilterFor(record) {
+        const categories = record.categories || [record.category];
+        if (categories.includes('engineering')) return 'engineering';
+        return categories[0];
+    }
+
+    function renderRegisterRow(record, hiddenRelatedRecords = []) {
+        const isExpanded = expandedRelationId === record.id;
+        const relatedLabel = hiddenRelatedRecords.length === 1
+            ? `Related ${hiddenRelatedRecords[0].type.toLowerCase()}`
+            : `${hiddenRelatedRecords.length} related entries`;
+        const relatedToggle = hiddenRelatedRecords.length ? `
+            <button class="register-related-toggle" type="button" data-related-toggle="${escapeText(record.id)}" aria-expanded="${isExpanded}" aria-controls="related-${escapeText(record.id)}">
+                <span>${escapeText(relatedLabel)}</span>
+                <span class="register-related-toggle-mark" aria-hidden="true"></span>
+            </button>` : '';
+        return `
+            <article class="register-row" data-record-row-id="${escapeText(record.id)}" data-code="${escapeText(record.code)}" data-paired="${record.paired}">
+                <div class="register-kind">${escapeText(record.type)}</div>
+                <div class="register-period">${escapeText(record.period)}</div>
+                <div class="register-title-cell"><h3 class="register-title">${escapeText(record.title)}</h3>${relatedToggle}</div>
+                <div class="register-origin">${escapeText(record.origin)}</div>
+                <button class="open-control" type="button" data-record-id="${escapeText(record.id)}" aria-label="View details for ${escapeText(record.title)}">View details →</button>
+            </article>`;
+    }
+
+    function renderRelatedPreview(parentRecord, records) {
+        const isExpanded = expandedRelationId === parentRecord.id;
+        const rows = records.map(record => {
+            const destinationFilter = primaryFilterFor(record);
+            return `
+                <article class="register-related-row">
+                    <div class="register-related-kind">${escapeText(record.type)}</div>
+                    <h4 class="register-related-title">${escapeText(record.title)}</h4>
+                    <div class="register-related-origin">${escapeText(record.origin)}</div>
+                    <button class="open-control register-related-locate" type="button" data-locate-record="${escapeText(record.id)}" data-target-filter="${escapeText(destinationFilter)}" aria-label="View ${escapeText(record.title)}">View ${escapeText(record.type.toLowerCase())} →</button>
+                </article>`;
+        }).join('');
+
+        return `
+            <div class="register-related-preview" id="related-${escapeText(parentRecord.id)}" aria-hidden="${!isExpanded}">
+                <div class="register-related-preview-clip" ${isExpanded ? '' : 'inert'}>
+                    <div class="register-related-preview-list">
+                        <span class="register-related-route" aria-hidden="true"></span>
+                        ${rows}
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    function renderRegister(filter = 'all') {
+        activeRegisterFilter = filter;
+        const visible = registerRecords.filter(record => recordMatchesFilter(record, filter));
+        const visibleIds = new Set(visible.map(record => record.id));
+        filterStatus.textContent = filter === 'all'
+            ? `Showing all ${visible.length} entries.`
+            : filter === 'research'
+                ? `Showing ${visible.length} publications and research projects.`
+                : filter === 'experience'
+                    ? `Showing ${visible.length} roles.`
+                    : filter === 'engineering'
+                        ? `Showing ${visible.length} engineering projects.`
+                        : `Showing ${visible.length} degrees.`;
+        if (!visible.length) {
+            registerRows.innerHTML = '<div class="register-empty">No entries in this category.</div>';
+            return;
+        }
+        registerRows.innerHTML = groupVisibleRecords(visible).map(group => {
+            const rows = group.records.map(record => renderRegisterRow(record)).join('');
+            if (group.records.length < 2) {
+                const record = group.records[0];
+                const hiddenRelatedRecords = relatedRecordsFor(record).filter(related => !visibleIds.has(related.id));
+                if (!hiddenRelatedRecords.length) return rows;
+                const isExpanded = expandedRelationId === record.id;
+                return `
+                    <section class="register-related-shell${isExpanded ? ' is-expanded' : ''}" data-code="${escapeText(record.code)}" aria-label="${escapeText(record.title)}; ${escapeText(hiddenRelatedRecords.length === 1 ? `related ${hiddenRelatedRecords[0].type.toLowerCase()}` : `${hiddenRelatedRecords.length} related entries`)}">
+                        ${renderRegisterRow(record, hiddenRelatedRecords)}
+                        ${renderRelatedPreview(record, hiddenRelatedRecords)}
+                    </section>`;
+            }
+            return `
+                <section class="register-group is-linked" data-code="${escapeText(group.code)}" aria-label="${escapeText(group.records.map(record => `${record.type}: ${record.title}`).join('; '))}">
+                    <span class="register-relation-track" aria-hidden="true"></span>
+                    ${rows}
+                </section>`;
+        }).join('');
+    }
+
+    function toggleRelatedRecords(recordId) {
+        expandedRelationId = expandedRelationId === recordId ? null : recordId;
+        renderRegister(activeRegisterFilter);
+        requestAnimationFrame(() => {
+            const toggle = [...document.querySelectorAll('[data-related-toggle]')].find(control => control.dataset.relatedToggle === recordId);
+            if (toggle) toggle.focus({ preventScroll: true });
+        });
+    }
+
+    function locateRelatedRecord(recordId, targetFilter) {
+        const record = registerRecords.find(candidate => candidate.id === recordId);
+        if (!record) return;
+        expandedRelationId = null;
+        syncFilters(targetFilter);
+        renderRegister(targetFilter);
+        requestAnimationFrame(() => {
+            const row = [...document.querySelectorAll('[data-record-row-id]')].find(candidate => candidate.dataset.recordRowId === recordId);
+            if (!row) return;
+            row.style.setProperty('--route-color', record.code === 'A01' ? 'var(--red)' : 'var(--blue)');
+            row.setAttribute('tabindex', '-1');
+            row.classList.add('is-located');
+            row.focus({ preventScroll: true });
+            row.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'center' });
+            filterStatus.textContent += ` Focused ${record.title}.`;
+            window.setTimeout(() => {
+                row.classList.remove('is-located');
+                row.removeAttribute('tabindex');
+            }, reduceMotion.matches ? 50 : 1500);
+        });
+    }
+
+    function syncFilters(filter) {
+        document.querySelectorAll('.js-filter').forEach(button => {
+            button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
+        });
+    }
+
+    function openEvidence(id) {
+        const summary = registerRecords.find(record => record.id === id);
+        const data = educationData[id] || panelData[id];
+        if (!summary || !data) return;
+
+        const sections = (data.sections || []).map(section => `
+            <section class="dialog-section">
+                <h3>${escapeText(section.title)}</h3>
+                ${section.content}
+            </section>`).join('');
+
+        const awards = data.awards && data.awards.length ? `
+            <section class="dialog-awards">
+                <h3>Awards &amp; recognition</h3>
+                <ul>${data.awards.map(award => `<li>${escapeText(award.text)}${award.date ? ` · ${escapeText(award.date)}` : ''}</li>`).join('')}</ul>
+            </section>` : '';
+
+        const links = data.links && data.links.length ? `
+            <section class="dialog-links">
+                <h3>Supporting links</h3>
+                <div class="dialog-link-list">${data.links.map(link => `<a href="${escapeText(link.url)}" target="_blank" rel="noreferrer">${escapeText(link.label)} ↗</a>`).join('')}</div>
+            </section>` : '';
+
+        const tags = data.tags && data.tags.length ? `
+            <section class="dialog-tags">
+                <h3>Technologies &amp; concepts</h3>
+                <div class="dialog-tag-list">${data.tags.map(tag => `<span>${escapeText(tag)}</span>`).join('')}</div>
+            </section>` : '';
+
+        dialogContent.innerHTML = `
+            <div class="dialog-kind">${escapeText(summary.type)}</div>
+            <h2 class="dialog-title" id="dialogTitle">${escapeText(data.title || summary.title)}</h2>
+            <div class="dialog-classification">${escapeText(data.overline || summary.type)}</div>
+            ${sections}${awards}${links}${tags}`;
+
+        recordDialog.showModal();
+        document.body.style.overflow = 'hidden';
+        document.getElementById('dialogClose').focus();
+    }
+
+    document.addEventListener('click', event => {
+        const relatedToggle = event.target.closest('[data-related-toggle]');
+        if (relatedToggle) {
+            toggleRelatedRecords(relatedToggle.dataset.relatedToggle);
+            return;
+        }
+
+        const locateButton = event.target.closest('[data-locate-record]');
+        if (locateButton) {
+            locateRelatedRecord(locateButton.dataset.locateRecord, locateButton.dataset.targetFilter);
+            return;
+        }
+
+        const openButton = event.target.closest('[data-record-id]');
+        if (openButton) {
+            openEvidence(openButton.dataset.recordId);
+            return;
+        }
+
+        const filterButton = event.target.closest('.js-filter');
+        if (filterButton) {
+            const filter = filterButton.dataset.filter;
+            expandedRelationId = null;
+            syncFilters(filter);
+            renderRegister(filter);
+            if (filterButton.classList.contains('js-filter-hero')) {
+                document.getElementById('collection').scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+            }
+        }
+    });
+
+    document.getElementById('dialogClose').addEventListener('click', () => recordDialog.close());
+    recordDialog.addEventListener('click', event => {
+        if (event.target === recordDialog) recordDialog.close();
+    });
+    recordDialog.addEventListener('close', () => {
+        document.body.style.overflow = '';
+    });
+
+    function buildIntroArchitecture() {
+        const svg = document.querySelector('.intro-architecture');
+        if (!svg) return;
+
+        const meshMode = window.matchMedia('(min-width: 769px)').matches ? 'desktop' : 'mobile';
+        if (svg.dataset.meshMode === meshMode) return;
+
+        const namespace = 'http://www.w3.org/2000/svg';
+        const depth = svg.querySelector('.mesh-depth');
+        const ribs = svg.querySelector('.mesh-ribs');
+        const longitudes = svg.querySelector('.mesh-longitudes');
+        const outline = svg.querySelector('.mesh-outline');
+        [depth, ribs, longitudes, outline].forEach(group => group.replaceChildren());
+        const horizontalCoordinateScale = meshMode === 'desktop' ? (1 / .58) : 1;
+        const desktopAnchors = {
+            topCenterX: 142.5,
+            topHalfWidth: 142.5,
+            waistX: 330,
+            waistY: 410,
+            waistHalfHeight: 36,
+            upperBend: 18,
+            lowerBend: 20,
+            bottomCenterX: 680,
+            bottomHalfWidth: 220,
+            bottomY: 760
+        };
+        const mobileGeometry = {
+            centerX: [70, 230, 250, 680],
+            centerY: [0, 100, 360, 760],
+            halfWidthStart: 70,
+            halfWidthGrowth: 150,
+            halfWidthCrown: 14
+        };
+
+        const point = (u, across, offsetX = 0, offsetY = 0) => {
+            if (meshMode === 'desktop') {
+                const hermite = (start, end, startTangent, endTangent, progress) => {
+                    const progressSquared = progress * progress;
+                    const progressCubed = progressSquared * progress;
+                    return ((2 * progressCubed - 3 * progressSquared + 1) * start)
+                        + ((progressCubed - 2 * progressSquared + progress) * startTangent)
+                        + ((-2 * progressCubed + 3 * progressSquared) * end)
+                        + ((progressCubed - progressSquared) * endTangent);
+                };
+                const waistPointY = desktopAnchors.waistY + (across * desktopAnchors.waistHalfHeight);
+                const topPointX = desktopAnchors.topCenterX - (across * desktopAnchors.topHalfWidth);
+                const bottomPointX = desktopAnchors.bottomCenterX + (across * desktopAnchors.bottomHalfWidth);
+                const sharedTangentX = (bottomPointX - topPointX) * .5;
+                const sharedTangentY = desktopAnchors.bottomY * .5;
+                if (u <= .5) {
+                    const progress = u * 2;
+                    const bend = -across * desktopAnchors.upperBend * Math.sin(Math.PI * progress) ** 2;
+                    return [
+                        (hermite(
+                            topPointX,
+                            desktopAnchors.waistX,
+                            (desktopAnchors.waistX - topPointX) * .9,
+                            sharedTangentX,
+                            progress
+                        ) + bend + offsetX) * horizontalCoordinateScale,
+                        hermite(0, waistPointY, waistPointY * .9, sharedTangentY, progress) + offsetY
+                    ];
+                }
+
+                const progress = (u - .5) * 2;
+                const bend = across * desktopAnchors.lowerBend * Math.sin(Math.PI * progress) ** 2;
+                return [
+                    (hermite(
+                        desktopAnchors.waistX,
+                        bottomPointX,
+                        sharedTangentX,
+                        (bottomPointX - desktopAnchors.waistX) * .9,
+                        progress
+                    ) + bend + offsetX) * horizontalCoordinateScale,
+                    hermite(
+                        waistPointY,
+                        desktopAnchors.bottomY,
+                        sharedTangentY,
+                        (desktopAnchors.bottomY - waistPointY) * .9,
+                        progress
+                    ) + offsetY
+                ];
+            }
+
+            const turn = Math.PI * u;
+            const wave = Math.PI * 2 * u;
+            const inverseU = 1 - u;
+            const cubic = (start, controlOne, controlTwo, end) =>
+                (inverseU ** 3 * start)
+                + (3 * inverseU ** 2 * u * controlOne)
+                + (3 * inverseU * u ** 2 * controlTwo)
+                + (u ** 3 * end);
+            const centerX = cubic(...mobileGeometry.centerX) + (8 * Math.sin(wave));
+            const centerY = cubic(...mobileGeometry.centerY) - (14 * Math.sin(wave));
+            const smoothU = u * u * (3 - (2 * u));
+            const halfWidth = mobileGeometry.halfWidthStart
+                + (mobileGeometry.halfWidthGrowth * smoothU)
+                + (mobileGeometry.halfWidthCrown * Math.sin(turn));
+            const twistX = -Math.cos(turn);
+            const twistY = .052 * Math.sin(turn);
+
+            return [
+                (centerX + (across * halfWidth * twistX) + offsetX) * horizontalCoordinateScale,
+                centerY + (across * halfWidth * twistY) + offsetY
+            ];
+        };
+
+        const appendPath = (group, coordinates) => {
+            const path = document.createElementNS(namespace, 'path');
+            path.setAttribute('d', coordinates.map((coordinate, index) => `${index ? 'L' : 'M'}${coordinate[0].toFixed(1)},${coordinate[1].toFixed(1)}`).join(' '));
+            group.appendChild(path);
+        };
+
+        const appendLine = (group, start, end) => {
+            const line = document.createElementNS(namespace, 'line');
+            line.setAttribute('x1', start[0].toFixed(1));
+            line.setAttribute('y1', start[1].toFixed(1));
+            line.setAttribute('x2', end[0].toFixed(1));
+            line.setAttribute('y2', end[1].toFixed(1));
+            group.appendChild(line);
+        };
+
+        const longitudeCoordinates = (baseAcross, offsetX = 0, offsetY = 0) => {
+            const coordinates = [];
+            const warpAmount = meshMode === 'desktop' ? .018 : .065;
+            for (let step = 0; step <= 48; step += 1) {
+                const u = step / 48;
+                const throatWeight = Math.pow(Math.sin(Math.PI * u), 1.7);
+                const interiorWeight = (1 - Math.abs(baseAcross)) * throatWeight;
+                const warpedAcross = baseAcross + (warpAmount * Math.sin((u * 5.5 + baseAcross * 1.45) * Math.PI) * interiorWeight);
+                coordinates.push(point(u, warpedAcross, offsetX, offsetY));
+            }
+            return coordinates;
+        };
+
+        const ribCoordinates = (baseU, ribIndex) => {
+            const coordinates = [];
+            const throatWeight = Math.pow(Math.sin(Math.PI * baseU), 1.55);
+            const warpAmount = meshMode === 'desktop' ? .006 : .022;
+            for (let step = 0; step <= 20; step += 1) {
+                const across = -1 + (step / 10);
+                const edgeWeight = 1 - (.28 * Math.abs(across));
+                const uOffset = warpAmount * Math.sin((across * 2.35 + ribIndex * .41) * Math.PI) * throatWeight * edgeWeight;
+                const warpedU = Math.max(0, Math.min(1, baseU + uOffset));
+                coordinates.push(point(warpedU, across));
+            }
+            return coordinates;
+        };
+
+        appendPath(depth, longitudeCoordinates(-1, 4, 5));
+        appendPath(depth, longitudeCoordinates(1, 4, 5));
+        appendLine(depth, point(0, -1, 4, 5), point(0, 1, 4, 5));
+        appendLine(depth, point(1, -1, 4, 5), point(1, 1, 4, 5));
+        appendLine(depth, point(0, -1), point(0, -1, 4, 5));
+        appendLine(depth, point(0, 1), point(0, 1, 4, 5));
+        appendLine(depth, point(1, -1), point(1, -1, 4, 5));
+        appendLine(depth, point(1, 1), point(1, 1, 4, 5));
+
+        for (let index = 0; index <= 30; index += 1) {
+            const u = index / 30;
+            appendPath(ribs, ribCoordinates(u, index));
+        }
+
+        for (let index = 0; index <= 16; index += 1) {
+            const across = -1 + (index / 8);
+            appendPath(longitudes, longitudeCoordinates(across));
+        }
+
+        appendPath(outline, longitudeCoordinates(-1));
+        appendPath(outline, longitudeCoordinates(1));
+        appendLine(outline, point(0, -1), point(0, 1));
+        appendLine(outline, point(1, -1), point(1, 1));
+        svg.dataset.meshMode = meshMode;
+    }
+
+    function buildRegisterField() {
+        const svg = document.querySelector('.archive-graph svg');
+        if (!svg || svg.dataset.fieldBuilt) return;
+
+        const namespace = 'http://www.w3.org/2000/svg';
+        const ribs = svg.querySelector('.field-ribs');
+        const contours = svg.querySelector('.field-contours');
+        const outline = svg.querySelector('.field-outline');
+
+        const upperPoint = (u, across) => {
+            const topX = 90 + (90 * across);
+            const throatX = 78 + (2.2 * across);
+            const throatY = 112 + (1.4 * across);
+            const bend = Math.sin(Math.PI * u);
+            return [
+                (topX * (1 - u)) + (throatX * u) + (22 * ((1 - across) / 2) * bend),
+                (throatY * u) + (9 * across * bend)
+            ];
+        };
+
+        const lowerPoint = (u, across) => {
+            const throatX = 104 + (2.2 * across);
+            const throatY = 128 + (1.4 * across);
+            const bottomX = 90 + (90 * across);
+            const bend = Math.sin(Math.PI * u);
+            return [
+                (throatX * (1 - u)) + (bottomX * u) - (22 * ((1 + across) / 2) * bend),
+                (throatY * (1 - u)) + (240 * u) + (9 * across * bend)
+            ];
+        };
+
+        const appendPath = (group, coordinates) => {
+            const path = document.createElementNS(namespace, 'path');
+            path.setAttribute('d', coordinates.map((coordinate, index) => `${index ? 'L' : 'M'}${coordinate[0].toFixed(1)},${coordinate[1].toFixed(1)}`).join(' '));
+            group.appendChild(path);
+        };
+
+        const appendLine = (group, start, end) => {
+            const line = document.createElementNS(namespace, 'line');
+            line.setAttribute('x1', start[0].toFixed(1));
+            line.setAttribute('y1', start[1].toFixed(1));
+            line.setAttribute('x2', end[0].toFixed(1));
+            line.setAttribute('y2', end[1].toFixed(1));
+            group.appendChild(line);
+        };
+
+        const contourCoordinates = (pointForSurface, across) => {
+            const coordinates = [];
+            for (let step = 0; step <= 32; step += 1) {
+                const u = step / 32;
+                const interiorWeight = (1 - Math.abs(across)) * Math.sin(Math.PI * u);
+                const warpedAcross = across + (.014 * Math.sin((u * 4.5 + across) * Math.PI) * interiorWeight);
+                coordinates.push(pointForSurface(u, warpedAcross));
+            }
+            return coordinates;
+        };
+
+        const ribCoordinates = (pointForSurface, u, ribIndex) => {
+            const coordinates = [];
+            for (let step = 0; step <= 16; step += 1) {
+                const across = -1 + (step / 8);
+                const uOffset = .014 * Math.sin((across * 1.65 + ribIndex * .31) * Math.PI) * Math.sin(Math.PI * u);
+                coordinates.push(pointForSurface(Math.max(0, Math.min(1, u + uOffset)), across));
+            }
+            return coordinates;
+        };
+
+        for (let index = 0; index <= 10; index += 1) {
+            const progress = index / 10;
+            const upperU = 1 - Math.pow(1 - progress, 1.4);
+            const lowerU = Math.pow(progress, 1.4);
+            appendPath(ribs, ribCoordinates(upperPoint, upperU, index));
+            appendPath(ribs, ribCoordinates(lowerPoint, lowerU, index));
+        }
+
+        for (let index = 0; index <= 12; index += 1) {
+            const across = -1 + (index / 6);
+            appendPath(contours, contourCoordinates(upperPoint, across));
+            appendPath(contours, contourCoordinates(lowerPoint, across));
+        }
+
+        appendPath(outline, contourCoordinates(upperPoint, -1));
+        appendPath(outline, contourCoordinates(upperPoint, 1));
+        appendPath(outline, contourCoordinates(lowerPoint, -1));
+        appendPath(outline, contourCoordinates(lowerPoint, 1));
+        appendLine(outline, upperPoint(0, -1), upperPoint(0, 1));
+        appendLine(outline, lowerPoint(1, -1), lowerPoint(1, 1));
+        svg.dataset.fieldBuilt = 'true';
+    }
+
+    buildIntroArchitecture();
+    buildRegisterField();
+    window.matchMedia('(min-width: 769px)').addEventListener('change', buildIntroArchitecture);
+    syncFilterCounts();
+    renderRegister();
+    document.querySelectorAll('[data-record-id]').forEach(control => {
+        const record = registerRecords.find(item => item.id === control.dataset.recordId);
+        if (record) control.setAttribute('aria-label', `View details for ${record.title}`);
+    });
+</script>
 </body>
 </html>

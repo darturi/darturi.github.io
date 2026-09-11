@@ -1,11 +1,51 @@
-DEPLOY.md
+# macOS metadata
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Editor and IDE state
 .idea/
+.vscode/
+*.swp
+*.swo
+*~
 
-# macOS duplicates
-* 2.*
-* 2
+# Local agent and design-tool state
+.agents/
+.claude/
+.codex/
+.impeccable/
+Claude outputs/
 
-# Scratch files
-*.pyc
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies, generated builds, and caches
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+
+# Hosting-provider local state
+.netlify/
+.vercel/
+.wrangler/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Python scratch files
+__pycache__/
+*.py[cod]
 extract_readme.py
 readme_extracted.txt
+
+# Local deployment notes
+DEPLOY.md
