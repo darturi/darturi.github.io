@@ -3835,6 +3835,22 @@
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
 
+        <!-- NYC Housing Research -->
+        <div class="card fade-up" onclick="openPanel('nyc-housing-rag')">
+            <div class="card-accent pink"></div>
+            <div class="card-overline pink">Local-First &bull; Legal Research</div>
+            <div class="card-title">NYC Housing Research</div>
+            <div class="card-subtitle">Python &bull; FastAPI &bull; SQLite &bull; macOS</div>
+            <div class="card-description">A local-first legal-information application for citation-grounded NYC housing-law research and bounded HPD violation lookups, with keyless search, optional BYOK answers, private-resource ingestion, and resilient workspace recovery.</div>
+            <div class="card-tags">
+                <span class="card-tag">Local-First</span>
+                <span class="card-tag">SQLite</span>
+                <span class="card-tag">RAG</span>
+                <span class="card-tag">HPD Open Data</span>
+            </div>
+            <div class="card-click-hint">Click to expand &rarr;</div>
+        </div>
+
         <!-- Mosaic Exchange -->
         <div class="card fade-up" onclick="openPanel('mosaic-exchange')">
             <div class="card-accent purple"></div>
@@ -3863,21 +3879,6 @@
                 <span class="card-tag">Paxos</span>
                 <span class="card-tag">UDP</span>
                 <span class="card-tag">Fault Tolerance</span>
-            </div>
-            <div class="card-click-hint">Click to expand &rarr;</div>
-        </div>
-        <!-- NYC Housing Law RAG -->
-        <div class="card fade-up" onclick="openPanel('nyc-housing-rag')">
-            <div class="card-accent pink"></div>
-            <div class="card-overline pink">Full-Stack &bull; RAG</div>
-            <div class="card-title">NYC Housing Law RAG</div>
-            <div class="card-subtitle">Python &bull; FastAPI &bull; PostgreSQL &bull; pgvector</div>
-            <div class="card-description">A full-stack RAG system answering NYC housing-law questions with citation-grounded, source-validated answers over official legal corpora, including hybrid retrieval, session auth, rate limiting, and deployment runbooks.</div>
-            <div class="card-tags">
-                <span class="card-tag">FastAPI</span>
-                <span class="card-tag">PostgreSQL</span>
-                <span class="card-tag">pgvector</span>
-                <span class="card-tag">RAG</span>
             </div>
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
@@ -4024,27 +4025,52 @@
             tags: ['Quantum-for-DB', 'QUBO', 'D-Wave Ocean', 'QAOA', 'Qiskit Aer', 'Quantum Annealing', 'Experimental Systems', 'Workshop Presentation', 'Research Communication', 'Open Science']
         },
         'nyc-housing-rag': {
-            overline: 'Full-Stack · RAG',
+            overline: 'Local-First · Legal Research · Release Candidate',
             overlineColor: 'var(--accent-1)',
-            title: 'NYC Housing Law RAG',
+            title: 'NYC Housing Research',
             image: null,
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>A full-stack retrieval-augmented generation system that answers NYC housing-law questions with citation-grounded, source-validated answers over official legal corpora.</p>`
+                    content: `<p>A local-first legal-information application for cited NYC housing-law research and bounded HPD violation lookups. The interface, SQLite workspace, legal-source corpus, cache, and usage ledger run on the user&apos;s machine; source search works without an API key, while optional user-supplied models add semantic retrieval and evidence-cited answers.</p>`
                 },
                 {
-                    title: 'Highlights',
+                    title: 'Research Workflow',
                     content: `<ul>
-                        <li>Hybrid retrieval over official legal corpora with citation-grounded, source-validated answers.</li>
-                        <li>Session authentication, rate limiting, and deployment runbooks for production use.</li>
-                        <li>Built with FastAPI, PostgreSQL, and pgvector.</li>
+                        <li>Downloads and locally indexes five official legal and guidance modules, with an explicitly partial rent-regulation source pack and transparent coverage limits.</li>
+                        <li>Supports keyless citation and full-text search, optional semantic indexing and evidence-cited answers, Spanish output, and plain-language controls.</li>
+                        <li>Imports private PDF, DOCX, Markdown, and text resources with per-resource provider consent; saved results can be organized into research matters and exported with checksums.</li>
+                        <li>Queries filtered violations from the official NYC Open Data HPD dataset, retains provenance-labeled property dossiers, and compares saved versions of official sources.</li>
                     </ul>`
+                },
+                {
+                    title: 'Privacy, Safety, and Cost Controls',
+                    content: `<ul>
+                        <li>Uses loopback-only access, one-use launch credentials, session and CSRF checks, and an offline egress policy to keep the local workspace bounded.</li>
+                        <li>Requires explicit estimates, approvals, and hard spending ceilings before paid indexing, evaluation, or answer generation.</li>
+                        <li>Keeps personal resources local by default and requires affirmative consent before their excerpts can be sent to a configured model provider.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Distribution and Reliability',
+                    content: `<ul>
+                        <li>Provides one-command setup for macOS, Linux, and Windows, plus a drag-to-Applications macOS build that bundles Python and opens the interface in a native WebKit window.</li>
+                        <li>Implements secret-free workspace backup and restore, compatibility checks, journaled upgrades, interrupted-upgrade recovery, diagnostics, and retention tooling.</li>
+                        <li>Maintains an extensive automated regression suite covering retrieval, ingestion, security, cost accounting, migration, backup, recovery, desktop, and browser workflows.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Release Status',
+                    content: `<p>The Apache-2.0 project is a release candidate, not a claim of legally validated or production-certified advice. Platform release validation, real-provider evaluation, and substantive housing-law review remain open and are documented explicitly in the repository.</p>`
                 }
             ],
             awards: [],
-            links: [],
-            tags: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'RAG']
+            links: [
+                { label: 'Explore the Open-Source Application', url: 'https://github.com/darturi/nyc-housing-research', type: 'primary' },
+                { label: 'Read the Current Release-Readiness Record', url: 'https://github.com/darturi/nyc-housing-research/blob/main/docs/Release_Readiness/2026-09-20_Recovery_Batch.md', type: 'outline' },
+                { label: 'Review Privacy and Data Flow', url: 'https://github.com/darturi/nyc-housing-research/blob/main/docs/Privacy_and_Data_Flow.md', type: 'outline' }
+            ],
+            tags: ['Python', 'FastAPI', 'SQLite', 'SQLAlchemy', 'Local-First Software', 'RAG', 'Legal Information Retrieval', 'HPD Open Data', 'macOS', 'pywebview', 'pytest', 'Privacy Engineering']
         },
         'nyu-expmath': {
             overline: 'Research Scientist · May 2026 – Present',
@@ -4571,9 +4597,9 @@
         { id: 'mcgill-graph-paper', code: 'G03', category: 'research', type: 'Paper', period: '2027', title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs', origin: 'EDBT · Under review · arXiv preprint', paired: true },
         { id: 'ml-sustainability', code: 'S06', category: 'research', type: 'Study', period: '—', title: 'Energy Profiling of GFlowNet Molecular Generation', origin: 'ML sustainability · PyTorch · CodeCarbon · CUDA', paired: false },
         { id: 'arxiv-reader', code: 'E05', category: 'engineering', type: 'System', period: '—', title: 'ArxivReader', origin: 'Web + iOS · Next.js · SwiftUI · Supabase', paired: false },
+        { id: 'nyc-housing-rag', code: 'E09', category: 'engineering', type: 'System', period: '2026', title: 'NYC Housing Research', origin: 'Local-first legal research · FastAPI · SQLite · macOS', paired: false },
         { id: 'mosaic-exchange', code: 'E07', category: 'engineering', type: 'System', period: '—', title: 'Mosaic Exchange', origin: 'Distributed systems · Java · Python', paired: false },
         { id: 'paxos', code: 'E08', category: 'engineering', type: 'System', period: '—', title: 'Paxos Treasure Island', origin: 'Distributed systems · Java · Paxos · UDP', paired: false },
-        { id: 'nyc-housing-rag', code: 'E09', category: 'engineering', type: 'System', period: '—', title: 'NYC Housing Law RAG', origin: 'RAG · FastAPI · PostgreSQL · pgvector', paired: false },
         { id: 'edu-nyu', code: 'D10', category: 'education', type: 'Degree', period: 'Fall 2026 – Present', title: 'M.S. in Computer Science', origin: 'NYU · Graduate School of Arts and Science · Courant Institute', paired: false },
         { id: 'edu-mcgill', code: 'D11', category: 'education', type: 'Degree', period: 'Graduated May 2026', title: 'B.Sc. Honours Software Engineering', origin: 'McGill University', paired: false }
     ];
