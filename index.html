@@ -3439,7 +3439,7 @@
             <section class="intro-now" aria-labelledby="now-title">
                 <header class="intro-now-header">
                     <h2 id="now-title">What I’m working on.</h2>
-                    <p>Current work in AI for mathematics and mechanistic interpretability.</p>
+                    <p>Current work in AI for mathematics, mechanistic interpretability, and agentic database optimization.</p>
                 </header>
 
                 <article class="pursuit pursuit-r04">
@@ -4165,6 +4165,61 @@
             ],
             tags: ['Lean 4', 'Mathlib', 'Formal Verification', 'AI for Mathematics', 'Agentic Harnesses', 'Human-AI Interaction', 'Multi-Agent Systems', 'React', 'TypeScript', 'FastAPI', 'SSE', 'SQLite', 'Chrome Extensions', 'Node.js', 'LaTeX/Overleaf', 'Docker', 'Testing']
         },
+        'nyu-fann-research': {
+            overline: 'Independent study · Sep 2026 – Present',
+            overlineColor: 'var(--accent-3)',
+            title: 'Database Systems Research · NYU Courant',
+            image: null,
+            sections: [
+                {
+                    title: 'Research Context',
+                    content: `<p>At NYU Courant, I am conducting an independent study with Professor Jinyang Li on learning-guided query optimization for filtered vector search. The central research question is whether an offline language-model agent can use evidence from prior query executions to synthesize compact, workload-specific early-termination policies. Those policies would run inside existing search procedures, making continue-or-stop decisions without an agent or model call at query time.</p>`
+                },
+                {
+                    title: 'Benchmark and Systems Work',
+                    content: `<p>I am building FANNBench, the benchmark and experimental substrate needed to develop and evaluate this idea across multiple vector-search backends. It standardizes workloads and measurements across the supported engines while establishing explicit controls for recall, runtime overhead, and reproducibility.</p>`
+                },
+                {
+                    title: 'Status and Boundaries',
+                    content: `<p>The cross-system benchmark and instrumentation are under active development and validation. The policy-synthesis agent and generated policies have not yet been implemented. Agent development and held-out evaluation are the next research stage, and the project does not yet claim a performance improvement.</p>`
+                }
+            ],
+            awards: [],
+            links: [],
+            tags: ['Database Systems', 'Vector Search', 'Filtered ANN', 'Benchmark Design', 'Agentic Systems', 'Policy Synthesis', 'Early Termination', 'Query Optimization', 'Experimental Systems', 'Reproducible Evaluation']
+        },
+        'fannbench': {
+            overline: 'Research system · Agentic stage planned',
+            overlineColor: 'var(--accent-3)',
+            title: 'FANNBench',
+            image: null,
+            sections: [
+                {
+                    title: 'Overview',
+                    content: `<p>FANNBench is the benchmark and systems substrate for studying agent-synthesized early termination in filtered approximate nearest-neighbor search. It executes comparable workloads across PostgreSQL with pgvector, Elasticsearch/Lucene, and Weaviate.</p>`
+                },
+                {
+                    title: 'Benchmark Infrastructure',
+                    content: `<ul>
+                        <li>Translates filtered-vector workloads deterministically across the supported systems.</li>
+                        <li>Captures search work, execution-path telemetry, decision points, and measurement overhead.</li>
+                        <li>Separates native execution, observation overhead, fixed-budget baselines, and experimental policies.</li>
+                        <li>Checks results against exact filtered top-<em>k</em> references and records experiments in reproducible manifests.</li>
+                    </ul>`
+                },
+                {
+                    title: 'Planned Agentic System',
+                    content: `<p>The next stage will attach an offline language-model agent to the benchmark. Using traces and outcomes from prior executions, the agent will synthesize lightweight, workload-specific early-termination policies for existing HNSW search paths. A deployed policy will make only continue-or-stop decisions and will not invoke a language model at query time.</p>`
+                },
+                {
+                    title: 'Current Status',
+                    content: `<p>The benchmark and measurement methodology are under active development and validation. The policy-synthesis agent has not yet been implemented. Public results and performance claims will follow only after the agentic stage and held-out evaluation.</p>`
+                }
+            ],
+            awards: [],
+            links: [],
+            tags: ['Database Systems', 'Vector Search', 'Filtered ANN', 'HNSW', 'Benchmark Design', 'Agentic Systems', 'Language Models', 'Policy Synthesis', 'Early Termination', 'Query Optimization', 'PostgreSQL', 'pgvector', 'Elasticsearch', 'Lucene', 'Weaviate', 'Python', 'Docker']
+        },
         'algoverse': {
             overline: 'Research Intern',
             overlineColor: 'var(--accent-2)',
@@ -4589,6 +4644,8 @@
     const registerRecords = [
         { id: 'nyu-expmath', code: 'R04', category: 'experience', type: 'Role', period: 'May 2026 – Present', title: 'Research Scientist · VIDA Center', origin: 'NYU Tandon · DARPA expMath', paired: true },
         { id: 'lea', code: 'R04', categories: ['research', 'engineering'], type: 'System', period: '2026', title: 'Lea', origin: 'Open source · NYU Tandon · VIDA · DARPA', paired: true },
+        { id: 'nyu-fann-research', code: 'F12', category: 'experience', type: 'Role', period: 'Sep 2026 – Present', title: 'Database Systems Researcher', origin: 'NYU Courant · Independent study · Prof. Jinyang Li', paired: true },
+        { id: 'fannbench', code: 'F12', categories: ['research', 'engineering'], type: 'System', period: '2026', title: 'FANNBench', origin: 'Filtered ANN benchmark · Planned agentic policy synthesis · Query optimization', paired: true },
         { id: 'algoverse', code: 'A01', category: 'experience', type: 'Role', period: 'Apr 2025 – Present', title: 'AI Safety & Interpretability Research Intern', origin: 'Algoverse · Remote', paired: true },
         { id: 'neurips-paper', code: 'A01', category: 'research', type: 'Paper', period: '2025', title: 'Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior', origin: 'NeurIPS · Joint first author · ICLR submission', paired: true },
         { id: 'mcgill-quantum', code: 'Q02', category: 'experience', type: 'Role', period: 'Jan – Jun 2026', title: 'Quantum Computing Research Intern', origin: 'McGill University · DISL', paired: true },
