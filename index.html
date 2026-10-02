@@ -1764,6 +1764,28 @@
             line-height: 1.45;
         }
 
+        .intro-news-link {
+            min-height: 24px;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: var(--blue);
+            font: inherit;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: .18em;
+            cursor: pointer;
+        }
+
+        .intro-news-link:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        .intro-news-link:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+        }
+
         .portrait-figure {
             align-self: center;
             width: 100%;
@@ -2290,19 +2312,19 @@
             border-bottom: 0;
         }
 
+        .register-group.is-linked > .register-related-shell:last-child > .register-row {
+            border-bottom: 0;
+        }
+
         .register-relation-track {
             position: absolute;
-            top: 54px;
-            bottom: 54px;
             left: -17px;
             width: 14px;
             background: linear-gradient(var(--route-color), var(--route-color)) center / 3px 100% no-repeat;
             pointer-events: none;
         }
 
-        .register-relation-track::before,
-        .register-relation-track::after {
-            content: '';
+        .register-relation-station {
             position: absolute;
             left: 50%;
             width: 12px;
@@ -2311,17 +2333,7 @@
             border: 3px solid var(--route-color);
             border-radius: 50%;
             background: var(--paper);
-            transform: translateX(-50%);
-        }
-
-        .register-relation-track::before {
-            top: 0;
             transform: translate(-50%, -50%);
-        }
-
-        .register-relation-track::after {
-            bottom: 0;
-            transform: translate(-50%, 50%);
         }
 
         .register-row:hover,
@@ -3233,8 +3245,6 @@
             }
 
             .register-relation-track {
-                top: 66px;
-                bottom: 66px;
                 left: -3px;
             }
 
@@ -3428,6 +3438,7 @@
                     <h1 class="intro-title" id="about-title">About me.</h1>
                     <p class="intro-lead">I’m a research scientist and engineer who turns open-ended questions into rigorous experiments, reproducible evidence, and working systems.</p>
                     <p class="intro-support">My work spans research science and research engineering: framing questions, designing evaluations, building experimental infrastructure, and communicating results with precision. I’ve applied that approach across AI safety, formal methods, database systems, and quantum optimization, producing first-author papers, open-source research artifacts, and production-minded tools. I currently work at NYU Tandon’s VIDA Center on DARPA’s expMath program, helping develop Lea as an open-source platform for mathematician-controlled formalization.</p>
+                    <p class="intro-support">Our paper on tree-shaped substructures in property graphs was accepted at <button class="intro-news-link" type="button" data-record-id="mcgill-graph-paper">EDBT 2027</button>.</p>
                 </div>
                 <figure class="portrait-figure">
                     <div class="portrait-window">
@@ -3445,9 +3456,10 @@
                 <article class="pursuit pursuit-r04">
                     <div class="pursuit-index"><span>System</span><span>AI for mathematics</span></div>
                     <h3>Formalization with the mathematician in control.</h3>
-                    <p>I helped build Lea’s Lean 4 agentic harness and release its open-source ecosystem, including a browser client and an Overleaf workflow, through NYU Tandon’s VIDA Center and DARPA expMath.</p>
+                    <p>I helped build Lea’s open-source platform for mathematician-controlled formalization in Lean at NYU Tandon’s VIDA Center through DARPA expMath. I am a first author on the accompanying paper, accepted to the Sixth Workshop on Mathematical Reasoning and AI at NeurIPS 2026.</p>
                     <div class="pursuit-actions">
                         <button class="open-control" type="button" data-record-id="lea">View Lea →</button>
+                        <button class="open-control" type="button" data-record-id="lea-paper">View paper →</button>
                         <button class="open-control" type="button" data-record-id="nyu-expmath">View VIDA role →</button>
                     </div>
                 </article>
@@ -3709,7 +3721,7 @@
             <div class="card-overline purple">Aug 2025 &ndash; Mar 2026</div>
             <div class="card-title">Graph Database Systems Research Intern</div>
             <div class="card-subtitle">McGill University &bull; University of Passau collaboration</div>
-            <div class="card-description">Implemented and benchmarked Dewey and PrePost structural indexes for tree-shaped substructures across Apache AGE, Kuzu, and Neo4j, then helped turn the experiments into a public reproducibility artifact and an EDBT 2027 vision-paper submission. The work contributes to a broader vision of optimizing queries using knowledge of the shape and properties of data.</div>
+            <div class="card-description">Implemented and benchmarked Dewey and PrePost structural indexes for tree-shaped substructures across Apache AGE, Kuzu, and Neo4j, and built a public reproducibility artifact. This work contributed to a vision paper accepted at EDBT 2027, which advances the use of data shape and properties in query optimization.</div>
             <div class="card-tags">
                 <span class="card-tag">Graph DBs</span>
                 <span class="card-tag">Query Optimization</span>
@@ -3761,12 +3773,12 @@
             <div class="card-click-hint">Click to expand &rarr;</div>
         </div>
 
-        <!-- Graph DB Preprint -->
+        <!-- EDBT Graph DB Paper -->
         <div class="card fade-up" onclick="openPanel('mcgill-graph-paper')">
             <div class="card-accent purple"></div>
-            <div class="card-overline purple">EDBT 2027 &bull; Under review</div>
+            <div class="card-overline purple">EDBT 2027 &bull; Accepted</div>
             <div class="card-title">Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs</div>
-            <div class="card-subtitle">With Christoph K&ouml;hnen, George Fletcher, Bettina Kemme, Stefanie Scherzinger</div>
+            <div class="card-subtitle">Co-author &bull; With Christoph K&ouml;hnen, George Fletcher, Bettina Kemme, Stefanie Scherzinger</div>
             <div class="card-description">Defines tree-shaped substructures and evaluates XML-inspired Dewey and PrePost indexes across three graph database systems. It advances a vision of optimizing queries using knowledge of the shape and properties of data. The clearest gains appear on Apache AGE&apos;s relational backend, while Neo4j&apos;s native traversal produces mixed results.</div>
             <div class="card-awards">
                 <span class="award-badge gold">&#9733; McGill Science Undergraduate Research Showcase</span>
@@ -4101,11 +4113,11 @@
                 },
                 {
                     title: 'Research Contribution',
-                    content: `<p>Alongside implementation, I contributed to Lea&apos;s evolving research narrative and internal scholarly materials, spanning related-work synthesis, the system&apos;s human-in-the-loop framing, architecture documentation, case-study analysis, and precise communication of what formalization and verification do and do not guarantee.</p>`
+                    content: `<p>I am a first author on <em>Lea: An Agent Backbone for Mathematician-Controlled Formalization in Lean</em>, accepted to the Sixth Workshop on Mathematical Reasoning and AI at NeurIPS 2026. Alongside implementation, I contributed to related-work synthesis, the system&apos;s human-in-the-loop research framing, architecture documentation, case-study analysis, and precise communication of what formalization and verification do and do not guarantee.</p>`
                 },
                 {
                     title: 'Outcome',
-                    content: `<p>The work has produced a public open-source release: an installable research platform, a standalone proof-authoring client, and an Overleaf-to-Lean workflow that other mathematicians and developers can inspect, extend, and build on.</p>`
+                    content: `<p>The work produced an open-source formalization platform, LeaChat and LeaOverleaf, and a first-author workshop paper accepted at NeurIPS 2026. The platform and its applications let other mathematicians and developers inspect, extend, and build on the research.</p><p><button class="open-control" type="button" data-record-id="lea-paper">View Lea paper →</button></p>`
                 }
             ],
             awards: [],
@@ -4118,7 +4130,7 @@
             tags: ['AI for Mathematics', 'DARPA expMath', 'Human-AI Interaction', 'Research Engineering', 'Agentic Harnesses', 'Autoformalization', 'Formal Verification', 'Agent Systems', 'React', 'TypeScript', 'FastAPI', 'SSE', 'SQLite', 'Chrome Extensions', 'Node.js', 'Docker', 'Technical Writing']
         },
         'lea': {
-            overline: 'Open-source research project',
+            overline: 'Open-source research project · NeurIPS 2026 workshop paper accepted',
             overlineColor: 'var(--accent-3)',
             title: 'Lea',
             image: null,
@@ -4139,11 +4151,11 @@
                 },
                 {
                     title: 'Research Practice',
-                    content: `<p>The project strengthened my ability to connect human-AI interaction evidence to system design, compare autonomy-first provers with general-purpose coding agents, document a complex architecture, and evaluate complete research-mathematics formalization workflows for ongoing scholarly work.</p>`
+                    content: `<p>The project strengthened my ability to connect human-AI interaction evidence to system design, compare autonomy-first provers with general-purpose coding agents, document a complex architecture, and evaluate complete research-mathematics formalization workflows. I am a first author on the accompanying paper, accepted to the Sixth Workshop on Mathematical Reasoning and AI at NeurIPS 2026.</p><p><button class="open-control" type="button" data-record-id="lea-paper">View Lea paper →</button></p>`
                 },
                 {
                     title: 'Research Evaluation',
-                    content: `<p>I contributed to internal evaluations of long-horizon formalization, studying how the harness decomposes research-level proofs, draws on Mathlib, records human intervention, and exposes failure modes that require substantive correction. This work reinforced why transparent human control is central to Lea&apos;s design.</p>`
+                    content: `<p>The accepted paper reports a case study formalizing the Durfee square generating function from a mathematician&apos;s natural-language outline. Lea produced a complete Lean development from Mathlib alone across three sessions and 38 sub-agent invocations, with 28 human messages and one substantive correction. The development followed the intended decomposition closely, while still requiring stylistic cleanup before it would meet Mathlib&apos;s standards.</p><p>The paper&apos;s evidence consists of the architecture and one case study; it does not report a controlled comparison with other harnesses or an evaluation across mathematical domains. Expert review of the formalized statement remains necessary.</p>`
                 },
                 {
                     title: 'Community Impact',
@@ -4151,7 +4163,7 @@
                         <li>Lea lowers the setup barrier for formalization research by shipping its Lean tooling, project memory, blueprints, configurable sub-agent roles, verification path, and local-first applications as one open-source platform with Docker and local install routes.</li>
                         <li>The shared API is designed as community infrastructure: researchers can build new mathematician-facing clients without reimplementing the agent loop, Lean runtime, or proof history.</li>
                         <li>By September 10, 2026, the public repository had drawn 71 stars and 6 forks, while Professor Chinmay Hegde&apos;s launch announcement had received 1,083 reactions and 22 comments and invited users into a public Discord.</li>
-                        <li>At launch, Professor Hegde reported a 9/23 result on Math Inc.&apos;s FormalQualBench and internal use on multiple open problems, including a long-standing conjecture in nonlinear elliptic PDEs.</li>
+                        <li>Separately from the accepted paper&apos;s case study, Professor Hegde&apos;s launch announcement reported a 9/23 result on Math Inc.&apos;s FormalQualBench and internal use on multiple open problems, including a long-standing conjecture in nonlinear elliptic PDEs.</li>
                     </ul>`
                 }
             ],
@@ -4164,6 +4176,49 @@
                 { label: 'Lea Discord', url: 'https://discord.gg/CtEJvUTjm', type: 'outline' },
             ],
             tags: ['Lean 4', 'Mathlib', 'Formal Verification', 'AI for Mathematics', 'Agentic Harnesses', 'Human-AI Interaction', 'Multi-Agent Systems', 'React', 'TypeScript', 'FastAPI', 'SSE', 'SQLite', 'Chrome Extensions', 'Node.js', 'LaTeX/Overleaf', 'Docker', 'Testing']
+        },
+        'lea-paper': {
+            overline: 'NeurIPS 2026 · MATH-AI workshop · Accepted · First author',
+            overlineColor: 'var(--accent-3)',
+            title: 'Lea: An Agent Backbone for Mathematician-Controlled Formalization in Lean',
+            image: null,
+            sections: [
+                {
+                    title: 'Publication Status',
+                    content: `<p>Accepted to the Sixth Workshop on Mathematical Reasoning and AI (MATH-AI) at NeurIPS 2026. This work was developed at NYU Tandon&apos;s VIDA Center through DARPA&apos;s expMath program.</p>`
+                },
+                {
+                    title: 'Research Summary',
+                    content: `<p>Lea is a Lean-specific agent backbone that lets mathematicians guide formalization as it unfolds: decompose an argument, intervene during a run, inspect proof changes, and review the resulting statements. One application-neutral API exposes runs, sessions, and typed events, with Lean tooling, persistent blueprints, and verification already integrated. LeaChat supports interactive proof authoring, while LeaOverleaf formalizes theorems annotated in an Overleaf document; both share projects and sessions.</p>`
+                },
+                {
+                    title: 'My Contribution',
+                    content: `<p>I am a first author on this paper. My work spans research framing and related-work synthesis, agent and application architecture, full-stack implementation, the Overleaf-to-Lean workflow, case-study analysis, and technical writing.</p>`
+                },
+                {
+                    title: 'Authors',
+                    content: `<p><strong>Daniel Aarao Reis Arturi</strong>, Shaswat Patel, Kevin Gomez, Jaume de Dios Pont, Jorge Poco, Eduardo V. Teixeira, Sam Westrick, Claudio Silva, and Chinmay Hegde.</p>`
+                },
+                {
+                    title: 'Case Study: The Durfee Square Generating Function',
+                    content: `<p>From a mathematician&apos;s natural-language outline, Lea produced a complete Lean development of the Durfee square generating function using Mathlib alone. The proof spanned three sessions and 38 sub-agent invocations, with 28 human messages. One sub-agent required substantive correction after proving a trivial restatement of an earlier lemma instead of its target. The resulting development followed the intended decomposition closely, but still needs stylistic cleanup before it would meet Mathlib&apos;s standards.</p>`
+                },
+                {
+                    title: 'Scope and Limitations',
+                    content: `<p>The evidence is the system architecture and one case study, without a controlled comparison against other harnesses or an evaluation across mathematical domains. Machine verification establishes the Lean statement; correspondence with the mathematician&apos;s intended statement still requires expert review.</p>`
+                },
+                {
+                    title: 'Related Work',
+                    content: `<p><button class="open-control" type="button" data-record-id="lea">View Lea system →</button> <button class="open-control" type="button" data-record-id="nyu-expmath">View VIDA role →</button></p>`
+                }
+            ],
+            awards: [],
+            // Add the camera-ready paper URL here when it is available.
+            links: [
+                { label: 'Lea Project Website', url: 'https://vida-nyu.github.io/Lea/', type: 'primary' },
+                { label: 'Open-Source Repository', url: 'https://github.com/VIDA-NYU/Lea', type: 'outline' }
+            ],
+            tags: ['AI for Mathematics', 'Lean 4', 'Mathlib', 'Autoformalization', 'Formal Verification', 'Human-AI Interaction', 'Agentic Systems', 'Open-Source Research']
         },
         'nyu-fann-research': {
             overline: 'Independent study · Sep 2026 – Present',
@@ -4259,7 +4314,7 @@
             sections: [
                 {
                     title: 'Role and Collaboration',
-                    content: `<p>At McGill University, I worked with researchers at the University of Passau on recognizing and optimizing tree-shaped substructures inside property graphs. I am an author on the resulting vision paper, which is under review at EDBT 2027. The public arXiv preprint and reproducibility artifact are linked below. The project was partly funded by the Passau International Centre for Advanced Interdisciplinary Studies.</p>`
+                    content: `<p>At McGill University, I implemented and benchmarked structural indexes for tree-shaped substructures in property graphs and built a Dockerized reproducibility artifact, working with researchers at the University of Passau. This work contributed to a vision paper accepted to the EDBT 2027 Research Track, on which I am a co-author. The project was partly funded by the Passau International Centre for Advanced Interdisciplinary Studies.</p>`
                 },
                 {
                     title: 'Systems and Evaluation',
@@ -4279,44 +4334,48 @@
                 { text: 'Selected for McGill Science Undergraduate Research Showcase', date: '2026', icon: '&#9733;' }
             ],
             links: [
-                { label: 'Read the arXiv Preprint', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
-                { label: 'Explore the Reproducibility Artifact', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
+                { label: 'Explore the Reproducibility Artifact', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'primary' },
+                { label: 'Read the Earlier Preprint', url: 'https://arxiv.org/abs/2603.12476', type: 'outline' },
             ],
             tags: ['Graph Databases', 'Apache AGE', 'Kuzu', 'Neo4j', 'Dewey', 'PrePost', 'LDBC SNB', 'Python', 'Docker', 'Reproducibility']
         },
         'mcgill-graph-paper': {
-            overline: 'EDBT 2027 · Under review',
+            overline: 'EDBT 2027 · Accepted · Co-author',
             overlineColor: 'var(--accent-1)',
             title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs',
             image: null,
             sections: [
                 {
+                    title: 'Publication Status',
+                    content: `<p>Co-author of this vision paper, accepted to the EDBT 2027 Research Track in the second submission round.</p>`
+                },
+                {
+                    title: 'My Contribution',
+                    content: `<p>Implemented and benchmarked Dewey and PrePost structural indexes across Apache AGE, Kuzu, and Neo4j, and built a Dockerized reproducibility artifact supporting the research. My work covered dataset preparation, query implementation, cross-system evaluation, and reproducible experiment tooling.</p>`
+                },
+                {
                     title: 'Vision and Contribution',
                     content: `<p>Property graphs frequently contain semantically meaningful forests, including comment threads, place hierarchies, and tag ontologies, but current graph schemas, languages, and engines rarely manage them explicitly. This vision paper defines tree-shaped substructures and asks how structural indexes originally developed for XML can make recursive property-graph queries faster. The broader vision is to optimize queries using explicit knowledge of the shape and properties of the data throughout the graph query lifecycle: discovery, schema design, index maintenance, query rewriting, optimization, and interaction design.</p>`
                 },
                 {
-                    title: 'Review Status',
-                    content: `<p>I am an author on this paper, which is under review at EDBT 2027. The public arXiv preprint and reproducibility artifact are linked below.</p>`
-                },
-                {
                     title: 'Evaluation and Findings',
-                    content: `<p>The evaluation compares baseline traversal with Dewey and PrePost encodings across Apache AGE, Kuzu, and Neo4j. Apache AGE shows the strongest result: 6.7&times; to more than 300,000&times; speedups in microbenchmarks and 1.1&times; to 16&times; on three LDBC queries. Kuzu is strong on many microbenchmarks but is limited where its hash index cannot support the required range predicates. Neo4j is mixed, ranging from a 2&times; slowdown to a 1.6&times; speedup, because native adjacency traversal leaves less room for improvement. The paper therefore scopes its claim to systems and queries whose architecture can exploit structural indexes.</p>`
+                    content: `<p>In my implementation and evaluation work, I compared baseline traversal with Dewey and PrePost encodings across Apache AGE, Kuzu, and Neo4j. Apache AGE showed the strongest result: 6.7&times; to more than 300,000&times; speedups in microbenchmarks and 1.1&times; to 16&times; on three LDBC queries. Kuzu was strong on many microbenchmarks but limited where its hash index could not support the required range predicates. Neo4j showed mixed results, ranging from a 2&times; slowdown to a 1.6&times; speedup, because native adjacency traversal leaves less room for improvement. These findings show that the benefits depend on whether a system and query can exploit structural indexes.</p>`
                 },
                 {
-                    title: 'Co-Authors',
-                    content: `<p>Christoph Köhnen (University of Passau), Daniel Aarao Reis Arturi (McGill University), George Fletcher (Eindhoven University of Technology), Bettina Kemme (McGill University), and Stefanie Scherzinger (University of Passau).</p>`
+                    title: 'Collaborators',
+                    content: `<p>Collaborated with Christoph Köhnen (University of Passau), George Fletcher (Eindhoven University of Technology), Bettina Kemme (McGill University), and Stefanie Scherzinger (University of Passau).</p>`
                 },
                 {
                     title: 'Open Reproducibility Artifact',
-                    content: `<p>The public repository contains Dockerized setups for all three database systems; prepared synthetic and LDBC SNB datasets; baseline, Dewey, and PrePost query suites; experiment runners; committed reference results and execution plans; and report generators for heatmaps and cross-system speedup plots. Kuzu and Neo4j each cover ten logical operations per encoding, Apache AGE covers four, and the artifact also includes the three LDBC interactive queries used in the revised paper.</p>`
+                    content: `<p>The public repository contains Dockerized setups for all three database systems; prepared synthetic and LDBC SNB datasets; baseline, Dewey, and PrePost query suites; experiment runners; committed reference results and execution plans; and report generators for heatmaps and cross-system speedup plots. Kuzu and Neo4j each cover ten logical operations per encoding, Apache AGE covers four, and the artifact also includes the three LDBC interactive queries used in the benchmark.</p>`
                 }
             ],
             awards: [
                 { text: 'Selected for McGill Science Undergraduate Research Showcase', date: '2026', icon: '&#9733;' }
             ],
             links: [
-                { label: 'Read the arXiv Preprint', url: 'https://arxiv.org/abs/2603.12476', type: 'primary' },
-                { label: 'Explore the Code and Artifact', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'outline' },
+                { label: 'Explore the Code and Artifact', url: 'https://github.com/sdbs-uni-p/trees-in-graphs', type: 'primary' },
+                { label: 'Read the Earlier Preprint', url: 'https://arxiv.org/abs/2603.12476', type: 'outline' },
             ],
             tags: ['Graph Databases', 'Property Graphs', 'Structural Indexes', 'Apache AGE', 'Kuzu', 'Neo4j', 'Dewey', 'PrePost', 'LDBC SNB', 'Query Optimization', 'Reproducibility']
         },
@@ -4644,6 +4703,7 @@
     const registerRecords = [
         { id: 'nyu-expmath', code: 'R04', category: 'experience', type: 'Role', period: 'May 2026 – Present', title: 'Research Scientist · VIDA Center', origin: 'NYU Tandon · DARPA expMath', paired: true },
         { id: 'lea', code: 'R04', categories: ['research', 'engineering'], type: 'System', period: '2026', title: 'Lea', origin: 'Open source · NYU Tandon · VIDA · DARPA', paired: true },
+        { id: 'lea-paper', code: 'R04', category: 'research', type: 'Paper', period: '2026', title: 'Lea: An Agent Backbone for Mathematician-Controlled Formalization in Lean', origin: 'NeurIPS MATH-AI workshop · Accepted · First author', paired: true },
         { id: 'nyu-fann-research', code: 'F12', category: 'experience', type: 'Role', period: 'Sep 2026 – Present', title: 'Database Systems Researcher', origin: 'NYU Courant · Independent study · Prof. Jinyang Li', paired: true },
         { id: 'fannbench', code: 'F12', categories: ['research', 'engineering'], type: 'System', period: '2026', title: 'FANNBench', origin: 'Filtered ANN benchmark · Planned agentic policy synthesis · Query optimization', paired: true },
         { id: 'algoverse', code: 'A01', category: 'experience', type: 'Role', period: 'Apr 2025 – Present', title: 'AI Safety & Interpretability Research Intern', origin: 'Algoverse · Remote', paired: true },
@@ -4651,7 +4711,7 @@
         { id: 'mcgill-quantum', code: 'Q02', category: 'experience', type: 'Role', period: 'Jan – Jun 2026', title: 'Quantum Computing Research Intern', origin: 'McGill University · DISL', paired: true },
         { id: 'vldb-quantum', code: 'Q02', category: 'research', type: 'Paper', period: '2026', title: 'Evaluating a Quantum Solution: How Hard Can It Be?', origin: 'VLDB QC&DKM · Accepted · First author · Oral presenter', paired: true },
         { id: 'mcgill-graph', code: 'G03', category: 'experience', type: 'Role', period: 'Aug 2025 – Mar 2026', title: 'Graph Database Systems Research Intern', origin: 'McGill · University of Passau', paired: true },
-        { id: 'mcgill-graph-paper', code: 'G03', category: 'research', type: 'Paper', period: '2027', title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs', origin: 'EDBT · Under review · arXiv preprint', paired: true },
+        { id: 'mcgill-graph-paper', code: 'G03', category: 'research', type: 'Paper', period: '2027', title: 'Seeing the Trees for the Forest: Leveraging Tree-Shaped Substructures in Property Graphs', origin: 'EDBT · Accepted · Co-author', paired: true },
         { id: 'ml-sustainability', code: 'S06', category: 'research', type: 'Study', period: '—', title: 'Energy Profiling of GFlowNet Molecular Generation', origin: 'ML sustainability · PyTorch · CodeCarbon · CUDA', paired: false },
         { id: 'arxiv-reader', code: 'E05', category: 'engineering', type: 'System', period: '—', title: 'ArxivReader', origin: 'Web + iOS · Next.js · SwiftUI · Supabase', paired: false },
         { id: 'nyc-housing-rag', code: 'E09', category: 'engineering', type: 'System', period: '2026', title: 'NYC Housing Research', origin: 'Local-first legal research · FastAPI · SQLite · macOS', paired: false },
@@ -4694,6 +4754,7 @@
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let activeRegisterFilter = 'all';
     let expandedRelationId = null;
+    const relationResizeObserver = new ResizeObserver(syncRegisterRelations);
 
     function escapeText(value) {
         return String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
@@ -4781,6 +4842,7 @@
     }
 
     function renderRegister(filter = 'all') {
+        relationResizeObserver.disconnect();
         activeRegisterFilter = filter;
         const visible = registerRecords.filter(record => recordMatchesFilter(record, filter));
         const visibleIds = new Set(visible.map(record => record.id));
@@ -4798,24 +4860,40 @@
             return;
         }
         registerRows.innerHTML = groupVisibleRecords(visible).map(group => {
-            const rows = group.records.map(record => renderRegisterRow(record)).join('');
-            if (group.records.length < 2) {
-                const record = group.records[0];
+            const rows = group.records.map(record => {
                 const hiddenRelatedRecords = relatedRecordsFor(record).filter(related => !visibleIds.has(related.id));
-                if (!hiddenRelatedRecords.length) return rows;
+                if (!hiddenRelatedRecords.length) return renderRegisterRow(record);
                 const isExpanded = expandedRelationId === record.id;
                 return `
                     <section class="register-related-shell${isExpanded ? ' is-expanded' : ''}" data-code="${escapeText(record.code)}" aria-label="${escapeText(record.title)}; ${escapeText(hiddenRelatedRecords.length === 1 ? `related ${hiddenRelatedRecords[0].type.toLowerCase()}` : `${hiddenRelatedRecords.length} related entries`)}">
                         ${renderRegisterRow(record, hiddenRelatedRecords)}
                         ${renderRelatedPreview(record, hiddenRelatedRecords)}
                     </section>`;
-            }
+            }).join('');
+            if (group.records.length < 2) return rows;
             return `
                 <section class="register-group is-linked" data-code="${escapeText(group.code)}" aria-label="${escapeText(group.records.map(record => `${record.type}: ${record.title}`).join('; '))}">
                     <span class="register-relation-track" aria-hidden="true"></span>
                     ${rows}
                 </section>`;
         }).join('');
+        registerRows.querySelectorAll('.register-group.is-linked').forEach(group => relationResizeObserver.observe(group));
+        syncRegisterRelations();
+    }
+
+    function syncRegisterRelations() {
+        registerRows.querySelectorAll('.register-group.is-linked').forEach(group => {
+            const groupBounds = group.getBoundingClientRect();
+            const centers = [...group.querySelectorAll('[data-record-row-id]')].map(row => {
+                const bounds = row.getBoundingClientRect();
+                return bounds.top + bounds.height / 2 - groupBounds.top - group.clientTop;
+            });
+            const track = group.querySelector('.register-relation-track');
+            const firstCenter = centers[0];
+            track.style.top = `${firstCenter}px`;
+            track.style.height = `${centers[centers.length - 1] - firstCenter}px`;
+            track.innerHTML = centers.map(center => `<span class="register-relation-station" style="top: ${center - firstCenter}px"></span>`).join('');
+        });
     }
 
     function toggleRelatedRecords(recordId) {
@@ -4890,6 +4968,7 @@
             <div class="dialog-classification">${escapeText(data.overline || summary.type)}</div>
             ${sections}${awards}${links}${tags}`;
 
+        recordDialog.scrollTop = 0;
         recordDialog.showModal();
         document.body.style.overflow = 'hidden';
         document.getElementById('dialogClose').focus();
