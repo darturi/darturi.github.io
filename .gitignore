@@ -17,6 +17,7 @@
 .codex/
 .impeccable/
 Claude outputs/
+tmp/
 
 # Environment files and secrets
 .env
