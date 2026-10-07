@@ -331,19 +331,21 @@ def build_research(path: Path) -> None:
             "Sep 2026-Present",
             "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Database Systems&nbsp;&nbsp;|&nbsp;&nbsp;Prof. Jinyang Li",
             [
-                "Building FANNBench, a cross-system research benchmark for filtered approximate nearest-neighbor search across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with deterministic workload translation, exact filtered top-<i>k</i> conformance, same-execution telemetry, and controls separating native execution, observation, and policy overhead.",
-                "Designing the next stage: an offline language-model agent that will synthesize lightweight, workload-specific early-termination policies from prior query traces. Generated policies will make continue-or-stop decisions inside existing HNSW search paths with no model call at query time; implementation and held-out evaluation are forthcoming.",
+                "Built FANNAgent, an offline language-model agent that probes workloads, tests stopping policies, calibrates recall requirements, and freezes policies before held-out evaluation. Accepted policies execute inside HNSW search with no model call at query time.",
+                "Built FANNBench across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with exact filtered top-<i>k</i> checks, execution telemetry, and controls separating native search, observation, and policy overhead; implemented native pgvector stopping and isolated database copies.",
+                "Separated development, calibration, and held-out evaluation; implemented experiment budgets, resumable runs, and recoverable preparation. Native ARM64 qualification covers stopping, correctness, and recovery; broader performance evaluation is ongoing.",
             ],
             s,
         ),
         experience_entry(
             "Algoverse AI Research",
             "Apr 2025-Present",
-            f"<i>Research Intern</i>&nbsp;&nbsp;|&nbsp;&nbsp;AI Safety and Mechanistic Interpretability&nbsp;&nbsp;|&nbsp;&nbsp;{link('Paper', 'em_paper')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Project', 'em_project')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Code', 'em_code')}",
+            f"<i>Research Intern</i>&nbsp;&nbsp;|&nbsp;&nbsp;AI Safety and Mechanistic Interpretability&nbsp;&nbsp;|&nbsp;&nbsp;{link('Workshop paper', 'em_paper')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Project', 'em_project')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Code', 'em_code')}",
             [
-                "Studied emergent misalignment through the parameter geometry of LoRA-adapted Qwen2.5-7B and Llama 3.1-8B models. Across harmful tasks, mean principal angles were about 20 degrees versus an approximately 85-degree random baseline, with projection overlap near 0.8.",
-                "Used linear mode connectivity to test functional equivalence across independently fine-tuned models; cross-task interpolations retained misaligned behavior while preserving more than 90% coherence. Extended the work to post-hoc and during-training interventions and GSM8K retention.",
-                "Co-authored the NeurIPS 2025 workshop paper as a joint first author and began a separate study of how multi-thousand-turn conversations and persistent memory affect model persona stability.",
+                "Characterized shared parameter subspaces and cross-task linear mode connectivity in LoRA-adapted Qwen2.5-7B and Llama 3.1-8B models; interpolations retained misaligned behavior while preserving more than 90% coherence.",
+                "Compared harmful and matched benign fine-tunes across data-generation conditions, showing that shared parameter geometry can reflect template provenance rather than misalignment alone; tested robustness across LoRA ranks and model sizes.",
+                "Evaluated post-hoc negation and orthonormal projection, finding better reasoning retention with projection in the tested mixed-data settings; contributed to the full-length manuscript under review at ICLR 2027.",
+                "Joint first author of the NeurIPS 2025 workshop paper; a separate ongoing project studies how multi-thousand-turn conversations and persistent memory affect model persona stability.",
             ],
             s,
         ),
@@ -389,11 +391,19 @@ def build_research(path: Path) -> None:
             s["note"],
         ),
         Paragraph(
-            f'<i>{link("Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior", "em_paper")}</i><br/><b>Daniel Aarao Reis Arturi*</b>, Eric Zhang*, Andrew Ansah, Kevin Zhu, Ashwinee Panda, and Aishwarya Balwani. arXiv:2511.02022, 2025. Joint first author. &nbsp;{link("[Project]", "em_project")}&nbsp;&nbsp;{link("[Code]", "em_code")}',
+            '<i>Shared Parametric Geometry and Data Provenance in Model Organisms for Emergent Misalignment</i><br/>2026. Full-length manuscript under review at ICLR 2027.',
             s["publication"],
         ),
         Paragraph(
-            "* Joint first authors with equal contributions; authors listed alphabetically. Expanded manuscript: <i>Of Basins and Vaccines: Emergent Misalignment Through the Lens of Parametric Geometry</i> (ICLR submission).",
+            "Extends the NeurIPS 2025 workshop work with robustness analyses, matched benign controls, data-provenance experiments, and post-hoc interventions evaluated for alignment and reasoning retention.",
+            s["note"],
+        ),
+        Paragraph(
+            f'<i>{link("Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior", "em_paper")}</i><br/><b>Daniel Aarao Reis Arturi*</b>, Eric Zhang*, Andrew Ansah, Kevin Zhu, Ashwinee Panda, and Aishwarya Balwani. Accepted to NeurIPS 2025 workshops. arXiv:2511.02022, 2025. Joint first author. &nbsp;{link("[Project]", "em_project")}&nbsp;&nbsp;{link("[Code]", "em_code")}',
+            s["publication"],
+        ),
+        Paragraph(
+            "* Joint first authors with equal contributions; joint first authors listed alphabetically.",
             s["note"],
         ),
         Paragraph(
@@ -440,14 +450,14 @@ def build_research(path: Path) -> None:
     story += section("AWARDS AND RECOGNITION", s)
     story += [
         Paragraph("<b>NeurIPS 2026 MATH-AI</b>&nbsp;&nbsp;Workshop Paper Acceptance&nbsp;&nbsp;|&nbsp;&nbsp;First Author", s["body_tight"]),
-        Paragraph("<b>NeurIPS 2025 workshops</b>&nbsp;&nbsp;UniReps - Oral Award&nbsp;&nbsp;|&nbsp;&nbsp;MechInterp - Honourable Mention&nbsp;&nbsp;|&nbsp;&nbsp;CogInterp - Poster Acceptance", s["body_tight"]),
+        Paragraph("<b>NeurIPS 2025 workshops</b>&nbsp;&nbsp;UniReps - Oral Presentation + Honorable Mention&nbsp;&nbsp;|&nbsp;&nbsp;MechInterp - Spotlight&nbsp;&nbsp;|&nbsp;&nbsp;CogInterp - Poster Acceptance", s["body_tight"]),
         Paragraph("<b>VLDB 2026 QC&amp;DKM</b>&nbsp;&nbsp;Workshop Paper Acceptance&nbsp;&nbsp;|&nbsp;&nbsp;First-Author Oral Presentation", s["body_tight"]),
         Paragraph("McGill Science Undergraduate Research Showcase (2026)&nbsp;&nbsp;|&nbsp;&nbsp;Wing Hing Chan Scholarship in Science&nbsp;&nbsp;|&nbsp;&nbsp;Algoverse Merit Scholarship (twice)&nbsp;&nbsp;|&nbsp;&nbsp;McGill Dean's Honour List", s["body"]),
     ]
 
     story += section("RESEARCH METHODS AND TECHNICAL SKILLS", s)
     story += [
-        Paragraph("<b>Methods</b>&nbsp;&nbsp;Experimental design, benchmark design, reproducible evaluation, filtered-ANN evaluation, query optimization, performance instrumentation, exact-oracle validation, mechanistic interpretability, parameter-subspace analysis, linear mode connectivity, QUBO, statistical analysis", s["small"]),
+        Paragraph("<b>Methods</b>&nbsp;&nbsp;Experimental design, benchmark design, reproducible evaluation, filtered-ANN evaluation, query optimization, performance instrumentation, exact-oracle validation, mechanistic interpretability, parameter-subspace analysis, linear mode connectivity, data-provenance analysis, intervention evaluation, QUBO, statistical analysis", s["small"]),
         Paragraph("<b>Research stack</b>&nbsp;&nbsp;Python, PyTorch, Transformers, NumPy, pandas, scikit-learn, Jupyter, CUDA, Slurm, CodeCarbon, D-Wave Ocean, Qiskit Aer", s["small"]),
         Paragraph("<b>Systems</b>&nbsp;&nbsp;Lean 4, Mathlib, FastAPI, React, TypeScript, SQLite, PostgreSQL, pgvector, Elasticsearch/Lucene, Weaviate, Docker, Git, Apache AGE, Kuzu, Neo4j", s["small"]),
     ]
@@ -590,9 +600,9 @@ def build_industry(path: Path) -> None:
             "Sep 2026-Present",
             "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Database Systems&nbsp;&nbsp;|&nbsp;&nbsp;Prof. Jinyang Li",
             [
-                "Building FANNBench, a cross-engine benchmark that executes equivalent filtered-vector workloads against pgvector, Elasticsearch/Lucene, and Weaviate using deterministic adapters and exact top-<i>k</i> correctness oracles.",
-                "Instrumenting HNSW execution paths with policy checkpoints and same-run telemetry to measure search work, recall, feature-observation overhead, and policy overhead independently.",
-                "Designing an offline LLM-agent pipeline that will transform prior execution traces into lightweight early-termination policies that run as continue-or-stop logic without online model inference.",
+                "Built FANNAgent, an offline LLM agent that probes workloads, tests stopping policies, calibrates recall, and freezes policies before held-out evaluation; accepted policies run inside HNSW without query-time model calls.",
+                "Built FANNBench across pgvector, Elasticsearch/Lucene, and Weaviate with exact top-<i>k</i> checks and execution telemetry; implemented native pgvector stopping, isolated database copies, and recovery. Broader performance evaluation is ongoing.",
+                "Packaged a reusable agent core and typed backend extensions with spending and experiment budgets, resumable runs, bounded decision-tree policies, and cleanup restricted to each run's resources.",
             ],
             s,
         ),
@@ -619,10 +629,10 @@ def build_industry(path: Path) -> None:
         experience_entry(
             "Algoverse AI Research",
             "Apr 2025-Present",
-            f"<i>Research Intern</i>&nbsp;&nbsp;|&nbsp;&nbsp;AI Safety and Mechanistic Interpretability&nbsp;&nbsp;|&nbsp;&nbsp;{link('Paper', 'em_paper')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Code', 'em_code')}",
+            f"<i>Research Intern</i>&nbsp;&nbsp;|&nbsp;&nbsp;AI Safety and Mechanistic Interpretability&nbsp;&nbsp;|&nbsp;&nbsp;{link('Workshop paper', 'em_paper')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Code', 'em_code')}",
             [
-                "Analyzed the parameter geometry of LoRA-adapted Qwen2.5-7B and Llama 3.1-8B models with PyTorch, principal-angle analysis, projection overlap, and linear mode connectivity.",
-                "Built reproducible fine-tuning and evaluation pipelines; cross-task interpolations retained misaligned behavior while preserving more than 90% coherence, contributing to a joint-first-author NeurIPS workshop paper.",
+                "Analyzed LoRA-adapted Qwen2.5-7B and Llama 3.1-8B models using PyTorch, parameter-subspace analysis, and linear mode connectivity.",
+                "Built fine-tuning and evaluation pipelines for matched benign controls, data provenance, and post-hoc interventions; contributed to a full-length manuscript under review at ICLR 2027.",
             ],
             s,
         ),
@@ -653,7 +663,7 @@ def build_industry(path: Path) -> None:
     story += section("SELECTED RESEARCH OUTPUT", s)
     story += [
         Paragraph(
-            f'<b>NeurIPS 2026 MATH-AI</b>: accepted Lea paper, first author&nbsp;&nbsp;|&nbsp;&nbsp;<b>EDBT 2027</b>: accepted research-track paper, co-author&nbsp;&nbsp;|&nbsp;&nbsp;<b>NeurIPS 2025 workshops</b>: {link("joint-first-author paper", "em_paper")}, UniReps Oral Award, MechInterp Honourable Mention&nbsp;&nbsp;|&nbsp;&nbsp;<b>VLDB 2026 QC&amp;DKM</b>: {link("accepted paper", "quantum_paper")}, first author and oral presenter',
+            f'<b>NeurIPS 2026 MATH-AI</b>: accepted Lea paper, first author&nbsp;&nbsp;|&nbsp;&nbsp;<b>EDBT 2027</b>: accepted paper, co-author&nbsp;&nbsp;|&nbsp;&nbsp;<b>ICLR 2027</b>: full-length manuscript under review&nbsp;&nbsp;|&nbsp;&nbsp;<b>NeurIPS 2025 workshops</b>: {link("joint-first-author paper", "em_paper")}, UniReps oral + honorable mention, MechInterp spotlight&nbsp;&nbsp;|&nbsp;&nbsp;<b>VLDB 2026 QC&amp;DKM</b>: {link("accepted paper", "quantum_paper")}, first author and oral presenter',
             s["small"],
         )
     ]
