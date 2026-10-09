@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cover Letter"
+  short_description: "Evidence-based cover letters for Daniel Arturi"
+  default_prompt: "Use $cover-letter to draft a concise cover letter for this job and explain the choices with citations."
