@@ -304,7 +304,7 @@ def build_research(path: Path) -> None:
     story += section("RESEARCH PROFILE", s)
     story += [
         Paragraph(
-            "Research scientist and engineer building reproducible benchmarks, agentic systems, and experimental infrastructure for open-ended problems. Current work spans AI for mathematics, mechanistic interpretability, and agentic query optimization for vector search.",
+            "Research scientist and engineer building reproducible benchmarks, agentic systems, and experimental infrastructure for open-ended problems. Current work spans AI for mathematics, mechanistic interpretability, and LLM-guided stopping policies for filtered vector search.",
             s["body"],
         ),
         Paragraph(
@@ -329,11 +329,11 @@ def build_research(path: Path) -> None:
         experience_entry(
             "New York University, Courant Institute of Mathematical Sciences",
             "Sep 2026-Present",
-            "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Database Systems&nbsp;&nbsp;|&nbsp;&nbsp;Prof. Jinyang Li",
+            "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Filtered Vector Search&nbsp;&nbsp;|&nbsp;&nbsp;Advisor: Prof. Jinyang Li",
             [
-                "Built FANNAgent, an offline language-model agent that probes workloads, tests stopping policies, calibrates recall requirements, and freezes policies before held-out evaluation. Accepted policies execute inside HNSW search with no model call at query time.",
-                "Built FANNBench across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with exact filtered top-<i>k</i> checks, execution telemetry, and controls separating native search, observation, and policy overhead; implemented native pgvector stopping and isolated database copies.",
-                "Separated development, calibration, and held-out evaluation; implemented experiment budgets, resumable runs, and recoverable preparation. Native ARM64 qualification covers stopping, correctness, and recovery; broader performance evaluation is ongoing.",
+                "Developed FANNAgent, an offline LLM-guided system for workload-specific early stopping in filtered approximate nearest-neighbor search; implemented bounded policies inside pgvector's HNSW search without query-time model calls.",
+                "Built FANNBench across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with exact filtered top-<i>k</i> references and native instrumentation separating search, feature-collection, and policy-execution costs.",
+                "Measured 59.7-62.0% lower mean latency than native pgvector for an agent-generated policy on 300 development query-filter cases, with 95% mean Recall@10 versus 99% for the baseline.",
             ],
             s,
         ),
@@ -578,7 +578,7 @@ def build_industry(path: Path) -> None:
     story += section("PROFESSIONAL SUMMARY", s)
     story += [
         Paragraph(
-            "Research engineer and software engineer building agentic systems, cross-system benchmarks, and production-minded research infrastructure. Experience spanning LLM agents, vector search, query optimization, full-stack systems, and reproducible performance evaluation.",
+            "Research engineer and software engineer building agentic systems, cross-system benchmarks, and production-minded research infrastructure. Experience spanning LLM agents, filtered vector search, stopping-policy synthesis, full-stack systems, and reproducible performance evaluation.",
             s["body"],
         )
     ]
@@ -598,11 +598,11 @@ def build_industry(path: Path) -> None:
         experience_entry(
             "New York University, Courant Institute of Mathematical Sciences",
             "Sep 2026-Present",
-            "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Database Systems&nbsp;&nbsp;|&nbsp;&nbsp;Prof. Jinyang Li",
+            "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Filtered Vector Search&nbsp;&nbsp;|&nbsp;&nbsp;Advisor: Prof. Jinyang Li",
             [
-                "Built FANNAgent, an offline LLM agent that probes workloads, tests stopping policies, calibrates recall, and freezes policies before held-out evaluation; accepted policies run inside HNSW without query-time model calls.",
-                "Built FANNBench across pgvector, Elasticsearch/Lucene, and Weaviate with exact top-<i>k</i> checks and execution telemetry; implemented native pgvector stopping, isolated database copies, and recovery. Broader performance evaluation is ongoing.",
-                "Packaged a reusable agent core and typed backend extensions with spending and experiment budgets, resumable runs, bounded decision-tree policies, and cleanup restricted to each run's resources.",
+                "Developed FANNAgent, an offline LLM-guided system for workload-specific early stopping in filtered approximate nearest-neighbor search; implemented bounded policies inside pgvector's HNSW search without query-time model calls.",
+                "Built FANNBench across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with exact filtered top-<i>k</i> references and native instrumentation separating search, feature-collection, and policy-execution costs.",
+                "Measured 59.7-62.0% lower mean latency than native pgvector for an agent-generated policy on 300 development query-filter cases, with 95% mean Recall@10 versus 99% for the baseline.",
             ],
             s,
         ),

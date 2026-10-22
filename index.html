@@ -4223,20 +4223,20 @@
         'nyu-fann-research': {
             overline: 'Independent study · Sep 2026 – Present',
             overlineColor: 'var(--accent-3)',
-            title: 'Database Systems Research · NYU Courant',
+            title: 'Filtered Vector Search Research · NYU Courant',
             image: null,
             sections: [
                 {
                     title: 'Research Context',
-                    content: `<p>At NYU Courant, I am conducting an independent study with Professor Jinyang Li on learning-guided query optimization for filtered vector search. The central research question is whether an offline language-model agent can use evidence from prior query executions to synthesize compact, workload-specific early-termination policies. Those policies run inside existing search procedures, making continue-or-stop decisions without an agent or model call at query time.</p>`
+                    content: `<p>At NYU Courant, I am conducting an independent study with Professor Jinyang Li on LLM-guided stopping policies for filtered approximate nearest-neighbor search. I investigate whether an offline language-model agent can synthesize compact, workload-specific rules that reduce query latency while controlling recall loss.</p>`
                 },
                 {
                     title: 'Agent and Systems Work',
-                    content: `<p>I built FANNAgent, an offline policy-synthesis system that probes a workload, tests candidate stopping policies, calibrates them against recall requirements, and freezes a policy before final held-out evaluation. Its reusable core controls experimental splits, spending, evidence, and policy acceptance; a separately installed pgvector extension handles database copies, native HNSW instrumentation, exact references, and application sessions.</p><p>FANNBench provides the complementary benchmark infrastructure, with comparable filtered-vector workloads, exact-result checks, and execution telemetry across PostgreSQL with pgvector, Elasticsearch/Lucene, and Weaviate.</p>`
+                    content: `<p>I developed FANNAgent, an offline LLM-guided system for workload-specific early stopping, and implemented bounded policies inside pgvector&apos;s HNSW search without query-time model calls.</p><p>I built FANNBench across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with exact filtered top-<em>k</em> references and native instrumentation separating search, feature-collection, and policy-execution costs.</p>`
                 },
                 {
-                    title: 'Current Status',
-                    content: `<p>The agent workflow and pgvector integration are implemented and packaged for local installation. Native qualification on ARM64 covers real stopping, result correctness, recovery, and isolated database copies. The research is now moving toward broader held-out performance evaluation; agent extensions for Elasticsearch/Lucene and Weaviate remain future work. The implementation does not yet establish a performance improvement.</p>`
+                    title: 'Measured Results',
+                    content: `<p>Measured <strong>59.7&ndash;62.0% lower mean latency</strong> than native pgvector for an agent-generated policy on <strong>300 development query-filter cases</strong>, with <strong>95% mean Recall@10 versus 99% for the baseline</strong>.</p>`
                 }
             ],
             awards: [],
@@ -4251,12 +4251,16 @@
             sections: [
                 {
                     title: 'Overview',
-                    content: `<p>I built FANNAgent and FANNBench to study agent-synthesized early termination in filtered approximate nearest-neighbor search. FANNAgent uses an offline language-model agent to investigate a workload and synthesize compact stopping policies. FANNBench supplies the cross-system workloads and measurements. Accepted policies execute inside the database&apos;s existing HNSW search loop, with no language-model call at query time.</p>`
+                    content: `<p>I developed FANNAgent for offline LLM-guided synthesis of workload-specific stopping policies for filtered approximate nearest-neighbor search. Bounded policies execute inside pgvector&apos;s HNSW search without query-time model calls. FANNBench provides the complementary three-engine benchmark and measurement infrastructure.</p>`
+                },
+                {
+                    title: 'Measured Results',
+                    content: `<p>Measured <strong>59.7&ndash;62.0% lower mean latency</strong> than native pgvector for an agent-generated policy on <strong>300 development query-filter cases</strong>, with <strong>95% mean Recall@10 versus 99% for the baseline</strong>.</p>`
                 },
                 {
                     title: 'Offline Policy Synthesis',
                     content: `<ul>
-                        <li>Built a tool-driven exploration loop for inspecting data, probing queries, collecting execution traces, testing candidate policies, and calibrating recall constraints.</li>
+                        <li>Built a tool-driven exploration loop for inspecting data, probing queries, collecting execution traces, testing candidate policies, and calibrating them against fixed recall requirements.</li>
                         <li>Separated development, calibration, and final held-out evaluation; policies are frozen before final testing, and application use requires explicit acceptance and compatibility checks.</li>
                         <li>Implemented spending and experiment budgets, persistent run state, interruption and resume, and recovery of an eligible calibrated candidate when the model budget is exhausted.</li>
                         <li>Validated generated policies as bounded decision trees and bytecode with only continue-or-stop actions; malformed tool requests receive actionable feedback and repeated invalid submissions end exploration.</li>
@@ -4273,7 +4277,7 @@
                 },
                 {
                     title: 'Benchmark Infrastructure',
-                    content: `<p>FANNBench executes comparable filtered-vector workloads across PostgreSQL with pgvector, Elasticsearch/Lucene, and Weaviate. It records exact filtered Recall@<em>k</em>, latency, execution-path telemetry, and search work in reproducible experiment artifacts. Separate native, no-op observation, fixed-budget, and candidate-policy runs expose instrumentation overhead and the effect of stopping.</p>`
+                    content: `<p>FANNBench executes comparable filtered-vector workloads across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate. It records exact filtered top-<em>k</em> references, Recall@<em>k</em>, latency, execution-path telemetry, and search work in reproducible experiment artifacts. Matched native, no-op observation, fixed-budget, and candidate-policy runs separate search, feature-collection, and policy-execution costs.</p>`
                 }
             ],
             awards: [],
@@ -4740,7 +4744,7 @@
         { id: 'nyu-expmath', code: 'R04', category: 'experience', type: 'Role', period: 'May 2026 – Present', title: 'Research Scientist · VIDA Center', origin: 'NYU Tandon · DARPA expMath', paired: true },
         { id: 'lea', code: 'R04', categories: ['research', 'engineering'], type: 'System', period: '2026', title: 'Lea', origin: 'Open source · NYU Tandon · VIDA · DARPA', paired: true },
         { id: 'lea-paper', code: 'R04', category: 'research', type: 'Paper', period: '2026', title: 'Lea: An Agent Backbone for Mathematician-Controlled Formalization in Lean', origin: 'NeurIPS MATH-AI workshop · Accepted · First author', paired: true },
-        { id: 'nyu-fann-research', code: 'F12', category: 'experience', type: 'Role', period: 'Sep 2026 – Present', title: 'Database Systems Researcher', origin: 'NYU Courant · Independent study · Prof. Jinyang Li', paired: true },
+        { id: 'nyu-fann-research', code: 'F12', category: 'experience', type: 'Role', period: 'Sep 2026 – Present', title: 'Independent Study Researcher', origin: 'NYU Courant · Filtered Vector Search · Advisor: Prof. Jinyang Li', paired: true },
         { id: 'fannbench', code: 'F12', categories: ['research', 'engineering'], type: 'System', period: '2026', title: 'FANNAgent & FANNBench', origin: 'Offline policy synthesis · Native pgvector integration · Filtered ANN benchmark', paired: true },
         { id: 'algoverse', code: 'A01', category: 'experience', type: 'Role', period: 'Apr 2025 – Present', title: 'AI Safety & Interpretability Research Intern', origin: 'Algoverse · Remote', paired: true },
         { id: 'iclr-em-paper', code: 'A01', category: 'research', type: 'Paper', period: '2026', title: 'Shared Parametric Geometry and Data Provenance in Model Organisms for Emergent Misalignment', origin: 'Full-length manuscript · ICLR 2027 · Under review', paired: true },
