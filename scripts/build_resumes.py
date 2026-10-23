@@ -42,6 +42,7 @@ URLS = {
     "github": "https://github.com/darturi",
     "fannagent_code": "https://github.com/darturi/FANN-Agent/tree/public-facing",
     "lea": "https://github.com/VIDA-NYU/Lea",
+    "lea_website": "https://vida-nyu.github.io/Lea/",
     "expmath": "https://www.darpa.mil/research/programs/expmath-exponential-mathematics",
     "em_paper": "https://arxiv.org/abs/2511.02022",
     "em_project": "https://darturi.github.io/shared-em-subspaces/",
@@ -308,7 +309,7 @@ def build_research(path: Path) -> None:
         experience_entry(
             "NYU Tandon School of Engineering, VIDA Center",
             "May 2026-Present",
-            f"<i>Research Scientist</i>&nbsp;&nbsp;|&nbsp;&nbsp;DARPA expMath&nbsp;&nbsp;|&nbsp;&nbsp;{link('Lea', 'lea')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Program', 'expmath')}",
+            f"<i>Research Scientist</i>&nbsp;&nbsp;|&nbsp;&nbsp;DARPA expMath&nbsp;&nbsp;|&nbsp;&nbsp;{link('Lea website', 'lea_website')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Code', 'lea')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Program', 'expmath')}",
             [
                 "Helped develop Lea, an open-source platform for mathematician-controlled formalization that supports proof decomposition, mid-run intervention, trajectory inspection, manual correction, and auditable Lean 4 output.",
                 "Worked on the agentic harness and its research infrastructure, integrating project-aware execution, configurable sub-agent roles, Lean checking, typed event streams, persistent proof history, and shared state across standalone and Overleaf clients.",
@@ -366,7 +367,7 @@ def build_research(path: Path) -> None:
     story += section("PUBLICATIONS AND MANUSCRIPTS", s)
     story += [
         Paragraph(
-            f'<i>Lea: An Agent Backbone for Mathematician-Controlled Formalization in Lean</i><br/><b>Daniel Aarao Reis Arturi</b>, Shaswat Patel, Kevin Gomez, Jaume de Dios Pont, Jorge Poco, Eduardo V. Teixeira, Sam Westrick, Claudio Silva, and Chinmay Hegde. Accepted to the Sixth Workshop on Mathematical Reasoning and AI (MATH-AI), NeurIPS 2026. First author. &nbsp;{link("[Code]", "lea")}',
+            f'<i>Lea: An Agent Backbone for Mathematician-Controlled Formalization in Lean</i><br/><b>Daniel Aarao Reis Arturi</b>, Shaswat Patel, Kevin Gomez, Jaume de Dios Pont, Jorge Poco, Eduardo V. Teixeira, Sam Westrick, Claudio Silva, and Chinmay Hegde. Accepted to the Sixth Workshop on Mathematical Reasoning and AI (MATH-AI), NeurIPS 2026. First author. &nbsp;{link("[Website]", "lea_website")}&nbsp;&nbsp;{link("[Code]", "lea")}',
             s["publication"],
         ),
         Paragraph(
@@ -494,7 +495,7 @@ def build_ai_security(path: Path) -> None:
         experience_entry(
             "NYU Tandon School of Engineering, VIDA Center",
             "May 2026-Present",
-            f"<i>Research Scientist</i>&nbsp;&nbsp;|&nbsp;&nbsp;DARPA expMath&nbsp;&nbsp;|&nbsp;&nbsp;{link('Lea', 'lea')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Program', 'expmath')}",
+            f"<i>Research Scientist</i>&nbsp;&nbsp;|&nbsp;&nbsp;DARPA expMath&nbsp;&nbsp;|&nbsp;&nbsp;{link('Lea website', 'lea_website')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Code', 'lea')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Program', 'expmath')}",
             [
                 "Helped develop Lea, an open-source agent platform for mathematician-controlled formalization with proof decomposition, bounded sub-agent roles, mid-run intervention, trajectory inspection, manual correction, and auditable Lean 4 output.",
                 "Worked on the project-aware agent harness and its research infrastructure, integrating tool and skill access, MCP servers, Lean checking, typed event streams, persistent proof history, and shared state across standalone and Overleaf clients.",
@@ -576,7 +577,7 @@ def build_industry(path: Path) -> None:
         experience_entry(
             "NYU Tandon School of Engineering, VIDA Center",
             "May 2026-Present",
-            f"<i>Research Scientist</i>&nbsp;&nbsp;|&nbsp;&nbsp;Agentic Systems and Research Infrastructure&nbsp;&nbsp;|&nbsp;&nbsp;{link('Lea', 'lea')}",
+            f"<i>Research Scientist</i>&nbsp;&nbsp;|&nbsp;&nbsp;Agentic Systems and Research Infrastructure&nbsp;&nbsp;|&nbsp;&nbsp;{link('Lea website', 'lea_website')}&nbsp;&nbsp;|&nbsp;&nbsp;{link('Code', 'lea')}",
             [
                 "Developed Lea's project-aware agent harness with configurable sub-agents, Lean checking, and persistent proof history; first-author paper accepted to NeurIPS 2026 MATH-AI.",
                 "Built the React/Vite/TypeScript client and Python/FastAPI/SQLite backend path, including typed server-sent events, live proof updates, shared state, usage tracking, and spend controls.",
@@ -652,7 +653,7 @@ def build_industry(path: Path) -> None:
     story += section("SELECTED RESEARCH OUTPUT", s)
     story += [
         Paragraph(
-            f'<b>NeurIPS 2026 MATH-AI</b>: accepted Lea paper, first author&nbsp;&nbsp;|&nbsp;&nbsp;<b>EDBT 2027</b>: accepted paper, co-author&nbsp;&nbsp;|&nbsp;&nbsp;<b>ICLR 2027</b>: full-length manuscript under review&nbsp;&nbsp;|&nbsp;&nbsp;<b>NeurIPS 2025 workshops</b>: {link("joint-first-author paper", "em_paper")}, UniReps oral + honorable mention, MechInterp spotlight&nbsp;&nbsp;|&nbsp;&nbsp;<b>VLDB 2026 QC&amp;DKM</b>: {link("accepted paper", "quantum_paper")}, first author and oral presenter',
+            f'<b>NeurIPS 2026 MATH-AI</b>: {link("accepted Lea paper", "lea_website")}, first author&nbsp;&nbsp;|&nbsp;&nbsp;<b>EDBT 2027</b>: accepted paper, co-author&nbsp;&nbsp;|&nbsp;&nbsp;<b>ICLR 2027</b>: full-length manuscript under review&nbsp;&nbsp;|&nbsp;&nbsp;<b>NeurIPS 2025 workshops</b>: {link("joint-first-author paper", "em_paper")}, UniReps oral + honorable mention, MechInterp spotlight&nbsp;&nbsp;|&nbsp;&nbsp;<b>VLDB 2026 QC&amp;DKM</b>: {link("accepted paper", "quantum_paper")}, first author and oral presenter',
             s["small"],
         )
     ]
