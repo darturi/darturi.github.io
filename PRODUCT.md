@@ -44,6 +44,7 @@ The current experience supports both quick scanning and deeper evaluation: visit
 ## Brand Commitments
 
 - Use the name Daniel Aarao Reis Arturi.
+- Given name: Daniel. Family name: Aarao Reis Arturi. Keep the full family name in attribution and metadata.
 - Preserve a credible first-person professional voice grounded in specific work and evidence.
 - Present Daniel as a research scientist and software engineer without overstating the status or outcome of work under review.
 - Keep research and engineering as connected parts of one professional identity rather than treating either as incidental.

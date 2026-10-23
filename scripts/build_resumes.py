@@ -40,6 +40,7 @@ URLS = {
     "email": "mailto:dar579@nyu.edu",
     "linkedin": "https://linkedin.com/in/daniel-aarao-reis-arturi",
     "github": "https://github.com/darturi",
+    "fannagent_code": "https://github.com/darturi/FANN-Agent/tree/public-facing",
     "lea": "https://github.com/VIDA-NYU/Lea",
     "expmath": "https://www.darpa.mil/research/programs/expmath-exponential-mathematics",
     "em_paper": "https://arxiv.org/abs/2511.02022",
@@ -233,8 +234,9 @@ def header_story(role: str, s: dict[str, ParagraphStyle]) -> list:
     contact = (
         "New York, NY&nbsp;&nbsp;|&nbsp;&nbsp;+1 917-655-9244&nbsp;&nbsp;|&nbsp;&nbsp;"
         f'{link("dar579@nyu.edu", "email")}&nbsp;&nbsp;|&nbsp;&nbsp;'
-        f'{link("linkedin.com/in/daniel-aarao-reis-arturi", "linkedin")}&nbsp;&nbsp;|&nbsp;&nbsp;'
-        f'{link("github.com/darturi", "github")}'
+        f'{link("LinkedIn", "linkedin")}&nbsp;&nbsp;|&nbsp;&nbsp;'
+        f'{link("GitHub", "github")}&nbsp;&nbsp;|&nbsp;&nbsp;'
+        f'{link("FANNAgent code", "fannagent_code")}'
     )
     return [
         Paragraph("Daniel Aarao Reis Arturi", s["name"]),
@@ -243,27 +245,18 @@ def header_story(role: str, s: dict[str, ParagraphStyle]) -> list:
     ]
 
 
-def footer(canvas, document, label: str) -> None:
-    canvas.saveState()
-    canvas.setFont("Helvetica", 7.2)
-    canvas.setFillColor(MUTED)
-    text = f"Daniel Arturi  |  {label}  |  {STAMP}"
-    canvas.drawCentredString(PAGE_WIDTH / 2, 14, text)
-    canvas.restoreState()
-
-
-def later_header(canvas, document, label: str) -> None:
+def later_header(canvas, document) -> None:
     canvas.saveState()
     canvas.setStrokeColor(RULE)
     canvas.setLineWidth(0.35)
     canvas.line(LEFT, PAGE_HEIGHT - 19, PAGE_WIDTH - RIGHT, PAGE_HEIGHT - 19)
     canvas.setFont("Helvetica", 7.2)
     canvas.setFillColor(MUTED)
-    canvas.drawRightString(PAGE_WIDTH - RIGHT, PAGE_HEIGHT - 15, f"Daniel Aarao Reis Arturi  |  {label}  |  {STAMP}")
+    canvas.drawRightString(PAGE_WIDTH - RIGHT, PAGE_HEIGHT - 15, f"Daniel Aarao Reis Arturi  |  {STAMP}")
     canvas.restoreState()
 
 
-def make_document(path: Path, title: str, subject: str, author_role: str, later_label: str) -> BaseDocTemplate:
+def make_document(path: Path, title: str, subject: str, author_role: str) -> BaseDocTemplate:
     document = BaseDocTemplate(
         str(path),
         pagesize=letter,
@@ -279,15 +272,13 @@ def make_document(path: Path, title: str, subject: str, author_role: str, later_
     frame = Frame(LEFT, BOTTOM, CONTENT_WIDTH, PAGE_HEIGHT - TOP - BOTTOM, id="content", leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
 
     def first_page(canvas, doc):
-        footer(canvas, doc, later_label)
         canvas.setTitle(title)
         canvas.setAuthor("Daniel Aarao Reis Arturi")
         canvas.setSubject(subject)
         canvas.setKeywords(author_role)
 
     def later_page(canvas, doc):
-        later_header(canvas, doc, later_label)
-        footer(canvas, doc, later_label)
+        later_header(canvas, doc)
 
     document.addPageTemplates(
         [
@@ -331,7 +322,7 @@ def build_research(path: Path) -> None:
             "Sep 2026-Present",
             "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Filtered Vector Search&nbsp;&nbsp;|&nbsp;&nbsp;Advisor: Prof. Jinyang Li",
             [
-                "Developed FANNAgent, an offline LLM-guided system for workload-specific early stopping in filtered approximate nearest-neighbor search; implemented bounded policies inside pgvector's HNSW search without query-time model calls.",
+                f"Developed {link('FANNAgent', 'fannagent_code')}, an offline LLM-guided system for workload-specific early stopping in filtered approximate nearest-neighbor search; implemented bounded policies inside pgvector's HNSW search without query-time model calls.",
                 "Built FANNBench across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with exact filtered top-<i>k</i> references and native instrumentation separating search, feature-collection, and policy-execution costs.",
                 "Measured 59.7-62.0% lower mean latency than native pgvector for an agent-generated policy on 300 development query-filter cases, with 95% mean Recall@10 versus 99% for the baseline.",
             ],
@@ -464,10 +455,9 @@ def build_research(path: Path) -> None:
 
     document = make_document(
         path,
-        f"Daniel Arturi Research Resume {STAMP}",
+        f"Daniel Aarao Reis Arturi Research Resume {STAMP}",
         "Research resume for research scientist and research engineering roles",
         "research scientist research engineer agentic systems database systems query optimization",
-        "Research Resume",
     )
     document.build(story)
 
@@ -564,10 +554,9 @@ def build_ai_security(path: Path) -> None:
 
     document = make_document(
         path,
-        f"Daniel Arturi AI Security Research Resume {STAMP}",
+        f"Daniel Aarao Reis Arturi AI Security Research Resume {STAMP}",
         "Tailored resume for AI safety and agent security research internships",
         "AI safety agent security researcher evaluation harnesses guardrails threat modeling",
-        "AI Security Research Resume",
     )
     document.build(story)
 
@@ -600,7 +589,7 @@ def build_industry(path: Path) -> None:
             "Sep 2026-Present",
             "<i>Independent Study Researcher</i>&nbsp;&nbsp;|&nbsp;&nbsp;Filtered Vector Search&nbsp;&nbsp;|&nbsp;&nbsp;Advisor: Prof. Jinyang Li",
             [
-                "Developed FANNAgent, an offline LLM-guided system for workload-specific early stopping in filtered approximate nearest-neighbor search; implemented bounded policies inside pgvector's HNSW search without query-time model calls.",
+                f"Developed {link('FANNAgent', 'fannagent_code')}, an offline LLM-guided system for workload-specific early stopping in filtered approximate nearest-neighbor search; implemented bounded policies inside pgvector's HNSW search without query-time model calls.",
                 "Built FANNBench across PostgreSQL/pgvector, Elasticsearch/Lucene, and Weaviate, with exact filtered top-<i>k</i> references and native instrumentation separating search, feature-collection, and policy-execution costs.",
                 "Measured 59.7-62.0% lower mean latency than native pgvector for an agent-generated policy on 300 development query-filter cases, with 95% mean Recall@10 versus 99% for the baseline.",
             ],
@@ -684,16 +673,15 @@ def build_industry(path: Path) -> None:
 
     document = make_document(
         path,
-        f"Daniel Arturi Industry Resume {STAMP}",
+        f"Daniel Aarao Reis Arturi Industry Resume {STAMP}",
         "Industry resume for research engineering and software engineering roles",
         "research engineer software engineer agentic systems LLM agents database systems query optimization",
-        "Industry Resume",
     )
     document.build(story)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build Daniel Arturi's research, industry, and AI security resume PDFs.")
+    parser = argparse.ArgumentParser(description="Build Daniel Aarao Reis Arturi's research, industry, and AI security resume PDFs.")
     parser.add_argument("--output-dir", type=Path, default=Path.cwd())
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
